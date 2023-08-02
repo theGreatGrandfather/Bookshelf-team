@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://theGreatGrandfather.github.io/Bookshelf-team",
+  "homepage": "https://theGreatGrandfather.github.io/apple",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /Bookshelf-team/"
+    "build": "parcel build src/*.html --public-url /apple/"
   },
   "repository": {
     "type": "git",
