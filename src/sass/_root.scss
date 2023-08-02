@@ -1,0 +1,44 @@
+:root {
+    --primery-bgc: #F6F6F6;
+    --color-white: #FFFFFF;
+// №11111199 
+    --text-color:rgba(17, 17, 17, 0.60);
+    --color-black: #111111;
+    --description-color: #B4AFAF;
+    --color-violet: #4F2EE8;
+    --color-yellow: #EAC645;
+
+
+    // використовувати тільки в ховері на категорії це значення
+    --color-accent: #4F2EE8;
+    --transition__stock: all 300ms linear;
+}
+
+:root body.dark-theme {
+    --primery-bgc: #202024;
+    --color-white: #111111;
+    --color-black: #000000;
+    --color-accent: #EAC645;
+
+    --text-color: rgba(255, 255, 255, 0.50);
+}
+
+@font-face {
+    font-family: italic;
+    src: url(../fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf);
+}
+@font-face {
+    font-family: regular;
+    src: url(../fonts/DMSans-VariableFont_opsz,wght.ttf);
+}
+
+body {
+font-family: regular;
+font-weight: 400;
+background-color: var(--primery-bgc);
+}
+
+
+* {
+outline: 1px solid red;
+}
