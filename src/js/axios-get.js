@@ -27,7 +27,7 @@ async function getTopBooks() {
   }
 };
 
-async function getyBooksByCategory(category) {
+async function getBooksByCategory(category) {
   try {
     const result = await axios.get((`${BASE_URL}${categoryBooks}`), {
       params: {category},
