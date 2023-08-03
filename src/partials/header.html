@@ -1,26 +1,37 @@
-<header class="header">
-  <div class="__container _container">
-    <div class="logo-box">
-      <a class="logo-box-link link" href=""></a>
-    </div>
-    <a class="home" href="">
-      <img src="" alt="" class="header-logo" />
-      <p class="logo-text"></p>
-    </a>
-    <button class="shopping-list" type="button">
-      <span>Shopping list</span>
-      <svg widht="" height="">
-        <use href="" class="shopping-list-icon"></use>
-      </svg>
-    </button>
 
-    <div class="theme-switcher">
-      <input type="checkbox" />
-    </div>
-    <button class="header-menu">
-      <svg width="24" height="24" aria-label="mobile-menu-switch">
-        <use href="" class="icon-menu"></use>
-      </svg>
-    </button>
-  </div>
-</header>
+    <header class="header">
+      <div class="__container _container">
+        <div class="logo-box">
+          <a class="logo-box-link link" href="#index.html">
+            <svg class="header-logo">
+              <use href="./images/sprite.svg#icon-logo"></use>
+            </svg>
+            <p class="logo-text"></p>
+          </a>
+        </div>
+
+        <nav class="header-nav hidden">
+          <a class="home" href="#index.html"></a>
+
+          <a href="#shopping-list-body.html" class="shopping-list">
+            <span>Shopping list</span>
+            <!-- <svg widht="24" height="24">
+        <use  class="shopping-list-icon"></use>
+      </svg> -->
+          </a>
+        </nav>
+
+        <div class="theme-switcher">
+          <input type="checkbox" />
+        </div>
+        <button class="header-menu">
+          <svg width="24" height="24" aria-label="mobile-menu-switch">
+            <use href="./images/sprite.svg#icon-burger" class="icon-menu"></use>
+          </svg>
+        </button>
+
+        <button type="button" class="user"></button>
+      </div>
+    </header>
+  </body>
+</html>
