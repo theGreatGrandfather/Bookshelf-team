@@ -8,6 +8,7 @@
     --color-violet: #4F2EE8;
     --color-yellow: #EAC645;
     --color-wrapper: #9d9d9d;
+    --color-switcher: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
 
 
     // використовувати тільки в ховері на категорії це значення
@@ -20,7 +21,7 @@
     --color-white: #111111;
     --color-black: #000000;
     --color-accent: #EAC645;
-
+    --color-switcher: fill: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
     --text-color: rgba(255, 255, 255, 0.50); //#f0f0f0
 }
 

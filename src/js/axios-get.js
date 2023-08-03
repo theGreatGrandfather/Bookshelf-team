@@ -50,4 +50,4 @@ async function getBookById(id) {
 };
 
 
-export { getCategoryList, getTopBooks, getyBooksByCategory, getBookById}
+export { getCategoryList, getTopBooks, getBooksByCategory, getBookById}
