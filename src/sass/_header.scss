@@ -1,0 +1,101 @@
+.header {
+    height: 64px;
+    width: 100vw;
+    border: 1px;
+}
+.header ._container {
+    display: flex;
+    padding: 18px 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-box {
+    display: flex;
+    width: 108px;
+    height: 28px;
+}
+
+.logo-box-link {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.logo-text {
+width: 77px;
+height: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+.header-logo {
+    width: 24px;
+    height: 24px;
+}
+
+.header-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.theme-switcher {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    flex-shrink: 0;
+    background-image:linear-gradient(
+        to bottom,
+        var(--color-violet, 
+        #dcdcdc)
+    );
+    border-radius: 18px;
+    
+}
+
+.switch__input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+
+}
+
+.switch__slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #dcdcdc;
+   
+}
+ .switch__slider::before {
+    position: absolute;
+    cursor: pointer;
+    top: 3px;
+    left: 1px;
+    background-color: #ccc;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.switch__input :focus + .switch__slider {
+box-shadow: inset(0 0 10px 5px var(--color-wrapper));
+}
+
+.switch__input:checked + .switch__slider {
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-violet,
+        #686868)
+    );
+}
