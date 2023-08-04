@@ -1,48 +1,33 @@
-import { getCategoryList, getTopBooks, getBooksByCategory, getBookById } from './axios-get'
-
-export function makeMarkupForBooks(booksArray) {
-  const markup = booksArray
-    .map(
-      ({ book_image, title, author, _id, description, buy_links }) => `<li class="book-item" class="_list"
-      data-title="${title}"
-      data-image="${book_image}"
-      data-author="${author}"
-      data-description="${description}"
-      data-namebuy1="${buy_links[0].name}"
-      data-urlbuy1="${buy_links[0].url}"
-      data-namebuy2="${buy_links[1].name}"
-      data-urlbuy2="${buy_links[1].url}"
-      data-namebuy3="${buy_links[2].name}"
-      data-urlbuy3="${buy_links[2].url}"
+export const makeMarkupForBooks = (booksArray) => {
+  const markup = booksArray.map(
+    ({ book_image, title, author, _id, list_name, description, buy_links }) => `
+      <li class="book-item" class="_list"
+        data-title="${title}"
+        data-image="${book_image}"
+        data-author="${author}"
+        data-listName="${list_name}"
+        data-description="${description}"
+        data-linkNameAmazon="${buy_links[0].name}"
+        data-linkUrlAmazon="${buy_links[0].url}"
+        data-linkNameApple="${buy_links[1].name}"
+        data-linkUrlApple="${buy_links[1].url}"
+        data-linkNameBarnes="${buy_links[2].name}"
+        data-linkUrlBarnes="${buy_links[2].url}"
       >
-    <a href="#" class="_link" class="book-item" data-id="${_id}">
-      <div class="thumb">
-        <img src="${book_image}" alt="Book cover" loading="lazy"/>
-        <div class="overlay">
-          <p class="overlay-text">quick view </p>
-        </div>
-      </div>
-      <h3 class="book-title">${title}</h3>
-      <p class="book-author">${author}</p>
-    </a>
-  </li>`
-    )
-    .join('\n');
+        <a href="#" class="_link" class="book-item" data-id="${_id}">
+          <div class="thumb">
+            <img class="lazyload" src="../images/testBook.png" data-src="${book_image}" alt="${title}" loading="lazy"/>
+            <div class="overlay">
+              <p class="overlay-text">quick view </p>
+            </div>
+          </div>
+          <h3 class="book-title">${title}</h3>
+          <p class="book-author">${author}</p>
+        </a>
+      </li>
+    `
+  ).join('');
   return markup;
-}
+};
 
 
-// для прикладу. для const ulEl треба розкоментувати ul в 4.html
-
-export const ulEl = document.querySelector('.books-list');
-
-
-// async function createBook(category) {
-//     const response = await getBooksByCategory(category);
-//     console.log('responce', response)
-//     ulEl.insertAdjacentHTML('beforeend', makeMarkupForBooks(response))
-// }
-
-// createBook('Young Adult Hardcover')
-
- 

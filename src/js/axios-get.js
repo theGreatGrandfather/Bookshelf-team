@@ -7,7 +7,7 @@ const topBooks = '/books/top-books';
 const categoryBooks = '/books/category'
 const book = '/books/';  
         
-async function getCategoryList() {
+const getCategoryList = async () => {
   try {
     const result = await axios.get(`${BASE_URL}${categoryList}`);
     return result.data
@@ -16,7 +16,7 @@ async function getCategoryList() {
   }
 };
 
-async function getTopBooks() {
+const getTopBooks = async () =>{
   try {
     const result = await axios.get(`${BASE_URL}${topBooks}`);
     return result.data
@@ -26,7 +26,7 @@ async function getTopBooks() {
   throw new Error(error);
 };
 
-async function getBooksByCategory(category) {
+const getBooksByCategory = async (category) => {
   try {
     const result = await axios.get((`${BASE_URL}${categoryBooks}`), {
       params: {category},
@@ -37,7 +37,7 @@ async function getBooksByCategory(category) {
   }
 };
 
-async function getBookById(id) {
+const getBookById = async (id) => {
   try {
     const result = await axios.get(`${BASE_URL}${book}${id}`);
     return result.data
