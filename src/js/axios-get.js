@@ -5,44 +5,41 @@ const BASE_URL = 'https://books-backend.p.goit.global';
 const categoryList = '/books/category-list';
 const topBooks = '/books/top-books';
 const categoryBooks = '/books/category'
-const book = '/books/';  //{id}
+const book = '/books/';  
         
-async function getCategoryList() {
+const getCategoryList = async () => {
   try {
     const result = await axios.get(`${BASE_URL}${categoryList}`);
-    console.log(result)
     return result.data
   } catch (error) {
     console.log(error)
   }
 };
 
-async function getTopBooks() {
+const getTopBooks = async () =>{
   try {
     const result = await axios.get(`${BASE_URL}${topBooks}`);
-    console.log(result)
     return result.data
   } catch (error) {
     console.log(error)
   }
+  throw new Error(error);
 };
 
-async function getBooksByCategory(category) {
+const getBooksByCategory = async (category) => {
   try {
     const result = await axios.get((`${BASE_URL}${categoryBooks}`), {
       params: {category},
     } );
-    console.log(result)
     return result.data
   } catch (error) {
     console.log(error)
   }
 };
 
-async function getBookById(id) {
+const getBookById = async (id) => {
   try {
     const result = await axios.get(`${BASE_URL}${book}${id}`);
-    console.log(result)
     return result.data
   } catch (error) {
     console.log(error)
@@ -50,4 +47,7 @@ async function getBookById(id) {
 };
 
 
-export { getCategoryList, getTopBooks, getBooksByCategory, getBookById}
+export { getCategoryList, getTopBooks, getBooksByCategory, getBookById }
+
+//для getBooksByCategory, getBookById потрібно передавати параметри 
+// getBooksByCategory(category) getBookById(id)
