@@ -1,4 +1,9 @@
-const bestSellContainer = document.getElementById('best_sellers_container');
+// import {categoryList} from './axios-get'
 
-const ulElement = bestSellContainer.insertAdjacentHTML('afterend', `<ul class='best_list'></ul>`);
+// const bestSellContainer = document.getElementById('best_sellers_container');
 
+// const ulElement = bestSellContainer.insertAdjacentHTML('afterend', `<ul class='best_list'></ul>`);
+
+// const createMarkupBestSellers = () => {
+
+// }
