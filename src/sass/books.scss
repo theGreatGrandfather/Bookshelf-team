@@ -34,6 +34,17 @@
         font-weight: 400;
         line-height: 1.16;
         letter-spacing: -0.48px;
+        width: 335px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @media screen and (min-width: 768px) {
+                width: 218px;
+            }
+            @media screen and (min-width: 1440px) {
+                width: 180px;
+            }
+        
 }
 
 .overlay {
