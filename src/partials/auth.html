@@ -1,0 +1,55 @@
+<div class="js_modal_auth modal_backdrop">
+  <div class="modal_window">
+    <button type="modal__button_close">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 28 28"
+        fill="none"
+      >
+        <path
+          d="M21 7L7 21M7 7L21 21"
+          stroke="#F6F6F6"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <form class="js_form_sign_in form_sign_in">
+      <ul>
+        <li class="form__element_name">
+          <input type="text" class="form__element_name__input" id="name" />
+          <label for="name" class="form__element_name__input">Name</label>
+        </li>
+
+        <li class="form__element_email">
+          <input type="email" class="form__element_email__input" id="email" />
+          <label for="email" class="form__element_name__input">Email</label>
+        </li>
+
+        <li class="form__element_password">
+          <input
+            type="password"
+            class="form__element_password__input"
+            id="password"
+          />
+
+          <label for="password" class="form__element_name__input"
+            >Password</label
+          >
+        </li>
+      </ul>
+
+      <button type="submit" class="form__button_submit">Sign up</button>
+    </form>
+
+    <div class="js_change_form buttons_change_form">
+      <button type="button" class="button button_disabled" disabled>
+        Sign up
+      </button>
+      <button type="button" class="button">Sign in</button>
+    </div>
+  </div>
+</div>
