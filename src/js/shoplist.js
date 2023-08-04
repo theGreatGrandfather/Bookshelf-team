@@ -1,4 +1,4 @@
-/**CARD TEMPLATE*/
+//CARD-TEMPLATE `
 /**       <li class="shopping-list__item shopping-list-card">
           <img
             class="shopping-list-card__image"
