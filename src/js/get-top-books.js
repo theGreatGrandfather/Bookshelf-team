@@ -2,10 +2,6 @@ import { getTopBooks } from './axios-get';
 import { makeMarkupForBooks } from './markup-books';
 
 const ulEl = document.querySelector('#best-sellers-container');
-
-console.log('ulEl', ulEl);
-const screenWidth = window.screen.width;
-
 const ulElement = document.createElement('ul');
 ulElement.classList.add('best_list');
 ulEl.appendChild(ulElement);
@@ -13,28 +9,34 @@ ulEl.appendChild(ulElement);
 const renderStartMarcup = async () => {
   try {
     const dataMarcup = await getTopBooks();
-    console.log('dataMarcup', dataMarcup);
 
     if (dataMarcup.length > 0) {
+      const windowInnerWidth = window.innerWidth;
 
-      const firstIndexBooks = dataMarcup.map(({books, list_name})=> {
+      let numBooksPerRow = 5; 
 
-        console.log('books', books),
-        console.log('list_name', list_name)
+      if (windowInnerWidth < 1440) {
+        numBooksPerRow = 3; 
+      }
+
+      if (windowInnerWidth < 768) {
+        numBooksPerRow = 1;
+      }
+      
+
+      const firstIndexBooks = dataMarcup.map(({ books, list_name }) => {
+        const booksSlice = books.slice(0, numBooksPerRow);
         return `<li class='best-item _list'> 
                   <h4 class='min-title'>${list_name}</h4>
                   <ul class='five-books'>
-                      ${ makeMarkupForBooks(books)}
+                      ${makeMarkupForBooks(booksSlice)}
                   </ul>
                   <button class='see_more' data-name="${list_name}">See More</button>
-                </li>`
-      }
-      )
+                </li>`;
+      });
 
       ulEl.insertAdjacentHTML('afterbegin', '<h2 class="title_best-sellers">Best Sellers&nbsp;<span class="title_book">Books</span></h2>');
-
       ulElement.insertAdjacentHTML('beforeend', firstIndexBooks.join(''));
-      console.log('ulEl', ulEl);
     }
   } catch (error) {
     console.error(error);
@@ -42,3 +44,21 @@ const renderStartMarcup = async () => {
 };
 
 renderStartMarcup();
+
+// window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
+//   if (!e.matches) {
+//     return
+//   };
+//   console.log('mobile => tablet');
+// })
+
+// window.matchMedia('(min-width: 1200px)').addEventListener('change', e => {
+//   if (!e.matches) {
+//     return
+//   };
+//   console.log('tablet => desktop');
+// })
+
+
+
+
