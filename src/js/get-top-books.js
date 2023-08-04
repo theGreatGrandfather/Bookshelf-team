@@ -42,27 +42,3 @@ const renderStartMarcup = async () => {
 };
 
 renderStartMarcup();
-
-
-
-
-
-// import { getTopBooks } from './axios-get';
-// import { makeMarkupForBooks, ulEl } from './markup-books';
-
-// const renderStartMarcup = async () => {
-//   try {
-//     const dataMarcup = await getTopBooks();
-//     console.log('dataMarcup', dataMarcup);
-
-//     if (dataMarcup.length > 0) {
-//       const firstIndexBooks = dataMarcup[0].books;
-//       ulEl.insertAdjacentHTML('beforeend', makeMarkupForBooks(firstIndexBooks));
-//       console.log('list_name', dataMarcup[0].list_name);
-//     }
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
-
-// renderStartMarcup();
