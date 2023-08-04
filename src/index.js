@@ -27,5 +27,6 @@ import './js/auth';
 
 // add your import from js file here
 
-// add your import from js file here
+import './js/renderCategories.js'; 
 
+import './js/toggleTheme.js'; 

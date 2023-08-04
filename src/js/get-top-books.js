@@ -1,8 +1,8 @@
 import { getTopBooks } from './axios-get';
 import { makeMarkupForBooks } from './markup-books';
 
-const ulEl = document.querySelector('#best-sellers-container');
-const ulElement = document.createElement('ul');
+export const ulEl = document.querySelector('#best-sellers-container');
+export const ulElement = document.createElement('ul');
 ulElement.classList.add('best_list');
 ulEl.appendChild(ulElement);
 
