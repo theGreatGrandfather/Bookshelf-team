@@ -11,12 +11,14 @@
 @media screen and (min-width: 768px){
     #best-sellers-container{
         margin-top: 100px;
+        min-width: 768px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     #best-sellers-container{
         margin-top: 40px;
+        min-width: 1440px;
     }
 }
 
@@ -29,7 +31,7 @@
     }
 
     .see_more{
-        margin-top: 8px;
+        margin-top: 32px;
         
         padding: 14px 28px;
         align-items: flex-start;
@@ -60,3 +62,23 @@
     .title_book {
         color: var(--color-violet);
     }
+
+.book-item{
+    margin-right: 24px;
+}
+
+.five-books{
+    margin-top: 18px;
+}
+
+.best-item{
+    margin-top: 40px;
+}
+
+.min-title{
+    color: var(--description-color);
+    font-family: DM Sans;
+    line-height: 171.429% ; 
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
+}

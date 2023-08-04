@@ -21,8 +21,8 @@ const renderStartMarcup = async () => {
 
         console.log('books', books),
         console.log('list_name', list_name)
-        return `<li> 
-                  <h4>${list_name}</h4>
+        return `<li class='best-item _list'> 
+                  <h4 class='min-title'>${list_name}</h4>
                   <ul class='five-books'>
                       ${ makeMarkupForBooks(books)}
                   </ul>
