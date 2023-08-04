@@ -1,0 +1,244 @@
+.header {
+    display: block;
+    height: 64px;
+    width: 100vw;
+}
+
+.header ._container {
+    display: flex;
+    padding: 18px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid;
+    border-color: var(--color-black);
+    border-radius: 0 0 8px 8px;
+}
+
+.logo-box {
+    display: flex;
+    width: 108px;
+    height: 28px;
+}
+
+.logo-box-link {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.logo-box:hover {
+    transform: scale(1.05);
+}
+
+.logo-text {
+width: 77px;
+height: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+.header-logo {
+    width: 24px;
+    height: 24px;
+}
+
+.header-box {
+    display: flex;
+    width: 82px;
+    height: 28px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.theme-switcher {
+    display: inline-block;
+    position: relative;
+    background-image:linear-gradient(
+        to bottom,
+        var(--color-violet),
+        var(--color-white)
+    );
+    border-radius: 18px;
+    
+}
+
+.switch__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    appearance: none;
+}
+
+.switch__slider{
+    display: inline-block;
+    position: relative;
+}
+
+.switch__slider::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-white),
+        #f7f7f7
+    );
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: left .3s;
+}
+
+.switch__slider::after {
+    display: block;
+    content: "";
+    width: 40px;
+    height: 20px;
+    border-radius: 18px;
+    background-image: linear-gradient(to bottom,
+                var(--color-violet),
+                var(--color-white));
+}
+
+.switch__input:checked + .switch__slider::before {
+display: block;
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 21px;   
+}
+
+.switch__input:checked + .switch__slider::after {
+    background-image: linear-gradient(to bottom,
+                var(--color-violet),
+                #686868);
+}
+
+// .switch__input:is(:hover, :focus) + .switch__slider {
+// box-shadow: inset(0 0 10px 5px var(--color-wrapper));
+// }
+
+// .switch__input:checked + .switch__slider {
+//     background-image: linear-gradient(
+//         to bottom,
+//         var(--color-violet,
+//         #686868)
+//     );
+// }
+
+.header-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+}
+
+@media screen and (min-width: 768px){
+    .logo-nav-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.shopping-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.home,
+.shopping-list {
+    width:auto;
+    height: auto;
+    padding: 7px 16px;
+    color: #111;
+    font-family: inherit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+} 
+
+.home:is(:hover, :focus) {
+background-color: var(--color-yellow);
+    border-radius: 36px;
+    font-weight: 700;
+}
+
+.shopping-list:is(:hover, :focus) {
+    background-color: var(--color-yellow);
+    border-radius: 36px;
+    font-weight: 700;
+}
+
+.header-box {
+    width: auto;
+    height: auto;
+    gap: 24px;
+}
+.header-menu {
+    display: none;
+}
+
+.user {
+display: flex;
+align-items: center;
+justify-content: space-around;
+gap: 4px;
+width: 184px;
+height: 45px;
+background-color: var(--color-violet);
+border-radius: 36px;
+border: none;
+} 
+
+.user-icon {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    // margin-left: 12px;
+    background-color: var(--color-white);
+}
+.user-name {
+    display: block;
+    margin-left: 5px;
+    color: #FFF;
+    font-family: inherit;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.44px;
+}
+.down-arrow {
+    display: block;
+    margin-left: 4px;
+}
+}
+@media screen and (min-width: 1280px) {
+    .header-nav {
+        gap: 24px;
+    }
+    .logo-nav-wrapper{
+        gap: 76px;
+    }
+}
