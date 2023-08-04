@@ -31,7 +31,7 @@ const renderStartMarcup = async () => {
       }
       )
 
-      ulEl.insertAdjacentHTML('afterbegin', '<h2 class="title_best-sellers">Best Sellers <span class="title_book">Books</span></h2>');
+      ulEl.insertAdjacentHTML('afterbegin', '<h2 class="title_best-sellers">Best Sellers&nbsp;<span class="title_book">Books</span></h2>');
 
       ulElement.insertAdjacentHTML('beforeend', firstIndexBooks.join(''));
       console.log('ulEl', ulEl);
