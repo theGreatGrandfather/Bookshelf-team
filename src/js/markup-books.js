@@ -1,6 +1,6 @@
 import { getCategoryList, getTopBooks, getBooksByCategory, getBookById } from './axios-get'
 
-function makeMarkupForBooks(booksArray) {
+export function makeMarkupForBooks(booksArray) {
   const markup = booksArray
     .map(
       ({ book_image, title, author, _id, description, buy_links }) => `<li class="book-item" class="_list"
@@ -30,14 +30,19 @@ function makeMarkupForBooks(booksArray) {
     .join('\n');
   return markup;
 }
-export { makeMarkupForBooks }
+
 
 // для прикладу. для const ulEl треба розкоментувати ul в 4.html
 
-const ulEl = document.querySelector('.books-list')
-async function createBook(category) {
-    const response = await getBooksByCategory(category);
-    console.log(response)
-    ulEl.insertAdjacentHTML('beforeend', makeMarkupForBooks(response))
-}
-createBook('Audio Fiction')
+export const ulEl = document.querySelector('.books-list');
+
+
+// async function createBook(category) {
+//     const response = await getBooksByCategory(category);
+//     console.log('responce', response)
+//     ulEl.insertAdjacentHTML('beforeend', makeMarkupForBooks(response))
+// }
+
+// createBook('Young Adult Hardcover')
+
+ 
