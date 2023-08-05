@@ -1,0 +1,54 @@
+.main__section {
+}
+
+.main__container {
+    display: flex;
+    flex-direction: column;
+}
+aside{
+    display: flex;
+    flex-direction: column;
+}
+.categories {
+}
+.categories__list {
+}
+.categories__item {
+}
+._list {
+}
+.categories__link {
+}
+._link {
+}
+.support-ukraine {
+}
+.support-ukraine__container-title {
+}
+.support-ukraine__title {
+}
+.support-ukraine__icon {
+}
+.support-ukraine__list {
+}
+.support-ukraine__item {
+}
+.support-ukraine__link {
+}
+.support-ukraine__btn {
+}
+
+@media screen and (min-width: 768px) {
+    aside{
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .main__container {
+        flex-direction: row;
+    }
+    aside{
+        flex-direction: column;
+    }
+}
