@@ -9,6 +9,8 @@ import './js/markup-books';
 import './js/axios-get';
 
 import './js/get-top-books';
+
+import './js/modal';
 // add your import from js file here
 
 // add your import from js file here
