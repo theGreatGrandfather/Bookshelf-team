@@ -139,7 +139,14 @@ display: block;
     width: 28px;
     height: 28px;
     padding: 0;
+    border: none;
+    background-color: transparent;
 }
+
+.header-menu:is(:hover, :focus) svg path {
+    stroke: var(--color-violet);
+}
+
 
 @media screen and (min-width: 768px){
     .logo-nav-wrapper {
@@ -245,7 +252,7 @@ border: none;
 .user-name {
     display: none;
     margin-left: 5px;
-    color: #FFF;
+    color: var(--color-white);
     font-family: inherit;
     font-size: 22px;
     font-style: normal;
