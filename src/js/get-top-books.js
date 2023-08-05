@@ -1,5 +1,6 @@
 import { getTopBooks } from './axios-get';
 import { makeMarkupForBooks } from './markup-books';
+import { categoryTitle } from './createCategoryMarcup';
 
 export const mainBookList = document.querySelector('.best_list');
 let numBooksPerRow = determineNumBooksPerRow();
@@ -52,4 +53,8 @@ function determineNumBooksPerRow() {
   } else {
     return 5;
   }
+}
+
+if (categoryTitle.classList.contains('no-change')) {
+  //не працює твій код
 }
