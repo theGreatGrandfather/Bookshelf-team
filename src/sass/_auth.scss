@@ -12,3 +12,15 @@
 //     --color-accent: #4F2EE8;
 //     --transition__stock: all 300ms linear;
 
+.modal_backdrop {
+    position: absolute;
+    width: 100wv;
+    height: 100wh;
+}
+
+.modal_window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

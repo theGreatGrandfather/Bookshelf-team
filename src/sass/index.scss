@@ -5,8 +5,9 @@
 @import './shoping-list';
 @import './category';
 @import './support-ukraine';
+@import './modal';
 
-@import './best-sellers';
+@import './get-top-books';
 // @import './your-file';
 // @import './your-file';
 @import './books';
@@ -16,10 +17,11 @@
 // @import './your-file';
 // @import './your-file';
 @import './auth';
-
+@import './section__main';
 
 
 
 @import './footer';
 
-
+@import './_scroll-up';
+@import './_section';
