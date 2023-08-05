@@ -60,6 +60,7 @@ onAuthStateChanged(auth, (user) => {
     // ...
   } else {
     // User is signed out
+        Notify.info(`Please Sign-In/Sign-Up`)
     // ...
   }
 });
