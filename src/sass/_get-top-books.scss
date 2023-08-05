@@ -4,6 +4,12 @@
     transition: margin-top 0.5s ease; 
 }
 
+.best_list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
 .five-books {
     display: flex;
 }
@@ -26,6 +32,7 @@
     gap: 10px;
     border-radius: 40px;
     border: 2px solid var(--color-violet);
+    background-color: transparent;
     color: var(--color-black);
     font-size: 14px;
     font-weight: 700;
@@ -46,22 +53,17 @@
 
 .books-list{
     display: flex;
+    column-gap: 24px;
 }
 
 .title_book {
     color: var(--color-violet);
 }
 
-.book-item {
-    margin-right: 24px;
-}
+
 
 .five-books {
     margin-top: 18px;
-}
-
-.best-item {
-    margin-top: 40px;
 }
 
 .min-title {

@@ -2,7 +2,7 @@ import { categoriesList } from './renderCategories';
 import { getBooksByCategory } from "./axios-get";
 import { mainBookList } from './get-top-books';
 import { makeMarkupForBooks } from './markup-books';
-const categoryTitle = document.querySelector('.title_best-sellers');
+export const categoryTitle = document.querySelector('.title_best-sellers');
 const categoryAccent = document.querySelector('.title_book');
 
 
@@ -18,6 +18,7 @@ const onCategoryClick = (e) => {
         const accentText = e.target.innerText.split(' ')[e.target.innerText.split(' ').length - 1];
         createCategoryMarcup(e.target.innerText)
             .then((resp) => {
+                categoryTitle.classList.add('no-change');
                 categoryTitle.innerHTML = `${titleTExt.join(' ')}&nbsp
                 <span class="title_book">${accentText}</span>`;
 
