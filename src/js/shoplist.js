@@ -109,6 +109,7 @@ localStorage.setItem(KEY_NAME_LS, JSON.stringify(list));
 
 const refs = {
   emptyListContainer: document.getElementById('empty-container-js'),
+  bookListEl: document.getElementById('js-book-list'),
 };
 
 const createShopListMarkup = arr => {
@@ -127,31 +128,30 @@ const createShopListMarkup = arr => {
       }) => `<li class="shopping-list__item shopping-list-card">
           <img
             class="shopping-list-card__image"
-            src=""
-            alt=""
-            width=""
-            height=""
+            src="${img}"
+            alt="${title}"
           />
           <div class="shopping-list-card__info">
-            <h2 class="shopping-list-card__title"></h2>
-            <p class="shopping-list-card__category"></p>
+            <h2 class="shopping-list-card__title">${title}</h2>
+            <p class="shopping-list-card__category">${listname}</p>
             <p class="shopping-list-card__descr">
+            ${description}
             </p>
             <div class="shopping-list-card__wrapper">
-              <p class="shopping-list-card__author"></p>
+              <p class="shopping-list-card__author">${author}</p>
               <div class="shopping-list-card__links">
                 <a
-                  href=""
+                  href="${amazonLink}"
                   target="_blank"
                   class="shopping-list-card__link --amazon _link"
                 ></a>
                 <a
-                  href=""
+                  href="${appleLink}"
                   target="_blank"
                   class="shopping-list-card__link --apple _link"
                 ></a>
                 <a
-                  href=""
+                  href="${barnesLink}"
                   target="_blank"
                   class="shopping-list-card__link --barnes _link"
                 ></a>

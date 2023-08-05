@@ -44,7 +44,7 @@
   }
 }
 
-.sh .shopping-list__list {
+.shopping-list__list {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -74,10 +74,11 @@
 
 .shopping-list-card__image {
   border-radius: 8px;
-
-  @media screen and (max-width: 767px) {
-    width: 100px;
-    height: 142px;
+  min-width: 100px;
+  height: 142px;
+  @media screen and (min-width: 768px) {
+    min-width: 116px;
+    height: 165px;
   }
 }
 
