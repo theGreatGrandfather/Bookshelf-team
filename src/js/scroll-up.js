@@ -12,7 +12,7 @@ const goTop = () => {
 const onScroll = () => {
     const offset = window.scrollY;
     const coords = document.documentElement.clientHeight;
-    if (offset >= coords) {
+    if (offset*5 >= coords) {
         btnGoTop.hidden = false
     } else {
         btnGoTop.hidden = true;
