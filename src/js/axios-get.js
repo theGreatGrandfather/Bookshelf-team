@@ -34,7 +34,7 @@ const getBooksByCategory = async (category) => {
     return result.data
   } catch (error) {
     console.log(error)
-  } 
+  }
 };
 
 const getBookById = async (id) => {
