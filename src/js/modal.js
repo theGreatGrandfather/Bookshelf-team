@@ -1,72 +1,80 @@
-const openModalBtn = document.getElementById("openModal")
-const modalWindow = document.getElementById("modalW")
-const modalContent = document.getElementById("modal-content")
-const closeModalBtn = document.getElementById("closeModal")
+import { setItem, getItem, removeItem } from './local-storage';
 
-console.log('test khjlkjllkj')
+const el = {
+  modal: document.getElementById('modal'),
+  modalTitle: document.getElementById('modal-title'),
+  modalAuthor: document.getElementById('modal-author'),
+  modalDescr: document.getElementById('modal-description'),
+  modalImg: document.getElementById('modal-image'),
+  modalClose: document.getElementById('modal-close-btn'),
+  amazonLink: document.getElementById('amazon-link'),
+  appleLink: document.getElementById('apple-link'),
+  barnesLink: document.getElementById('barnes-link'),
+  addToList: document.getElementById('modal-add-to-list'),
+  books: document.getElementById('best-sellers-container'),
+};
 
-// on click on book .book-item add...((e) => {
- 
-// } )
-// from event read book data from data atr
-// save to the const
-// 
+let bookInfo = {};
+let currentBookId;
+let isBookAdded = false;
 
-const bookList = document.querySelector(".book-items");
+const onBookClick = e => {
+  if (e.target.closest('.book-item')) {
+    const bookItem = e.target.closest('.book-item');
 
-// bookItem.addEventListener('click', (e) => {
-//     console.log(e.target)
-// })
+    // get book data from attrs
+    bookInfo = {
+      id: bookItem.querySelector('._link').dataset.id,
+      title: bookItem.dataset.title,
+      img: bookItem.dataset.image,
+      author: bookItem.dataset.author,
+      description: bookItem.dataset.description,
+      amazonLink: bookItem.dataset.linkurlamazon,
+      appleLink: bookItem.dataset.linkurlapple,
+      barnesLink: bookItem.dataset.linkurlbarnes,
+      listname: bookItem.dataset.listname,
+    };
+  }
 
-// bookItem.addEventListener("click", onBookItemClick)
-const onBookItemClick = (e)=>{ 
-    console.log('sdcsdcscsdc ', e.target)
-}
-bookList.addEventListener("click", onBookItemClick)
+  // Insert book data to modal and save current BookId
+  el.modalTitle.textContent = bookInfo.title;
+  el.modalAuthor.textContent = bookInfo.author;
+  el.modalDescr.textContent = bookInfo.description;
+  el.modalImg.src = bookInfo.img;
+  el.amazonLink.href = bookInfo.amazonLink;
+  el.appleLink.href = bookInfo.appleLink;
+  el.barnesLink.href = bookInfo.barnesLink;
 
+  currentBookId = bookInfo.id;
 
-const basketList = document.querySelector('.basket__list');
+  // check if this book has been already added to storage
+  isBookAdded = getItem(bookInfo.id);
+  if (!isBookAdded) {
+    el.addToList.textContent = 'Add to shopping list';
+  } else {
+    el.addToList.textContent = 'Remove from the shopping list';
+  }
 
+  // open Modal
+  el.modal.classList.toggle('modal-js');
+};
 
-const onCartButtonClick = (e) => {
-    if (e.target.hasAttribute('data-card')) {
-        const card = e.target.closest('.book__item');
-        const poductInfo = {
-            id: card.dataset.id,
-            img: card.querySelector('.book__img').getAttribute('src'),
-            title: card.querySelector('.book-title').innerText,
-            price: card.querySelector('.book__price').querySelector('.book__price__value').innerText,
-        } 
-        console.log('poductInfo', poductInfo);
+const onCloseModal = () => {
+  el.modal.classList.toggle('modal-js');
+};
 
-        const poductInfoJSON = JSON.stringify(poductInfo);
-        localStorage.setItem(`1111`, JSON.stringify(poductInfo));
+const toggleToList = () => {
+  if (isBookAdded) {
+    removeItem(currentBookId);
+    el.addToList.textContent = 'Add to shopping list';
+    isBookAdded = false;
+  } else {
+    setItem(bookInfo);
+    el.addToList.textContent = 'Remove from the shopping list';
+    isBookAdded = true;
+  }
+};
 
-
-
-    }
-} 
-
-
-window.addEventListener('click', onCartButtonClick);
-
-// const bookSearch = (e) => {
-//     console.log("event", e);
-// }
-
-// bookIt.addEventListener("click", bookSearch);
-
-
-
-//  document.addEventListener('click', (e) => {
-//      e.target
-//      const title = dataa-ttr
-
-
-//      titleEl.append(title)
-
-//     toggle()
-// })
-
-
-
+el.books.addEventListener('click', onBookClick);
+el.modalClose.addEventListener('click', onCloseModal);
+el.addToList.addEventListener('click', toggleToList);

@@ -1,40 +1,29 @@
-<section class="modal-js">
-    <button id="openModal"></button>
-  <div id="modal" class="modal">
-    <div class="modal__inner"></div>
-    <div class="modal__top"></div>
-    <button type="button" id="closeBtn" class="close-btn">
-        <svg width="40" height="40">
+<section id="modal" class="modal modal-js">
+  <div>
+    <!-- <div class="modal__inner"></div> -->
+    <!-- <div class="modal__top"></div> -->
+    <button type="button" id="modal-close-btn" class="modal-close-btn">
+      X
+        <!-- <svg width="40" height="40"> -->
             <!-- <use href="./images/sprite.svg#icon-close"></use> -->
-          </svg>
+          <!-- </svg> -->
     </button>
    
     <div class="modal-content">
-      <img id="image" src="#" alt="asxasxasx" />
-      <h2 class="title"></h2>
-      <p id="author">Автор книги</p>
-      <p id="description">Короткий опис змісту книги</p>
-      <h3>Посилання на магази:</h3>
-      <ul id="book-links">
-        <li><a href="link1" id="buy_links">Магазин 1</a></li>
-        <li><a href="link2" id="buy_links">Магазин 2</a></li>
-        <li><a href="link3" id="buy_links">Магазин 3</a></li>
-      </ul>
-      <button id="addToShoppingList">Додати до Shopping List</button>
- 
-      <button id="closeModal">Закрити модалку</button>
+      <div>
+        <img height="100" id="modal-image" src="#" alt="asxasxasx" />
+        <div>
+          <h4 id="modal-title"></h4>
+          <p id="modal-author">Автор книги</p>
+          <p id="modal-description">Короткий опис змісту книги</p>
+          <ul id="modal-book-links">
+            <li><a href="link1" id="amazon-link" target="_blank">Магазин 1</a></li>
+            <li><a href="link2" id="apple-link" target="_blank">Магазин 2</a></li>
+            <li><a href="link3" id="barnes-link" target="_blank">Магазин 3</a></li>
+          </ul>
+        </div>
+      </div>
+      <button id="modal-add-to-list">Add to shopping list</button>
     </div>
   </div>
 </section>
-
-<!-- data-title="${title}"
-data-image="${book_image}"
-data-author="${author}"
-data-listName="${list_name}"
-data-description="${description}"
-data-linkNameAmazon="${buy_links[0].name}"
-data-linkUrlAmazon="${buy_links[0].url}"
-data-linkNameApple="${buy_links[1].name}"
-data-linkUrlApple="${buy_links[1].url}"
-data-linkNameBarnes="${buy_links[2].name}"
-data-linkUrlBarnes="${buy_links[2].url}" -->
