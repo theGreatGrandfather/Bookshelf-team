@@ -1,7 +1,5 @@
 .header {
     display: block;
-    // height: 64px;
-    // width: 100vw;
 }
 
 .header ._container {
@@ -12,6 +10,8 @@
     border: 2px solid;
     border-color: var(--color-black);
     border-radius: 0 0 8px 8px;
+    height: 64px;
+    width: 100vw;
 }
 
 .logo-box {
@@ -156,6 +156,12 @@ display: block;
     gap: 16px;
 }
 
+.active {
+    background-color: var(--color-yellow);
+    border-radius: 36px;
+    font-weight: 700;
+}
+
 .shopping-list {
     display: flex;
     align-items: center;
@@ -191,10 +197,14 @@ background-color: var(--color-yellow);
 }
 
 .header-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: auto;
     height: auto;
     gap: 24px;
 }
+
 .header-menu {
     display: none;
 }
@@ -202,14 +212,28 @@ background-color: var(--color-yellow);
 .user {
 display: flex;
 align-items: center;
-justify-content: space-around;
+justify-content: space-between;
 gap: 4px;
 width: 184px;
 height: 45px;
+padding: 14px;
 background-color: var(--color-violet);
 border-radius: 36px;
 border: none;
 } 
+
+.sign-up-text {
+    display: block;
+    width: 46px;
+    height: 18px;
+    color: var(--color-white);
+    font-family:inherit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
+}
 
 .user-icon {
     width: 37px;
@@ -219,7 +243,7 @@ border: none;
     background-color: var(--color-white);
 }
 .user-name {
-    display: block;
+    display: none;
     margin-left: 5px;
     color: #FFF;
     font-family: inherit;
@@ -229,9 +253,15 @@ border: none;
     line-height: normal;
     letter-spacing: -0.44px;
 }
+
+
 .down-arrow {
     display: block;
     margin-left: 4px;
+}
+
+.down-arrow .hidden {
+    display: none;
 }
 }
 @media screen and (min-width: 1280px) {
