@@ -1,7 +1,8 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
 import { app } from "./firebase";
 import { onClickModal, openCloseModal } from "./auth-modal";
 import { refs } from "./auth-refs";
+import { Notify } from "notiflix";
 
 const auth = getAuth(app);
 
@@ -18,15 +19,21 @@ const onSubmit = e => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in
-                const user = userCredential.user;
-              
-                console.log(user.displayName);
                 // ...
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorCode, errorMessage);
+                Notify.failure(`Create profile error: ${errorMessage}`)
+            }).finally(() => {
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                }).then(() => {
+                    Notify.success(`Hello, ${name}, you successfully create new account`)
+                }).catch((error) => {
+                    const errorMessage = error.message;
+                    Notify.failure(`Update profile error: ${errorMessage}`)
+                });
             });
     }
 
@@ -35,18 +42,28 @@ const onSubmit = e => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-
-                console.log(user);
-                console.log(user.displayName);
+                Notify.success(`Hello, ${user.displayName}`)
                 // ...
             })
             .catch((error) => {
-                const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorCode, errorMessage);
+                Notify.failure(`Sign in error: ${errorMessage}`)
             });
     }
 }
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+    //   Ім'я юзера можна отримати з name тут
+      const name = user.displayName;
+      Notify.info(`User ${name}`)
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
 
 refs.authForm.addEventListener('submit', onSubmit);
 refs.buttonSignIn.addEventListener('click', openCloseModal)
