@@ -2,7 +2,7 @@ import { getTopBooks } from './axios-get';
 import { makeMarkupForBooks } from './markup-books';
 
 const mainBookList = document.querySelector('.best_list');
-let numBooksPerRow = 5;
+let numBooksPerRow = determineNumBooksPerRow();
 
 const debounce = (func, delay) => {
   let timeoutId;
@@ -35,6 +35,7 @@ const renderStartMarkup = async () => {
 };
 
 const handleResize = () => {
+  numBooksPerRow = determineNumBooksPerRow();
   renderStartMarkup();
 };
 
@@ -43,20 +44,12 @@ window.addEventListener('resize', debouncedHandleResize);
 
 renderStartMarkup();
 
-const mediaQueryChangeHandler = (mediaQuery, numBooks) => {
-  if (mediaQuery.matches) {
-    numBooksPerRow = numBooks;
+function determineNumBooksPerRow() {
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    return 1;
+  } else if (window.matchMedia('(min-width: 768px) and (max-width: 1439px)').matches) {
+    return 3;
+  } else {
+    return 5;
   }
-};
-
-window.matchMedia('(max-width: 767px)').addEventListener('change', e => {
-  mediaQueryChangeHandler(e, 1);
-});
-
-window.matchMedia('(min-width: 768px) and (max-width: 1439px)').addEventListener('change', e => {
-  mediaQueryChangeHandler(e, 3);
-});
-
-window.matchMedia('(min-width: 1440px)').addEventListener('change', e => {
-  mediaQueryChangeHandler(e, 5);
-});
+}
