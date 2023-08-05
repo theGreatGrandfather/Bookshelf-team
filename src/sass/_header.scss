@@ -26,9 +26,9 @@
     align-items: center;
 }
 
-.logo-box:hover {
-    transform: scale(1.05);
-}
+// .logo-box:hover {
+//     transform: scale(1.05);
+// }
 
 .logo-text {
 width: 77px;
@@ -143,10 +143,120 @@ display: block;
     background-color: transparent;
 }
 
+.header-menu svg path {
+    transition: .5s;
+}
+
 .header-menu:is(:hover, :focus) svg path {
     stroke: var(--color-violet);
 }
 
+/*----Mobile-menu---*/ 
+
+.js-menu-container {
+    position: fixed;
+    z-index: 10;
+    // transform: translateY(-100%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    transition: transform 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet) 18.03%, var(--color-white) 100%);
+}
+
+.menu-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 9px;
+    width: auto;
+    height: 37px;
+    padding: 4px 0;
+}
+
+.user-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+}
+
+.menu-user-name {
+    display:inline-block;
+    color: var(--color-white);
+    font-family: inherit;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.44px;
+    width: auto;
+}
+
+.menu-header-nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 130px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-home,
+.menu-shopping-list {
+    width: auto;
+    height: auto;
+    padding: 8px 16px;
+    color: var(--color-white);
+    font-family: inherit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+}
+
+
+
+.menu-shopping-list svg path {
+    fill: var(--color-white)
+}
+
+.menu-home:is(:hover, :focus) {
+    background-color: var(--color-yellow);
+    border-radius: 36px;
+    font-weight: 700;
+    color: var(--color-black);
+}
+
+.menu-shopping-list:is(:hover, :focus) {
+    background-color: var(--color-yellow);
+    border-radius: 36px;
+    font-weight: 700;
+    color: var(--color-black);
+}
+
+.menu-shopping-list:is(:hover, :focus) svg path {
+    fill: var(--color-black)
+}
+
+.books {
+    background-color: var(--color-yellow);
+    width: 450px;
+    height: 439px;
+    transform: rotate(-15deg);
+    flex-shrink: 0;
+}
 
 @media screen and (min-width: 768px){
     .logo-nav-wrapper {
