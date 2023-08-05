@@ -3,7 +3,8 @@ import { makeMarkupForBooks } from './markup-books';
 import { categoryTitle } from './createCategoryMarcup';
 
 export const mainBookList = document.querySelector('.best_list');
-let numBooksPerRow = determineNumBooksPerRow();
+let numBooksPerRow = 5;
+let savedMarkup = null;
 
 const debounce = (func, delay) => {
   let timeoutId;
@@ -13,7 +14,13 @@ const debounce = (func, delay) => {
   };
 };
 
+const shouldRenderMarkup = () => {
+  return !categoryTitle.classList.contains('no-change');
+};
+
 const renderStartMarkup = async () => {
+  if (!shouldRenderMarkup()) return;
+
   try {
     const dataMarkup = await getTopBooks();
     if (dataMarkup.length === 0) return;
@@ -36,14 +43,18 @@ const renderStartMarkup = async () => {
 };
 
 const handleResize = () => {
-  numBooksPerRow = determineNumBooksPerRow();
+  numBooksPerRow = shouldRenderMarkup() ? determineNumBooksPerRow() : numBooksPerRow;
   renderStartMarkup();
 };
 
 const debouncedHandleResize = debounce(handleResize, 250);
 window.addEventListener('resize', debouncedHandleResize);
 
-renderStartMarkup();
+if (shouldRenderMarkup()) {
+  renderStartMarkup();
+} else {
+  savedMarkup = mainBookList.innerHTML; 
+}
 
 function determineNumBooksPerRow() {
   if (window.matchMedia('(max-width: 767px)').matches) {
@@ -55,6 +66,10 @@ function determineNumBooksPerRow() {
   }
 }
 
-if (categoryTitle.classList.contains('no-change')) {
-  //не працює твій код
-}
+const restoreMarkup = () => {
+  if (!shouldRenderMarkup() && savedMarkup) {
+    mainBookList.innerHTML = savedMarkup;
+  }
+};
+
+window.addEventListener('resize', restoreMarkup);
