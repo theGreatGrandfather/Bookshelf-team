@@ -96,3 +96,30 @@
 .thumb:hover .overlay {
     transform: translate(0);
 }
+
+
+// scroll-up
+.go-top {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    position: fixed;
+    right: 20px;
+    top: 95%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 5px solid rgba(79, 46, 232, 0.30);
+}
+
+.icon-scroll-up-wrap {
+    border-radius: 50%;
+    background-color: var(--color-violet);
+    width: 100%;
+    height: 100%;
+
+}
+.icon-scroll-up {
+    margin-top: 18px;
+    margin-left: 18px;
+}
