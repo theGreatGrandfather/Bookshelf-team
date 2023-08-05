@@ -44,6 +44,10 @@
     display: flex;
 }
 
+.books-list{
+    display: flex;
+}
+
 .title_book {
     color: var(--color-violet);
 }
@@ -83,7 +87,8 @@
 
 @media screen and (min-width: 1440px) {
     #best-sellers-container {
-        // margin-top: 40px;
+        // margin-top: 0;
+        margin-left: 40px;
         width: 996px;
         transition: margin-top 0.5s ease; 
     }
