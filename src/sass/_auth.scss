@@ -1,0 +1,26 @@
+//     --primery-bgc: #F6F6F6;
+//     --color-white: #FFFFFF;
+
+//     --text-color: rgba(17, 17, 17, 0.60); // #707070 
+//     --color-black: #111111;
+//     --description-color: #B4AFAF;
+//     --color-violet: #4F2EE8;
+//     --color-yellow: #EAC645;
+//     --color-wrapper: #9d9d9d;
+
+//     // використовувати тільки в ховері на категорії це значення
+//     --color-accent: #4F2EE8;
+//     --transition__stock: all 300ms linear;
+
+.modal_backdrop {
+    position: absolute;
+    width: 100wv;
+    height: 100wh;
+}
+
+.modal_window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
