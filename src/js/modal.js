@@ -11,9 +11,12 @@ const el = {
   appleLink: document.getElementById('apple-link'),
   barnesLink: document.getElementById('barnes-link'),
   addToList: document.getElementById('modal-add-to-list'),
+  modalGreetings: document.getElementById('modal-greetings-text'),
   books: document.getElementById('best-sellers-container'),
 };
 
+const BUTTON_ADD_TEXT = 'Add to shopping list';
+const BUTTON_REMOVE_TEXT = 'Remove from the shopping list';
 let bookInfo = {};
 let currentBookId;
 let isBookAdded = false;
@@ -50,9 +53,9 @@ const onBookClick = e => {
   // check if this book has been already added to storage
   isBookAdded = getItem(bookInfo.id);
   if (!isBookAdded) {
-    el.addToList.textContent = 'Add to shopping list';
+    el.addToList.textContent = BUTTON_ADD_TEXT;
   } else {
-    el.addToList.textContent = 'Remove from the shopping list';
+    el.addToList.textContent = BUTTON_REMOVE_TEXT;
   }
 
   // open Modal
@@ -64,14 +67,16 @@ const onCloseModal = () => {
 };
 
 const toggleToList = () => {
-  if (isBookAdded) {
-    removeItem(currentBookId);
-    el.addToList.textContent = 'Add to shopping list';
-    isBookAdded = false;
-  } else {
+  if (!isBookAdded) {
     setItem(bookInfo);
-    el.addToList.textContent = 'Remove from the shopping list';
+    el.addToList.textContent = BUTTON_REMOVE_TEXT;
+    el.modalGreetings.classList.remove('modal-greetings-text-js')
     isBookAdded = true;
+  } else {
+    removeItem(currentBookId);
+    el.addToList.textContent = BUTTON_ADD_TEXT;
+    el.modalGreetings.classList.add('modal-greetings-text-js')
+    isBookAdded = false;
   }
 };
 
