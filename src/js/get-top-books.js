@@ -1,7 +1,7 @@
 import { getTopBooks } from './axios-get';
 import { makeMarkupForBooks } from './markup-books';
 
-const mainBookList = document.querySelector('.best_list');
+export const mainBookList = document.querySelector('.best_list');
 let numBooksPerRow = determineNumBooksPerRow();
 
 const debounce = (func, delay) => {

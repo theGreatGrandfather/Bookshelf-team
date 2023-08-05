@@ -30,3 +30,7 @@ import './js/scroll-up.js';
 import './js/renderCategories.js'; 
 
 import './js/toggleTheme.js'; 
+
+import './js/createFoundsMarcup'; 
+
+import './js/createCategoryMarcup.js'; 
