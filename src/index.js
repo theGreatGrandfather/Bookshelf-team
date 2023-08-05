@@ -8,7 +8,7 @@ import './js/markup-books';
 
 import './js/axios-get';
 
-import './js/getTopBooks';
+import './js/get-top-books';
 // add your import from js file here
 
 // add your import from js file here
@@ -27,5 +27,6 @@ import './js/scroll-up';
 
 // add your import from js file here
 
-// add your import from js file here
+import './js/renderCategories.js'; 
 
+import './js/toggleTheme.js'; 
