@@ -1,37 +1,53 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "./firebase";
-
-// const auth = getAuth(app);
-// ------------
-// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-// import { app } from "./firebase";
+import { onClickModal, openCloseModal } from "./auth-modal";
+import { refs } from "./auth-refs";
 
 const auth = getAuth(app);
 
-const refSignUpForm = document.querySelector('.js_form_sign_in')
-console.log(refSignUpForm);
-
 const onSubmit = e => {
     e.preventDefault()
-    
-    const {name, email, password} = {
-    name: e.currentTarget.name.value,
-    email: e.currentTarget.email.value,
-    password: e.currentTarget.password.value
+
+    const { name, email, password } = {
+        name: e.currentTarget.name.value,
+        email: e.currentTarget.email.value,
+        password: e.currentTarget.password.value
     }
 
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(userCredential);
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
-        });
+    if (e.target.children[0].classList.contains('js_form_sign_up')) {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+              
+                console.log(user.displayName);
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            });
+    }
 
-    console.log(name);
+    if (e.target.children[0].classList.contains('js_form_sign_in')) {
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+
+                console.log(user);
+                console.log(user.displayName);
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            });
+    }
 }
 
-refSignUpForm.addEventListener('submit', onSubmit)
+refs.authForm.addEventListener('submit', onSubmit);
+refs.buttonSignIn.addEventListener('click', openCloseModal)
+refs.modalAuth.addEventListener('click', onClickModal)

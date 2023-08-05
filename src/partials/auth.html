@@ -1,7 +1,8 @@
-<div class="js_modal_auth modal_backdrop">
+<div class="js_modal_auth modal hidden">
   <div class="modal_window">
-    <button type="modal__button_close">
+    <button type="button" class="modal__button_close">
       <svg
+        style="pointer-events: none"
         xmlns="http://www.w3.org/2000/svg"
         width="28"
         height="28"
@@ -17,8 +18,8 @@
         />
       </svg>
     </button>
-    <form class="js_form_sign_in form_sign_in">
-      <ul>
+    <form class="js_form_auth form_auth">
+      <ul class="js_form_sign_up">
         <li class="form__element_name">
           <input
             type="text"
@@ -57,10 +58,14 @@
     </form>
 
     <div class="js_change_form buttons_change_form">
-      <button type="button" class="button button_disabled" disabled>
+      <button
+        type="button"
+        class="js_button_sign_up button button_disabled"
+        disabled
+      >
         Sign up
       </button>
-      <button type="button" class="button">Sign in</button>
+      <button type="button" class="js_button_sign_in button">Sign in</button>
     </div>
   </div>
 </div>
