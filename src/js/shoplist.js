@@ -104,7 +104,21 @@ const list = [
       'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781797147949',
     listname: 'Audio Nonfiction',
   },
+  {
+    id: '643282b2e85766588626a132',
+    title: 'I WILL FIND YOU',
+    img: 'https://storage.googleapis.com/du-prd/books/images/9781538748367.jpg',
+    author: 'Harlan Coben',
+    description:
+      'A man imprisoned for murdering his 3-year-old son becomes convinced his son is still alive and plans an escape. Read by Steven Weber. 10 hours, 16 minutes unabridged.',
+    amazonLink: 'https://www.amazon.com/dp/1538748363?tag=NYTBSREV-20',
+    appleLink: 'https://goto.applebooks.apple/9781543661385?at=10lIEQ',
+    barnesLink:
+      'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781543661385',
+    listname: 'Audio Fiction',
+  },
 ];
+
 localStorage.setItem(KEY_NAME_LS, JSON.stringify(list));
 
 const refs = {
@@ -187,3 +201,16 @@ const hideEmptyListContainer = () => {
 const showEmptyListContainer = () => {
   refs.emptyListContainer.style.display = 'flex';
 };
+
+const fillShopListWithBooks = () => {
+  const shopListFromLS = localStorageApi.getItems();
+  if (!shopListFromLS.length) {
+    showEmptyListContainer();
+    return;
+  }
+  hideEmptyListContainer();
+  const shopListMarkup = createShopListMarkup(shopListFromLS);
+  refs.bookListEl.insertAdjacentHTML('beforeend', shopListMarkup);
+};
+
+fillShopListWithBooks();
