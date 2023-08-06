@@ -1,9 +1,19 @@
+.disable-scroll {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
 .header {
     display: block;
+    background-color: var(--color-white);
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--color-white);
 }
 
 .header ._container {
@@ -161,17 +171,17 @@ display: block;
     display: none;
 }
 
-.js-menu-container .is-open {
+.is-open {
     position: fixed;
     z-index: 10;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    transition: transform 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
     height: calc(100vh - 64px);
     width: 100vw;
     padding: 20px;
     background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet) 18.03%, var(--color-white) 100%);
+    // background-image: ;
     overflow: hidden;
 }
 
@@ -182,7 +192,7 @@ display: block;
     align-items: center;
     justify-content: space-between;
     gap: 9px;
-    width:133px;
+    width:auto;
     height: 37px;
     padding: 4px 0;
 }
@@ -213,6 +223,7 @@ display: block;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 16px;
     margin-top: 130px;
     margin-left: auto;
@@ -221,6 +232,9 @@ display: block;
 
 .menu-home,
 .menu-shopping-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: auto;
     height: auto;
     padding: 8px 16px;
@@ -259,9 +273,9 @@ display: block;
 }
 
 .books {
-    position: relative;
-    left: -15%;
-    bottom: -50%;
+    position: fixed;
+    left: -65px;
+    bottom: -171px;
     background-color: transparent;
     width: 450px;
     height: 439px;

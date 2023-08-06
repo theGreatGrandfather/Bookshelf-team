@@ -19,5 +19,5 @@ export { loaderOn, loaderOff }
 // у функціях де іду запит на початку ставимо loaderOn,
 // у блок finally loaderOff
 
-//<div class="wrapper-loader"></div><div class="loader"></div>
+// <div class="wrapper-loader"></div><div class="loader"></div>
 

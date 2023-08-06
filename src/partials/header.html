@@ -69,16 +69,19 @@
         </svg>
       </button>
 
-      <button class="user hidden js_sign_in" type="button">
+      <button class="user hidden js_sign_up" type="button">
         <span class="sign-up-text">Sign up</span>
         <svg class="sign-up" width="20" height="20">
           <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
         </svg>
-        <svg class="user-icon hidden">
+      </button>
+
+      <button class="js-profile user hidden">
+         <svg class="user-icon">
           <use href="./images/sprite.svg#icon-user"></use>
         </svg>
-        <span class="user-name">Name</span>
-        <svg class="arrow-down hidden" xmlns="http://www.w3.org/2000/svg" width="23" height="26" viewBox="0 0 23 26" fill="none">
+         <span class="user-name">Name</span>
+        <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="23" height="26" viewBox="0 0 23 26" fill="none">
           <path
             d="M4.7915 9.75H18.2082L12.1774 16.5674C11.9977 16.7705 11.754 16.8846 11.4998 16.8846C11.2457 16.8846 11.002 16.7705 10.8223 16.5674L4.7915 9.75Z"
             fill="white" />
@@ -92,13 +95,31 @@
   <div class="js-menu-container">
 
     <div class="menu-user">
-      <div  class="user-wrapper"> 
+      <!-- <div  class="user-wrapper"> 
         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
          <path d="M3.16663 17.4166C3.16663 15.7369 3.83389 14.126 5.02162 12.9383C6.20935 11.7506 7.82025 11.0833 9.49996 11.0833C11.1797 11.0833 12.7906 11.7506 13.9783 12.9383C15.166 14.126 15.8333 15.7369 15.8333 17.4166H3.16663ZM9.49996 10.2916C6.87558 10.2916 4.74996 8.166 4.74996 5.54163C4.74996 2.91725 6.87558 0.791626 9.49996 0.791626C12.1243 0.791626 14.25 2.91725 14.25 5.54163C14.25 8.166 12.1243 10.2916 9.49996 10.2916Z" fill="#4F2EE8"/>
         </svg>
-      </div>
+      </div> -->
+      <button class="user js_sign_up" type="button">
+        <span class="sign-up-text">Sign up</span>
+        <svg class="sign-up" width="20" height="20">
+          <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
+        </svg>
+      </button>
 
-      <p class="menu-user-name">Name</p>
+       <button class="js-profile user">
+         <svg class="user-icon">
+          <use href="./images/sprite.svg#icon-user"></use>
+        </svg>
+         <span class="user-name">Name</span>
+        <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="23" height="26" viewBox="0 0 23 26" fill="none">
+          <path
+            d="M4.7915 9.75H18.2082L12.1774 16.5674C11.9977 16.7705 11.754 16.8846 11.4998 16.8846C11.2457 16.8846 11.002 16.7705 10.8223 16.5674L4.7915 9.75Z"
+            fill="white" />
+        </svg>
+      </button>
+
+      <!-- <p class="menu-user-name">Name</p> -->
 
     </div>
 
