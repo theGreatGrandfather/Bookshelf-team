@@ -3,6 +3,7 @@ import { app } from "./firebase";
 import { onClickModal, openCloseModal } from "./auth-modal";
 import { refs } from "./auth-refs";
 import { Notify } from "notiflix";
+import { loaderOn, loaderOff } from "./loader";
 
 const auth = getAuth(app);
 
@@ -17,6 +18,7 @@ const onSubmit = e => {
 
     // Реєстрація
     if (e.target.children[0].classList.contains('js_form_sign_up')) {
+        loaderOn()
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // userCredential данні користувача отримані відразу після реєстрації
@@ -35,28 +37,33 @@ const onSubmit = e => {
                 updateProfile(auth.currentUser, {
                     displayName: name,
                 }).then(() => {
-                    Notify.success(`Hello, ${name}, you successfully create new account`);
                     openCloseModal();
+                    Notify.success(`Hello, ${name}, you successfully create new account`);
                 }).catch((error) => {
                     // error помилки, обробляю через Notiflix
                     const errorMessage = error.message;
                     Notify.failure(`Update profile error: ${errorMessage}`);
                 });
+                loaderOff()
             });
     }
 
     // Авторизація
     if (e.target.children[0].classList.contains('js_form_sign_in')) {
+        loaderOn()
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Данні отримані про користувача після авторизації
                 const user = userCredential.user;
+                openCloseModal();
                 Notify.success(`Hello, ${user.displayName}`);
             })
             .catch((error) => {
                 // error помилки, обробляю через Notiflix
                 const errorMessage = error.message;
                 Notify.failure(`Sign in error: ${errorMessage}`)
+            }).finally(() => {
+                loaderOff();
             });
     }
 }
