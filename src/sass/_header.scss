@@ -25,7 +25,9 @@
     border-color: var(--color-black);
     border-radius: 0 0 8px 8px;
     height: 64px;
-    // width: 100vw;
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo-box {
@@ -58,6 +60,10 @@ height: 14px;
 .header-logo {
     width: 24px;
     height: 24px;
+}
+
+.logo-text {
+    fill: var(--color-black);
 }
 
 .header-box {
@@ -180,10 +186,9 @@ display: block;
     flex-wrap: wrap;
     flex-direction: column;
     height: calc(100vh - 64px);
-    width: 100vw;
+    // width: 100vw;
     padding: 20px;
     background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet) 18.03%, var(--color-white) 100%);
-    // background-image: ;
     overflow: hidden;
 }
 
@@ -275,14 +280,16 @@ display: block;
 }
 
 .books {
-    position: fixed;
-    left: -65px;
-    bottom: -171px;
+    position: absolute;
+    left:0;
+    bottom: -50%;
     background-color: transparent;
     width: 450px;
     height: 439px;
     transform: rotate(-15deg) translateY(-50%);
     flex-shrink: 0;
+    background: url(../images/bg-books.png);
+    background-repeat: no-repeat;
 }
 
 .js_log_out {
@@ -310,6 +317,11 @@ display: block;
 
 
 @media screen and (min-width: 768px){
+
+    .header ._container {
+        width: 768px;
+    }
+
     .logo-nav-wrapper {
         display: flex;
         align-items: center;
@@ -431,7 +443,12 @@ border: none;
     display: none;
 }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
+   
+    .header ._container {
+            width: 1440px;
+        }
+
     .header-nav {
         gap: 24px;
     }
