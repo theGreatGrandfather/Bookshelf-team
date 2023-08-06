@@ -4,6 +4,7 @@ import { onClickModal, openCloseModal } from "./auth-modal";
 import { refs } from "./auth-refs";
 import { Notify } from "notiflix";
 import { loaderOn, loaderOff } from "./loader";
+import { async } from "@firebase/util";
 
 const auth = getAuth(app);
 
@@ -87,5 +88,5 @@ onAuthStateChanged(auth, (user) => {
 });
 
 refs.authForm.addEventListener('submit', onSubmit);
-refs.buttonSignIn.addEventListener('click', openCloseModal)
-refs.modalAuth.addEventListener('click', onClickModal)
+refs.buttonSignIn.addEventListener('click', openCloseModal);
+refs.modalAuth.addEventListener('click', onClickModal);
