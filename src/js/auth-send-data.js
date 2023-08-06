@@ -36,7 +36,7 @@ export const pullBookData = async (bookData) => {
 };
 
 /**
- * 
+ * Отримувати базу книг
  */
 const getBooksData = () => {
     onAuthStateChanged(auth, async (user) => {
