@@ -43,18 +43,12 @@ const renderStartMarkup = async () => {
 };
 
 const handleResize = () => {
-  numBooksPerRow = shouldRenderMarkup() ? determineNumBooksPerRow() : numBooksPerRow;
+  numBooksPerRow = determineNumBooksPerRow();
   renderStartMarkup();
 };
 
-const debouncedHandleResize = debounce(handleResize, 250);
+const debouncedHandleResize = debounce(handleResize, 150);
 window.addEventListener('resize', debouncedHandleResize);
-
-if (shouldRenderMarkup()) {
-  renderStartMarkup();
-} else {
-  savedMarkup = mainBookList.innerHTML; 
-}
 
 function determineNumBooksPerRow() {
   if (window.matchMedia('(max-width: 767px)').matches) {
@@ -73,3 +67,7 @@ const restoreMarkup = () => {
 };
 
 window.addEventListener('resize', restoreMarkup);
+
+window.addEventListener('load', () => {
+  handleResize();
+});

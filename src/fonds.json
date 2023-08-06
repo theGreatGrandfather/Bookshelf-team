@@ -1,47 +1,47 @@
 [
     { 
         "title": "Save the Children",
-        "img": "",
+        "img": "./images/founds/Save_the_Children.png",
         "url": "https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis"
     },
     {
         "title": "Project HOPE",
-        "img": "",
+        "img": "./images/founds/project_Hope.png",
         "url": "https://www.projecthope.org/country/ukraine/"
     },
     {
         "title": "UNITED24",
-        "img": "",
+        "img": "./images/founds/United24.png",
         "url": "https://u24.gov.ua/uk"
     },
     {
         "title": "International Medical Corps",
-        "img": "",
+        "img": "./images/founds/Internation_medical_corps.png",
         "url": "https://internationalmedicalcorps.org/country/ukraine/"
     },
     {
         "title": "Medicins Sans Frontieres",
-        "img": "",
+        "img": "./images/founds/Medicins_sans_frontieres.png",
         "url": "https://www.msf.org/ukraine"
     },
     {
         "title": "RAZOM",
-        "img": "",
+        "img": "./images/founds/Razom.png",
         "url": "https://www.razomforukraine.org/"
     },
     {
         "title": "Action against hunger",
-        "img": "",
+        "img": "../src/images/founds/Action_against_hunger.png",
         "url": "https://www.actionagainsthunger.org/location/europe/ukraine/"
     },
     {
         "title": "World vision",
-        "img": "",
+        "img": "./images/founds/World_vision.png",
         "url": "https://www.wvi.org/emergencies/ukraine"
     },
     {
         "title": "Serhiy Prytula Charity Foundation",
-        "img": "",
+        "img": "./images/founds/prutyla.png",
         "url": "https://prytulafoundation.org/en"
     }
 ]
