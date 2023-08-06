@@ -1,6 +1,6 @@
-import './js/shoplist';
+import './js/shop-list';
 
-// add your import from js file here 2
+import './js/createFoundsMarcup';
 
 // add your import from js file here 3
 
