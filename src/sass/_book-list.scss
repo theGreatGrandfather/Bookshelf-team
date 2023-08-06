@@ -1,0 +1,24 @@
+.best_list.category-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 40px;
+}
+.title_best-sellers.no-change{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+    .best_list.category-list{
+        flex-direction: row;
+        column-gap: 25px;
+        row-gap: 40px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .best_list.category-list{
+        column-gap: 24px;
+    }
+}
