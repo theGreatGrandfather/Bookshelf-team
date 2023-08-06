@@ -12,8 +12,6 @@ const loaderOff = () => {
 }
 loaderOff()
 
-console.log(loader)
-
 export { loaderOn, loaderOff }
 
 
