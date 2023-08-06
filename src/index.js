@@ -2,7 +2,7 @@
 
 // add your import from js file here 2
 
-// add your import from js file here 3
+import './js/header-menu';
 
 import './js/markup-books';
 
