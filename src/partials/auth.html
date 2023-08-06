@@ -1,17 +1,16 @@
-<div class="js_modal_auth hidden">
+<div class="js_modal_auth modal_backdrop hidden">
   <div class="modal_window">
     <button type="button" class="modal__button_close">
       <svg
-        style="pointer-events: none"
+        class="button_cross"
         xmlns="http://www.w3.org/2000/svg"
         width="28"
         height="28"
         viewBox="0 0 28 28"
-        fill="none"
       >
         <path
           d="M21 7L7 21M7 7L21 21"
-          stroke="#F6F6F6"
+          stroke="inherit"
           stroke-width="3"
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -20,49 +19,48 @@
     </button>
     <form class="js_form_auth form_auth">
       <ul class="js_form_sign_up">
-        <li class="form__element_name">
+        <li class="form__element form__element_name">
           <input
+            placeholder=""
             type="text"
-            class="form__element_name__input"
+            class="form__element__input form__element_name__input"
             id="name"
             required
           />
-          <label for="name" class="form__element_name__input">Name</label>
+          <label for="name" class="form__element__label">Name</label>
         </li>
 
-        <li class="form__element_email">
+        <li class="form__element form__element_email">
           <input
+            placeholder=""
             type="email"
-            class="form__element_email__input"
+            class="form__element__input form__element_email__input"
             id="email"
             required
           />
-          <label for="email" class="form__element_name__input">Email</label>
+          <label for="email" class="form__element__label">Email</label>
         </li>
 
-        <li class="form__element_password">
+        <li class="form__element form__element_password">
           <input
+            placeholder=""
             type="password"
-            class="form__element_password__input"
+            class="form__element__input form__element_password__input"
             id="password"
             required
           />
 
-          <label for="password" class="form__element_name__input"
-            >Password</label
-          >
+          <label for="password" class="form__element__label">Password</label>
         </li>
       </ul>
 
-      <button type="submit" class="form__button_submit">Sign up</button>
+      <button type="submit" class="form__button_submit">
+        <span>Sign up</span>
+      </button>
     </form>
 
     <div class="js_change_form buttons_change_form">
-      <button
-        type="button"
-        class="js_button_sign_up button button_disabled"
-        disabled
-      >
+      <button type="button" class="js_button_sign_up button button" disabled>
         Sign up
       </button>
       <button type="button" class="js_button_sign_in button">Sign in</button>

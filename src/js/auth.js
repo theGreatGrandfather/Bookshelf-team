@@ -15,43 +15,56 @@ const onSubmit = e => {
         password: e.currentTarget.password.value
     }
 
+    // Реєстрація
     if (e.target.children[0].classList.contains('js_form_sign_up')) {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in
+                // userCredential данні користувача отримані відразу після реєстрації
                 // ...
             })
             .catch((error) => {
-                const errorCode = error.code;
+                // error помилки, обробляю через Notiflix
+
                 const errorMessage = error.message;
-                Notify.failure(`Create profile error: ${errorMessage}`)
+                Notify.failure(`Create profile error: ${errorMessage}`);
             }).finally(() => {
+                // Сюди потрібно помістити те що потрібно оновлювати відразу після реєстрації
+                // auth.currentUser Авторизований зараз юзер (відразу після реєстрації він авторизований)
+                // другий параметр функції об'єкт з властивостями які потрібно оновити
+                if (!user) {return}
                 updateProfile(auth.currentUser, {
                     displayName: name,
                 }).then(() => {
-                    Notify.success(`Hello, ${name}, you successfully create new account`)
+                    Notify.success(`Hello, ${name}, you successfully create new account`);
                 }).catch((error) => {
+                    // error помилки, обробляю через Notiflix
                     const errorMessage = error.message;
-                    Notify.failure(`Update profile error: ${errorMessage}`)
+                    Notify.failure(`Update profile error: ${errorMessage}`);
                 });
             });
     }
 
+    // Авторизація
     if (e.target.children[0].classList.contains('js_form_sign_in')) {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in 
+                // Данні отримані про користувача після авторизації
                 const user = userCredential.user;
-                Notify.success(`Hello, ${user.displayName}`)
-                // ...
+                Notify.success(`Hello, ${user.displayName}`);
             })
             .catch((error) => {
+                // error помилки, обробляю через Notiflix
                 const errorMessage = error.message;
                 Notify.failure(`Sign in error: ${errorMessage}`)
             });
     }
 }
 
+
+// Перевірка чи користувач авторизований
+// Повертає сповіщення з проханням авторизації якщо не авторизований
+// Всі данні про користувача в user
+// user = null якщо не авторизований
 onAuthStateChanged(auth, (user) => {
     if (user) {
     //   Ім'я юзера можна отримати з name тут
@@ -59,7 +72,7 @@ onAuthStateChanged(auth, (user) => {
       Notify.info(`User ${name}`)
     // ...
   } else {
-    // User is signed out
+    // Користувач не авторизований
         Notify.info(`Please Sign-In/Sign-Up`)
     // ...
   }
