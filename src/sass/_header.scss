@@ -3,6 +3,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    background-color: var(--color-white);
 }
 
 .header ._container {
@@ -268,7 +269,7 @@ display: block;
     flex-shrink: 0;
 }
 
-.js-log-out {
+.js_log_out {
     position: fixed;
     left: 20px;
     bottom: 20px;
