@@ -2,11 +2,9 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import { app } from "./firebase";
 import { Notify } from "notiflix";
-import { async } from "@firebase/util";
 
 const auth = getAuth(app);
 const db = getFirestore(app);
-
 
 /**
  * Перевіряє чи користувач авторизований, якщо авторизований на його email
