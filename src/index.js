@@ -2,7 +2,7 @@
 
 // add your import from js file here 2
 
-// add your import from js file here 3
+import './js/header-menu';
 
 import './js/markup-books';
 
@@ -25,7 +25,7 @@ import './js/auth';
 
 import './js/scroll-up.js';
 
-// add your import from js file here
+import './js/loader.js'
 
 // add your import from js file here
 
@@ -36,3 +36,4 @@ import './js/toggleTheme.js';
 import './js/createFoundsMarcup'; 
 
 import './js/createCategoryMarcup.js'; 
+import './js/seeMore'; 
