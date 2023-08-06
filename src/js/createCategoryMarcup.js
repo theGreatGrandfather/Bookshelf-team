@@ -6,13 +6,13 @@ export const categoryTitle = document.querySelector('.title_best-sellers');
 const categoryAccent = document.querySelector('.title_book');
 
 
-const createCategoryMarcup = async (category) => {
-    return resp = await getBooksByCategory(category);
+export const createCategoryMarcup = async (category) => {
+    return await getBooksByCategory(category);
 };
 
 const onCategoryClick = (e) => {
     if (e.target.hasAttribute('data-categories__item')) {
-        
+        e.preventDefault();
         const titleTExt = e.target.innerText.split(' ');
         titleTExt.pop();
         const accentText = e.target.innerText.split(' ')[e.target.innerText.split(' ').length - 1];
