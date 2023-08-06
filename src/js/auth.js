@@ -60,7 +60,6 @@ const onSubmit = e => {
     }
 }
 
-
 // Перевірка чи користувач авторизований
 // Повертає сповіщення з проханням авторизації якщо не авторизований
 // Всі данні про користувача в user
@@ -77,7 +76,6 @@ onAuthStateChanged(auth, (user) => {
     // ...
   }
 });
-
 
 refs.authForm.addEventListener('submit', onSubmit);
 refs.buttonSignIn.addEventListener('click', openCloseModal)
