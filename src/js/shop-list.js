@@ -115,6 +115,7 @@ const hideDefaultMarkup = () => {
 
 const showDefaultMarkup = () => {
   refs.defaultMarkup.style.display = 'flex';
+  Notify.info('There is no books in your list yet...');
 };
 
 const onDelBtnClick = evt => {
@@ -124,6 +125,11 @@ const onDelBtnClick = evt => {
   }
   const bookCardEl = evt.target.closest('.js-shl-card');
   const cardId = bookCardEl.dataset.id;
+  bookCardEl.remove();
+  delBook(cardId);
+  if (!refs.bookListEl.children.length) {
+    showDefaultMarkup();
+  }
 };
 
 const launchBookDelBtn = () => {
@@ -154,7 +160,6 @@ const getBooksData = () => {
         arr.push(data);
       });
       if (!arr.length) {
-        Notify.info('There is no books in your list yet...');
         return showDefaultMarkup();
       }
       fillShopListWithBooks(arr);
@@ -165,19 +170,3 @@ const getBooksData = () => {
 };
 
 getBooksData();
-
-// const launchBookDelBtn = () => {
-//   const bookDelBtn = document.getElementById('js-shl-del-btn');
-//   bookDelBtn.addEventListener('click', onDelBtnClick);
-// };
-
-// refs.delBookBtn.addEventListener('click', onDelBtnClick);
-
-/** const delBook = async (docId) => {
-    onAuthStateChanged(auth, async (user) => {
-        if (user) {
-            const email = user.email;
-            await deleteDoc(doc(db, email, docId));
-        }
-    })
-};*/
