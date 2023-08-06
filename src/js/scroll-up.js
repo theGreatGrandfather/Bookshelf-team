@@ -4,7 +4,7 @@ btnGoTop.hidden = true;
 
 const goTop = () => {
     if (window.scrollY > 0) {
-        window.scrollBy(0, -22);
+        window.scrollBy(0, -82);
         setTimeout(goTop, 0);
     }
 }

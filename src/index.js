@@ -25,7 +25,7 @@ import './js/auth';
 
 import './js/scroll-up.js';
 
-// add your import from js file here
+import './js/loader.js'
 
 // add your import from js file here
 
