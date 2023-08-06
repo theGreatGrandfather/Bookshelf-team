@@ -15,7 +15,7 @@ import './js/modal';
 
 // add your import from js file here
 
-import './js/shoplist';
+// import './js/shoplist';
 
 // add your import from js file here
 
