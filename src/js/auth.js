@@ -31,11 +31,12 @@ const onSubmit = e => {
                 // Сюди потрібно помістити те що потрібно оновлювати відразу після реєстрації
                 // auth.currentUser Авторизований зараз юзер (відразу після реєстрації він авторизований)
                 // другий параметр функції об'єкт з властивостями які потрібно оновити
-                if (!user) {return}
+                if (!auth.currentUser) {return}
                 updateProfile(auth.currentUser, {
                     displayName: name,
                 }).then(() => {
                     Notify.success(`Hello, ${name}, you successfully create new account`);
+                    openCloseModal();
                 }).catch((error) => {
                     // error помилки, обробляю через Notiflix
                     const errorMessage = error.message;
@@ -67,6 +68,7 @@ const onSubmit = e => {
 onAuthStateChanged(auth, (user) => {
     if (user) {
     //   Ім'я юзера можна отримати з name тут
+    if(!user.displayName) {return}
       const name = user.displayName;
       Notify.info(`User ${name}`)
     // ...
