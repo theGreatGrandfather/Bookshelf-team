@@ -27,15 +27,23 @@
 //   },
 // ];
 
+import { pullBookData } from './auth-send-data';
+import { delBook } from './auth-send-data';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { app } from './firebase';
+import { Notify } from 'notiflix';
+
 const refs = {
-  defaultMarkup: document.getElementById('js-default-container'),
-  bookListEl: document.getElementById('js-book-list'),
+  defaultMarkup: document.getElementById('js-shl-default-container'),
+  bookListEl: document.getElementById('js-shl-booklist'),
 };
 
 const createShopListMarkup = arr => {
   return arr
     .map(
       ({
+        id,
         data: {
           img,
           title,
@@ -46,7 +54,7 @@ const createShopListMarkup = arr => {
           appleLink,
           barnesLink,
         },
-      }) => `<li class="shopping-list__item shopping-list-card">
+      }) => `<li class="shopping-list__item shopping-list-card js-shl-card" data-id='${id}'>
           <img
             class="shopping-list-card__image"
             src="${img}"
@@ -78,7 +86,7 @@ const createShopListMarkup = arr => {
                 ></a>
               </div>
             </div>
-            <button class="shopping-list-card__button" type="button">
+            <button class="shopping-list-card__button js-shl-del-btn" type="button">
               <svg
                 class="shopping-list-card__button--icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -109,17 +117,25 @@ const showDefaultMarkup = () => {
   refs.defaultMarkup.style.display = 'flex';
 };
 
+const onDelBtnClick = evt => {
+  const isContains = evt.target.classList.contains('js-shl-del-btn');
+  if (!isContains) {
+    return;
+  }
+  const bookCardEl = evt.target.closest('.js-shl-card');
+  const cardId = bookCardEl.dataset.id;
+};
+
+const launchBookDelBtn = () => {
+  refs.bookListEl.addEventListener('click', onDelBtnClick);
+};
+
 const fillShopListWithBooks = arr => {
   hideDefaultMarkup();
   const shopListMarkup = createShopListMarkup(arr);
   refs.bookListEl.insertAdjacentHTML('beforeend', shopListMarkup);
+  launchBookDelBtn();
 };
-
-import { pullBookData } from './auth-send-data';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { app } from './firebase';
-import { Notify } from 'notiflix';
 
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -149,3 +165,19 @@ const getBooksData = () => {
 };
 
 getBooksData();
+
+// const launchBookDelBtn = () => {
+//   const bookDelBtn = document.getElementById('js-shl-del-btn');
+//   bookDelBtn.addEventListener('click', onDelBtnClick);
+// };
+
+// refs.delBookBtn.addEventListener('click', onDelBtnClick);
+
+/** const delBook = async (docId) => {
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            const email = user.email;
+            await deleteDoc(doc(db, email, docId));
+        }
+    })
+};*/
