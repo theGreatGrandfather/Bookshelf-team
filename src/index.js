@@ -27,7 +27,7 @@ import './js/scroll-up.js';
 
 import './js/loader.js'
 
-// add your import from js file here
+import './js/thank-you-page'
 
 import './js/renderCategories.js'; 
 
