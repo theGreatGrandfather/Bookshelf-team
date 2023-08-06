@@ -1,10 +1,9 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut } from "firebase/auth";
 import { app } from "./firebase";
 import { onClickModal, openCloseModal } from "./auth-modal";
 import { refs } from "./auth-refs";
 import { Notify } from "notiflix";
 import { loaderOn, loaderOff } from "./loader";
-import { async } from "@firebase/util";
 
 const auth = getAuth(app);
 
@@ -62,12 +61,24 @@ const onSubmit = e => {
             .catch((error) => {
                 // error помилки, обробляю через Notiflix
                 const errorMessage = error.message;
-                Notify.failure(`Sign in error: ${errorMessage}`)
+                Notify.failure(`Sign-In error: ${errorMessage}`)
             }).finally(() => {
                 loaderOff();
             });
     }
 }
+
+/**
+ * Вийти з акаунту/розлогінитись/sign-out
+ */
+const signOut = () => {
+    signOut(auth).then(() => {
+        Notify.success(`You successfully Sign-Out`);
+    }).catch((error) => {
+        const errorMessage = error.message;
+        Notify.failure(`Sign-Out in error: ${errorMessage}`)
+    });
+};
 
 // Перевірка чи користувач авторизований
 // Повертає сповіщення з проханням авторизації якщо не авторизований
