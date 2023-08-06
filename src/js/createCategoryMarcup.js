@@ -7,7 +7,7 @@ const categoryAccent = document.querySelector('.title_book');
 
 
 const createCategoryMarcup = async (category) => {
-    return resp = await getBooksByCategory(category);
+    return await getBooksByCategory(category);
 };
 
 const onCategoryClick = (e) => {
