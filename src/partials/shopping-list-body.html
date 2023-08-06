@@ -48,32 +48,24 @@
       <h1 class="shopping-list__title">
         Shopping <span class="shopping-list__title--accent">List</span>
       </h1>
-      <div
-        class="shopping-list__content--default"
-        id="js-shl-default-container"
-      >
+      <div class="shopping-list__content--default" id="js-shl-default-container">
         <p class="shopping-list__text--default">
           This page is empty, add some books and proceed to order.
         </p>
         <picture>
-          <source
-            srcset="
+          <source srcset="
               ./images/shoplist-images/sh-list-265@1x.png 1x,
               ./images/shoplist-images/sh-list-530@2x.png 2x
-            "
-            media="(max-width:767px)"
-          />
-          <source
-            srcset="
+            " media="(max-width:767px)" />
+          <source srcset="
               ./images/shoplist-images/sh-list-w-322@1x.png 1x,
               ./images/shoplist-images/sh-list-w-644@2x.png 2x
-            "
-            media="(min-width:768px)"
-          />
+            " media="(min-width:768px)" />
           <img src="./images/shoplist-images/sh-list-265@1x.png" alt="books" />
         </picture>
       </div>
       <ul class="shopping-list__list _list" id="js-shl-booklist"></ul>
+      <include src="./partials/ofer.html"></include>
     </div>
   </div>
 </section>
