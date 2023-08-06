@@ -14,18 +14,18 @@
 
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
+  top: 0;
   background-color: rgba(17, 17, 17, 0.4);
   transition: var(--transition__stock);
 }
 
 .modal-inner {
-  position: relative;
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 335px;
   padding: 40px 24px;
   margin: 0 auto;
@@ -46,6 +46,7 @@
     flex-direction: row;
   }
 }
+
 
 .modal-image {
   border-radius: 8px;
@@ -178,20 +179,55 @@
   }
 }
 
-.amazon-link {
-  background-image: url(../images/modal-images/amazon.svg);
+// .modal__shop_img{
+//    -webkit-filter: var(); 
+//   filter: grayscale(99%);
+// }
+
+#amazon-link {
+  background-image: url(../images/modal-images/amazon.png);
+  background-repeat: no-repeat;
   width: 68px;
   height: 19px;
+  -webkit-filter:var(--filter-wImg); 
+  filter: var(--filter-img);
+    &:hover,
+    &:focus{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    }
 }
 
-.apple-link {
-  background-image: url(../images/modal-images/apple.svg);
+#apple-link {
+  background-image: url(../images/modal-images/shop1.png);
+  background-repeat: no-repeat;
   width: 33px;
   height: 32px;
+  -webkit-filter: var(--filter-wImg); 
+  filter: var(--filter-img);
+  &:hover,
+    &:focus{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    }
 }
 
-.barnes-link {
-  background-image: url(../images/modal-images/barnes.svg);
+#barnes-link {
+  background-image: url(../images/modal-images/shop.png);
+  background-repeat: no-repeat;
   width: 38px;
   height: 36px;
+  -webkit-filter: var(--filter-wImg); 
+  filter: var(--filter-img);
 }
+
+// #amazon-link, #apple-link, #barnes-link{
+//  fill: white;
+//  -webkit-filter: var(); 
+//   filter: var();
+//   &:hover,
+//   &:focus{
+//   -webkit-filter: grayscale(0%); 
+//   filter: grayscale(0%);
+//   }
+// }
