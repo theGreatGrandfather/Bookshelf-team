@@ -13,10 +13,10 @@ export const createCategoryMarcup = async (category) => {
 const onCategoryClick = (e) => {
     if (e.target.hasAttribute('data-categories__item')) {
         e.preventDefault();
-        const titleTExt = e.target.innerText.split(' ');
+        const titleTExt = e.target.dataset.listname.split(' ');
         titleTExt.pop();
-        const accentText = e.target.innerText.split(' ')[e.target.innerText.split(' ').length - 1];
-        createCategoryMarcup(e.target.innerText)
+        const accentText = e.target.dataset.listname.split(' ')[e.target.dataset.listname.split(' ').length - 1];
+        createCategoryMarcup(e.target.dataset.listname)
             .then((resp) => {
                 categoryTitle.classList.add('no-change');
                 categoryTitle.innerHTML = `${titleTExt.join(' ')}&nbsp
