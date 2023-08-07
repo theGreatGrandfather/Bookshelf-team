@@ -1,6 +1,7 @@
 import { getTopBooks } from './axios-get';
 import { makeMarkupForBooks } from './markup-books';
 import { categoryTitle } from './createCategoryMarcup';
+import { loaderOn, loaderOff } from './loader';
 
 export const mainBookList = document.querySelector('.best_list');
 let numBooksPerRow = 5;
@@ -22,6 +23,7 @@ const renderStartMarkup = async () => {
   if (!shouldRenderMarkup()) return;
 
   try {
+    loaderOn();
     const dataMarkup = await getTopBooks();
     if (dataMarkup.length === 0) return;
 
@@ -39,6 +41,8 @@ const renderStartMarkup = async () => {
     mainBookList.innerHTML = firstIndexBooks.join('');
   } catch (error) {
     console.error(error);
+  } finally {
+    loaderOff();
   }
 };
 
