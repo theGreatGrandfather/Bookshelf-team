@@ -11,23 +11,21 @@
 .header {
     display: block;
     background-color: var(--color-white);
-    position: absolute;
+    position: sticky;
     top: 0;
-    left: 0;
 }
 
 .header ._container {
     display: flex;
-    padding: 14px 20px;
+    padding-top: 14px;
+    padding-bottom: 14px;
     justify-content: space-between;
     align-items: center;
     border: 2px solid;
     border-color: var(--color-black);
     border-radius: 0 0 8px 8px;
     height: 64px;
-    width: 375px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 768px;
 }
 
 .logo-box {
@@ -173,6 +171,10 @@ display: block;
     stroke: var(--color-violet);
 }
 
+.user {
+    display: none;
+}
+
 /*----Mobile-menu---*/ 
 
 .js-menu-container {
@@ -192,7 +194,7 @@ display: block;
     overflow: hidden;
 }
 
-
+/*Button "burger-cross"*/ 
 .menu-user {
     align-self: start;
     display: flex;
@@ -233,8 +235,8 @@ display: block;
     align-items: center;
     gap: 16px;
     margin-top: 130px;
-    margin-left: auto;
-    margin-right: auto;
+    // margin-left: auto;
+    // margin-right: auto;
 }
 
 .menu-home,
@@ -314,7 +316,11 @@ display: block;
         line-height: 1.29px;
         letter-spacing: -0.56px;
 }
-
+// @media screen and (max-width: 414px) {
+//     .header ._container {
+//         max-width: 375px;
+//     }
+// }
 
 @media screen and (min-width: 768px){
 
