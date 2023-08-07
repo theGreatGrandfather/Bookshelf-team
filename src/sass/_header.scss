@@ -137,7 +137,7 @@ height: 14px;
 .switch__input:checked+.switch__slider {
     background-image: linear-gradient(to bottom,
             var(--color-violet),
-            #686868);
+           var(--color-switcher));
 }
 
 /*Button "burger-cross"*/

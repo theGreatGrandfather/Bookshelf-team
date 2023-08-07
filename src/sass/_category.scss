@@ -1,4 +1,14 @@
+.categories__list{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 .categories__link{
+    // width: 335px;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+   
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -18,4 +28,20 @@
     color: var(--color-accent);
     text-transform: uppercase;
     font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+    .categories__link{
+    font-size: 18px;
+    line-height: 24px;
+    // width: 218px;
+    }
+    .category-list{
+    gap: 32px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .categories__link{
+        // width: 180px;
+    }
 }

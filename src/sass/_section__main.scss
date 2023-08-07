@@ -5,7 +5,7 @@
 .main__container {
     display: flex;
     flex-direction: column;
-    
+    gap:40px;
 }
 aside{
     display: flex;
@@ -47,14 +47,14 @@ aside{
         gap: 32px;
     }
     .main__container{
-        
+         gap: 100px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     .main__container {
         flex-direction: row;
-        
+          gap: 40px;
     }
     aside{
         flex-direction: column;
