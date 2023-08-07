@@ -4,18 +4,13 @@
     gap: 24px;
     height: 228px;
     width: 335px;
-    overflow-y: scroll;
-    white-space: nowrap;
-    overflow-y: scroll;
-    text-overflow: ellipsis;
- 
+    overflow-y: scroll; 
 }
 .categories__link{
-    // width: 335px;
-    
-    white-space: nowrap;
+    display: block;
     overflow: hidden;
-    text-overflow: ellipsis;
+     text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -34,10 +29,12 @@
 .categories__list {
 }
 .categories__item {
+    
 }
 ._list {
 }
 .categories__link {
+
 }
 .active__link {
 }
