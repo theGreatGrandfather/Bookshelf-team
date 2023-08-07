@@ -6,7 +6,7 @@ import './js/createFoundsMarcup';
 
 // import './js/markup-books';
 
-// import './js/axios-get';
+import './js/auth';
 
 // import './js/get-top-books';
 
