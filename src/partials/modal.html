@@ -1,27 +1,39 @@
-<section id="modal" class="modal modal-js">
-  <div>
-    <!-- <div class="modal__inner"></div> -->
-    <!-- <div class="modal__top"></div> -->
+<div id="modal" class="modal modal-js">
+  <div id="modal-inner" class="modal-inner">
     <button type="button" id="modal-close-btn" class="modal-close-btn">
-      X
+      <img width="24" height="24" src="./images/modal-images/x-close.svg" alt="close button" />
     </button>
-   
     <div class="modal-content">
+      <img id="modal-image" class="modal-image" src="#" alt="book" />
       <div>
-        <img height="100" id="modal-image" src="#" alt="asxasxasx" />
-        <div>
-          <h4 id="modal-title"></h4>
-          <p id="modal-author">Автор книги</p>
-          <p id="modal-description">Короткий опис змісту книги</p>
-          <ul id="modal-book-links">
-            <li><a href="link1" id="amazon-link" target="_blank">Магазин 1</a></li>
-            <li><a href="link2" id="apple-link" target="_blank">Магазин 2</a></li>
-            <li><a href="link3" id="barnes-link" target="_blank">Магазин 3</a></li>
-          </ul>
-        </div>
+        <h4 id="modal-title" class="modal-title"></h4>
+        <p id="modal-author" class="modal-author"></p>
+        <p id="modal-description" class="modal-description"></p>
+        <ul class="modal-book-links">
+          <li>
+            <a href="link1" id="amazon-link" class="amazon-link modal__shop_img" target="_blank">
+              <!-- <img class="modal__shop_img" src="./images/modal-images/amazon.svg" alt="amazon" /> -->
+            </a>
+          </li>
+          <li>
+            <a href="link2" id="apple-link" class="apple-link" target="_blank">
+              <!-- <img class="modal__shop_img" src="./images/modal-images/apple.svg" alt="apple" /> -->
+            </a>
+          </li>
+          <li>
+            <a href="link3" id="barnes-link" class="barnes-link" target="_blank">
+              <!-- <img class="modal__shop_img" src="./images/modal-images/barnes.svg" alt="barnes" /> -->
+            </a>
+          </li>
+        </ul>
       </div>
-      <button id="modal-add-to-list">Add to shopping list</button>
-      <p id="modal-greetings-text" class="modal-greetings-text-js">Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".</p>
     </div>
+    <button id="modal-add-to-list" class="modal-btn">
+      Add to shopping list
+    </button>
+    <p id="modal-greetings-text" class="modal-greetings-text modal-greetings-text-js">
+      Congratulations! You have added the book to the shopping list. To delete,
+      press the button "Remove from the shopping list".
+    </p>
   </div>
-</section>
+</div>

@@ -14,17 +14,6 @@
     display: flex;
 }
 
-
-
-.title_best-sellers {
-    margin-bottom: 40px;
-    
-}
-
-// * {
-//     outline: 1px solid red;
-// }
-
 .see_more {
     margin-top: 32px;
     padding: 14px 28px;
@@ -44,8 +33,9 @@
 
 .title_best-sellers {
     color: var(--color-black);
-    font-size: 38px;
+    font-size: 32px;
     font-weight: 700;
+    margin-bottom: 40px;
     line-height: 108.333%;
     letter-spacing: -1.92px;
     display: flex;
@@ -86,6 +76,10 @@
     .min-title{
         line-height: 171.429%;
     }
+    .title_best-sellers{
+        font-size: 48px;
+    }
+
 }
 
 @media screen and (min-width: 1440px) {

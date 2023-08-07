@@ -1,0 +1,159 @@
+.categories {
+max-height: 228px;
+overflow-y: scroll;
+}
+.categories__list {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.categories__item {
+    // font-family: 'Italic';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.32px;
+    color: var(--text-color);
+}
+.categories__item:hover,
+.categories__item:focus{
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: var(--transition__stock);
+}
+
+
+.support-ukraine {
+    display: flex;
+    flex-direction: column;
+    
+    max-height: 352px;
+    border-radius: 16px;
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
+    box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
+       
+}
+
+.support-ukraine__container-title {
+    padding-top: 28px;
+    display: flex;
+    gap: 12px;
+justify-content: center;
+
+
+}
+.aside__conteiner{
+    gap: 40px;
+}
+.support-ukraine__title {
+    font-family: 'Italic';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.88px;
+    color: var(--color-white);
+}
+
+
+.support-ukraine__list {
+
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    gap: 24px;
+    list-style-type: decimal-leading-zero;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: -0.56px;
+    color: var(--color-white);
+    
+}
+// .support-ukraine__item{
+//     display: flex;
+//     // align-items: center;
+// }
+
+.support-ukraine__list__conteiner{
+
+    overflow-y: hidden;
+    max-height: 200px;
+}
+
+.support-ukraine__btn {
+position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-color:#FFFFFF;
+}
+
+
+@media screen and (min-width: 768px){
+
+    .aside__conteiner {
+            gap: 32px;
+        }
+        .categories {
+        width: 335px;
+        max-height: 474px;
+        }
+  .support-ukraine{
+                    width: 335px;
+                    max-height: 474px;
+                }
+
+  .support-ukraine__list__conteiner {
+padding-top: 42px; 
+   max-height: 270px;
+padding-left: 40px;
+                }
+  .support-ukraine__list{
+    align-items: flex-start;
+  }
+.support-ukraine__btn{
+    top: 15%;
+    width: 38px;
+    height: 38px;
+}
+.categories__item{
+    font-size: 18px;
+}
+}
+@media screen and (min-width: 1440px){
+.aside__conteiner {
+        gap: 86px;
+    }
+
+    .categories {
+        width: 356px;
+    }
+
+    .support-ukraine {
+        width: 356px;
+    }
+        .support-ukraine__btn {
+            top: 0%;
+           
+        }
+}
+.fonds-img{
+    filter: grayscale(0%)brightness(0)invert(1);
+}
+.support-ukraine__link > .fonds-img{
+    &:hover,
+    &:focus{
+        filter: none;
+        transform: scale(1.25);
+    }
+}
