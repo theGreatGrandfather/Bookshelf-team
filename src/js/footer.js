@@ -1,24 +1,39 @@
-// const btn = document.querySelector('.btn-aaaaaa');
-// const modal = document.getElementById('myModal');
-// const closeModal = document.getElementById('closeModal');
+const openModalButton = document.querySelector('.btn-aaaaaa');
+const closeModalButton = document.querySelector('.footer-btn-close');
+const modal = document.querySelector('.footer-modal');
 
-// if (btn && modal && closeModal) {
-//   const openModal = () => {
-//     modal.classList.add('show');
-//     document.body.style.overflow = 'hidden';
-//   };
+function hiddenBodyOverflow() {
+  if (document.body.style.overflow === 'hidden') {
+    document.body.style.overflow = 'visible';
+  } else {
+    document.body.style.overflow = 'hidden';
+  }
+}
 
-//   const closeModalFunction = () => {
-//     modal.classList.remove('show');
-//     document.body.style.overflow = 'auto';
-//   };
+function closeModal() {
+  modal.classList.remove('show');
+  hiddenBodyOverflow();
+  document.removeEventListener('keydown', onEscKeyPress);
+}
 
-//   btn.addEventListener('click', openModal);
-//   closeModal.addEventListener('click', closeModalFunction);
+function onEscKeyPress(event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+}
 
-//   window.addEventListener('click', (event) => {
-//     if (event.target === modal) {
-//       closeModalFunction();
-//     }
-//   });
-// }
+openModalButton.addEventListener('click', () => {
+  modal.classList.add('show');
+  hiddenBodyOverflow();
+  document.addEventListener('keydown', onEscKeyPress);
+});
+
+closeModalButton.addEventListener('click', () => {
+  closeModal();
+});
+
+modal.addEventListener('click', (event) => {
+  if (event.target === modal || event.target.classList.contains('footer-overlay')) {
+    closeModal();
+  }
+});
