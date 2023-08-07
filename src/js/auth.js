@@ -96,7 +96,7 @@ const authorizedUser = (userName) => {
 }
 
 const onClickUser = (e) => {
-    
+    refs.buttonsLogOut[0].classList.toggle('hidden')
 }
 
 const onLogOut = () => {

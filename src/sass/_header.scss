@@ -11,6 +11,7 @@
 .header {
     display: block;
     position: sticky;
+    z-index: 5;
     top: 0;
 }
 
@@ -46,7 +47,7 @@ width: 77px;
 height: 14px;
 }
 
-.for_desctop,
+.for_desktop.hidden,
 .hidden,
 .user.hidden {
     display: none;
@@ -224,7 +225,12 @@ display: block;
 //     background-color: var(--color-white);
 //     border-radius: 50%;
 // }
+
 .user-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     margin-left: 5px;
     color: var(--color-white);
     font-family: inherit;
@@ -432,13 +438,24 @@ align-items: center;
 justify-content: space-between;
 gap: 4px;
 width: fit-content;
-max-width: 200px;
+max-width: 230px;
 height: 45px;
 padding: 14px;
 background-color: var(--color-violet);
 border-radius: 36px;
 border: none;
-} 
+}
+
+.wrapper_buttons {
+    position: relative;
+}
+
+.for_desktop {
+    position: absolute;
+    top: 100%;
+    left: auto;
+    right: 0;
+}
 
 .sign-up-text {
     display: block;
