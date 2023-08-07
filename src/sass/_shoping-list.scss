@@ -1,3 +1,20 @@
+.shopping-list__container {
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+#shopping-list__support-ukraine {
+  @media screen and (max-width: 1439px) {
+    display: none;
+  }
+}
+
+.shopping-list__content {
+  width: 100%;
+}
+
 .shopping-list__title {
   margin-bottom: 40px;
   color: var(--color-black);
@@ -168,6 +185,7 @@
   background-size: contain;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
+  transition: filter var(--transition__stock);
 }
 
 .shopping-list-card__link:is(:hover, :focus) {
