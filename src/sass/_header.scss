@@ -21,7 +21,7 @@
     padding-bottom: 14px;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid;
+    border: 1.5px solid;
     border-color: var(--color-black);
     background-color: var(--color-white);
     border-radius: 0 0 8px 8px;
@@ -29,7 +29,13 @@
     max-width: 768px;
     width: auto;
 }
-
+.switch__input:focus+.switch__slider {
+    outline: 1px solid var(--color-violet);
+    cursor: pointer;
+}
+.switch__input:hover+.switch__slider {
+    cursor: pointer;
+}
 .logo-box {
     display: flex;
     width: 108px;
@@ -47,7 +53,7 @@ width: 77px;
 height: 14px;
 }
 
-.for_desktop.hidden,
+.for_desktop,
 .hidden,
 .user.hidden {
     display: none;
@@ -346,7 +352,7 @@ height: 14px;
 @media screen and (min-width: 768px){
 
     .header ._container {
-        width: 768px;
+        max-width: 768px;
     }
 
     .logo-nav-wrapper {
@@ -461,7 +467,6 @@ border: none;
 @media screen and (min-width: 1440px) {
    
     .header ._container {
-            width: 1440px;
             max-width: 1440px;
         }
 

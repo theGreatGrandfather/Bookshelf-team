@@ -3,19 +3,43 @@
     flex-direction: column;
     gap: 24px;
     height: 228px;
-    width: 335px;
-    overflow-y: scroll;
-    white-space: nowrap;
-    overflow-y: scroll;
-    text-overflow: ellipsis;
- 
+    width: 318px;
+    overflow-y: scroll; 
+    scrollbar-width: thin; /* "auto" или "thin" */
+    scrollbar-color:transparent;
+    &::-webkit-scrollbar {
+    width: 8px;
+    
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color:var(--scroll-color);
+        border-radius: 12px;    
+    }
+
+    &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 100%;
+    background-color:transparent;
+
+    }
 }
 .categories__link{
-    // width: 335px;
-    
-    white-space: nowrap;
+    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+
+
+    
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -34,10 +58,12 @@
 .categories__list {
 }
 .categories__item {
+    
 }
 ._list {
 }
 .categories__link {
+
 }
 .active__link {
 }
@@ -169,7 +195,7 @@
 }
 @media screen and (min-width: 1440px) {
     .categories__link{
-         width: 356px;
+        //  width: 356px;
     }
     .support-ukraine{
        width: 356px;

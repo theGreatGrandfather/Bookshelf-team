@@ -37,7 +37,8 @@
   @media screen and (min-width: 768px) {
     max-width: 579px;
     padding: 40px;
-     height: fit-content;
+    height: fit-content;
+    overflow-y: hidden;
   }
 }
 
@@ -115,8 +116,8 @@
     padding: 20px;
   }
 
-  &:hover,
-  &:focus {
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
     color: var(--color-white);
     background: var(--color-violet);
   }

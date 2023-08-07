@@ -1,9 +1,12 @@
 import { mainBookList } from './get-top-books';
 import { makeMarkupForBooks } from './markup-books';
 import { createCategoryMarcup, categoryTitle } from './createCategoryMarcup';
+import { loaderOn, loaderOff } from './loader';
 
 const onSeeMoreClick = (e) => {
     if (e.target.classList.contains('see_more')) {
+        e.preventDefault();
+        loaderOn();
         const list = document.querySelector('.categories__list');
         const category = list.getElementsByClassName('categories__link');
 
@@ -32,7 +35,7 @@ const onSeeMoreClick = (e) => {
                 <span class="title_book">${accentText}</span>`;
 
                 mainBookList.innerHTML = makeMarkupForBooks(resp);
-                console.log('resp', resp)
+                loaderOff();
             })
     }
 };

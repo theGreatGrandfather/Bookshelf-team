@@ -1,5 +1,9 @@
 import { setItem, getItem, removeItem } from './local-storage';
 import { pullBookData } from './auth-send-data';
+import { onAuthStateChanged } from 'firebase/auth';
+import { app } from './firebase';
+import { getAuth } from 'firebase/auth';
+const auth = getAuth(app);
 
 const el = {
   body: document.querySelector('body'),
@@ -26,6 +30,17 @@ let isBookAdded = false;
 
 const onBookClick = e => {
   e.preventDefault();
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      el.addToList.disabled = false;
+      el.addToList.style.cursor = 'pointer';
+    } else {
+      el.addToList.disabled = true;
+      el.addToList.style.cursor = 'not-allowed';
+    }
+});
+
   if (!e.target.closest('.book-item')) return;
   el.modalClose.addEventListener('click', onCloseModal);
   document.addEventListener('keydown', onCloseModalESC);
@@ -120,29 +135,6 @@ const toggleToList = () => {
 
 el.books.addEventListener('click', onBookClick);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // el.modalInner.addEventListener('click', e => e.stopPropagation());
-
 
 // el.books.removeEventListener

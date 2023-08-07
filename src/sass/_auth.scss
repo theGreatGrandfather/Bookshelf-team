@@ -13,7 +13,7 @@
 //     --transition__stock: all 300ms linear;
 
 .modal_backdrop {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -33,7 +33,7 @@
 
     border-radius: 18px;
     border: 2px solid var(--color-black);
-    background: var(--color-white);
+    background: var(--primery-bgc);
 }
 
 .modal__button_close {
@@ -59,7 +59,7 @@
     align-items: center;
     border-radius: 40px;
     border: 2px solid var(--color-black);
-
+    background: var(--primery-bgc);
 }
 
 .form__element__input:not(:placeholder-shown) + .form__element__label,
@@ -72,7 +72,8 @@ transform: translateY(-120%);
     left: 40px;
     top: 48px;
     padding: 0 4px;
-    background-color: var(--color-white);
+    background: var(--primery-bgc);
+    color: var(--color-black);
     transition: var(--transition__stock);
     border-radius: 4px;
 }

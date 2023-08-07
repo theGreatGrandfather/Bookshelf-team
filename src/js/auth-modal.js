@@ -2,6 +2,10 @@ import { refs } from "./auth-refs"
 
 export const openCloseModal = () => {
   refs.modalAuth.classList.toggle('hidden');
+  refs.iconBurger.classList.remove('hidden');
+  refs.iconCross.classList.add('hidden');
+  refs.menuContainer.classList.remove('is-open');   
+  document.body.classList.remove('disable-scroll');
   if (document.body.style.overflow === 'hidden') {
     document.body.style.overflow = 'visible'
   } else {document.body.style.overflow = 'hidden'}
