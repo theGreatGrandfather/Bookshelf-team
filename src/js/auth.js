@@ -79,10 +79,11 @@ onAuthStateChanged(auth, (user) => {
     if(!user.displayName) {return}
         const name = user.displayName;
         authorizedUser(name)
+        refs.buttonsLogOut[1].classList.remove('hidden')
     // ...
     } else {
     // Користувач не авторизований
-
+    refs.buttonsLogOut[1].classList.add('hidden')
     // ...
     }
 });
@@ -108,12 +109,13 @@ const onLogOut = () => {
         Notify.success('Sign-out successful.')
         unAuthorizedUser();
         openCloseButtonLogOut();
+        refs.buttonsLogOut[1].classList.add('hidden')
     }).catch((error) => {
         const errorMessage = error.message;
         Notify.failure(`An error happened: ${errorMessage}`)
     });
 };
-
+refs.buttonsSignUp.forEach(el => console.log(el))
 refs.authForm.addEventListener('submit', onSubmit);
 refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.addEventListener('click', openCloseModal));
 refs.modalAuth.addEventListener('click', onClickModal);

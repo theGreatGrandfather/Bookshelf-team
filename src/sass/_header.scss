@@ -21,7 +21,7 @@
     padding-bottom: 14px;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid;
+    border: 1.5px solid;
     border-color: var(--color-black);
     background-color: var(--color-white);
     border-radius: 0 0 8px 8px;
@@ -47,7 +47,7 @@ width: 77px;
 height: 14px;
 }
 
-.for_desktop.hidden,
+.for_desktop,
 .hidden,
 .user.hidden {
     display: none;
