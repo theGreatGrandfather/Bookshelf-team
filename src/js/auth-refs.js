@@ -4,5 +4,5 @@ export const refs = {
     modalAuth: document.querySelector('.js_modal_auth'),
     changeButtons: document.querySelector('.js_change_form'),
     buttonsUser: document.querySelectorAll('.js-profile'),
-    buttoonsLogOut: document.querySelectorAll('.js_log_out')
+    buttonsLogOut: document.querySelectorAll('.js_log_out')
 }

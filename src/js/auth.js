@@ -1,10 +1,9 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut } from "firebase/auth";
 import { app } from "./firebase";
 import { onClickModal, openCloseModal } from "./auth-modal";
 import { refs } from "./auth-refs";
 import { Notify } from "notiflix";
 import { loaderOn, loaderOff } from "./loader";
-import { async } from "@firebase/util";
 
 const auth = getAuth(app);
 
@@ -77,14 +76,15 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
     //   Ім'я юзера можна отримати з name тут
     if(!user.displayName) {return}
-      const name = user.displayName;
-      authorizedUser(name)
+        const name = user.displayName;
+        authorizedUser(name)
     // ...
-  } else {
+    } else {
     // Користувач не авторизований
-        Notify.info(`Please Sign-In/Sign-Up`)
+        const errorMessage = error.message;
+        Notify.failure(`Sign in error: ${errorMessage}`)
     // ...
-  }
+    }
 });
 
 const authorizedUser = (userName) => {
@@ -96,10 +96,20 @@ const authorizedUser = (userName) => {
 }
 
 const onClickUser = (e) => {
-    refs
+    
 }
+
+const onLogOut = () => {
+    signOut(auth).then(() => {
+        Notify.success('Sign-out successful.')
+    }).catch((error) => {
+        const errorMessage = error.message;
+        Notify.failure(`An error happened: ${errorMessage}`)
+    });
+};
 
 refs.authForm.addEventListener('submit', onSubmit);
 refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.addEventListener('click', openCloseModal));
 refs.modalAuth.addEventListener('click', onClickModal);
 refs.buttonsUser.forEach(buttonUser => buttonUser.addEventListener('click', onClickUser));
+refs.buttonsLogOut.forEach(buttonLogOut => buttonLogOut.addEventListener('click', onLogOut))
