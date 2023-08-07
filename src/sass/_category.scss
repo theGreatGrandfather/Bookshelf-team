@@ -1,4 +1,16 @@
+.categories__list   { 
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 228px;
+    overflow-y: scroll;
+}
 .categories__link{
+    // width: 335px;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+   
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -14,8 +26,85 @@
     }
 }
 
+.categories__list {
+}
+.categories__item {
+}
+._list {
+}
+.categories__link {
+}
+.active__link {
+}
+.all-categories {
+}
+._link {
+}
+.support-ukraine {
+    display: flex;
+    flex-direction: column;
+    height: 228px;
+
+}
+.support-ukraine__container-title {
+}
+.support-ukraine__title {
+}
+.support-ukraine__icon {
+}
+.support-ukraine__list {
+    display: flex;
+    flex-direction: column;
+    height: 188px;
+    overflow: hidden;
+}
+.support-ukraine__item {
+}
+.support-ukraine__link {
+}
+.support-ukraine__btn {
+}
+.title_best-sellers {
+}
+.title_book {
+}
+.best_list {
+}
+.category-list {
+}
+.go-top {
+}
+.icon-scroll-up-wrap {
+}
+.icon-scroll-up {
+}
+
 .categories__link.active__link{
     color: var(--color-accent);
     text-transform: uppercase;
     font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+    .categories__link{
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+    // width: 218px;
+    }
+    .categories__list {
+        gap: 32px;
+        height: 474px;
+    }
+    .support-ukraine{
+        height: 474px;
+    }
+    .support-ukraine__list{
+        height: 292px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .categories__link{
+        // width: 180px;
+    }
 }
