@@ -3,10 +3,10 @@ max-height: 228px;
 overflow-y: scroll;
 }
 .categories__list {
-    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 24px;
+    padding-left: 20px;
 }
 .categories__item {
     font-family: 'Italic';
@@ -18,7 +18,8 @@ overflow-y: scroll;
     color: var(--text-color);
 }
 .categories__item:hover,
-.categories__item:focus{
+.categories__item:focus
+{
     color: var(--color-accent);
     text-transform: uppercase;
     font-weight: 700;
@@ -40,7 +41,10 @@ overflow-y: scroll;
     gap: 12px;
 justify-content: center;
 
-
+}
+._section_categories {
+    padding-top: 40px;
+    margin-top: 0px
 }
 .aside__conteiner{
     gap: 40px;
@@ -58,12 +62,11 @@ justify-content: center;
 
 .support-ukraine__list {
 
-display: flex;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    
-    
+    align-items: flex-start;
+    padding-left: 40px;
+    gap: 20px;
 
 }
 
@@ -71,6 +74,11 @@ display: flex;
 
     overflow-y: hidden;
     max-height: 200px;
+}
+.found_img{
+    filter: brightness(0) invert(1);
+    height: 32px;
+    width: 132px;
 }
 
 .support-ukraine__btn {
@@ -101,12 +109,14 @@ width: 32px;
                 }
 
   .support-ukraine__list__conteiner {
-padding-top: 42px; 
-   max-height: 270px;
-padding-left: 40px;
+  max-height: 270px;
+
                 }
   .support-ukraine__list{
+    padding-top: 42px;
+    padding-left: 40px;
     align-items: flex-start;
+    gap: 20px ;
   }
 .support-ukraine__btn{
     top: 15%;
@@ -118,6 +128,11 @@ padding-left: 40px;
 }
 }
 @media screen and (min-width: 1440px){
+
+    .support-ukraine__list__conteiner {
+            max-height: 300px;
+    
+        }
 .aside__conteiner {
         gap: 86px;
     }
@@ -128,9 +143,10 @@ padding-left: 40px;
 
     .support-ukraine {
         width: 356px;
+        height: 474px;
     }
         .support-ukraine__btn {
-            top: 0%;
+            top: 10%;
            
         }
 }
