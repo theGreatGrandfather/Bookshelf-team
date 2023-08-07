@@ -37,3 +37,5 @@ import './js/toggleTheme.js';
 // import './js/createFoundsMarcup';
 
 // import './js/createCategoryMarcup.js';
+
+import './js/onFondsBtnClick.js';

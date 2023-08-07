@@ -55,28 +55,13 @@
     }
 }
 
-.categories__list {
-}
-.categories__item {
-    
-}
-._list {
-}
-.categories__link {
-
-}
-.active__link {
-}
-.all-categories {
-}
-._link {
-}
 .support-ukraine {
     display: flex;
     flex-direction: column;
     height: 352px;
     padding: 26px 40px 20px 40px;
     width:335px;
+    transition: var(--transition__stock);
     border-radius: 16px;
     background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
     box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
@@ -96,8 +81,7 @@
     line-height: 24px; /* 109.091% */
     letter-spacing: -0.88px;
 }
-.support-ukraine__icon {
-}
+
 .support-ukraine__list {
     display: flex;
     flex-direction: column;
@@ -109,6 +93,16 @@
     counter-reset:  item; /* Обнуляем счетчик списка */
     // margin-left: 50px;
     color: #FFF;
+    transition: var(--transition__stock);
+}
+.support-ukraine__list.open{
+    height: 100%;
+    transition: var(--transition__stock);
+}
+.support-ukraine.open{
+    height: fit-content;
+    transition: var(--transition__stock);
+
 }
 .support-ukraine__item {
     display: flex;
@@ -118,7 +112,8 @@
     content: '0' counter(item);
     counter-increment: item; 
 }}
-.support-ukraine__link {
+.support-ukraine__btn.open{
+   transform: rotate(180deg);
 }
 .support-ukraine__btn {
     display: flex;
@@ -129,6 +124,7 @@
     border-radius: 50%;
     align-self: center;
     background-color: #FFF;
+    transition: var(--transition__stock);
     &>svg{
         width: 20px;
         height: 20px;

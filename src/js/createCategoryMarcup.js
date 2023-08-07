@@ -34,6 +34,10 @@ const onCategoryClick = (e) => {
                 categoryTitle.innerHTML = `${titleTExt.join(' ')}&nbsp
                 <span class="title_book">${accentText}</span>`;
                 mainBookList.innerHTML = makeMarkupForBooks(resp);
+                document.querySelector('#best-sellers-container').scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
 
                 // loaderOff();
             })

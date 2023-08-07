@@ -27,7 +27,7 @@ import './js/scroll-up.js';
 
 // import './js/loader.js';
 
-// add your import from js file here
+import './js/onFondsBtnClick.js';
 
 import './js/renderCategories.js';
 
@@ -37,3 +37,4 @@ import './js/createFoundsMarcup';
 
 import './js/createCategoryMarcup.js';
 import './js/seeMore';
+ 
