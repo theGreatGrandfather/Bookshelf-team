@@ -21,7 +21,7 @@ import './js/modal';
 
 import './js/auth';
 
-// add your import from js file here
+import './js/footer.js';
 
 import './js/scroll-up.js';
 

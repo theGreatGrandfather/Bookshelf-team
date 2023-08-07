@@ -1,10 +1,9 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut } from "firebase/auth";
 import { app } from "./firebase";
 import { onClickModal, openCloseModal } from "./auth-modal";
 import { refs } from "./auth-refs";
 import { Notify } from "notiflix";
 import { loaderOn, loaderOff } from "./loader";
-import { async } from "@firebase/util";
 
 const auth = getAuth(app);
 
@@ -77,16 +76,40 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
     //   Ім'я юзера можна отримати з name тут
     if(!user.displayName) {return}
-      const name = user.displayName;
-      Notify.info(`User ${name}`)
+        const name = user.displayName;
+        authorizedUser(name)
     // ...
-  } else {
+    } else {
     // Користувач не авторизований
-        Notify.info(`Please Sign-In/Sign-Up`)
+        const errorMessage = error.message;
+        Notify.failure(`Sign in error: ${errorMessage}`)
     // ...
-  }
+    }
 });
 
+const authorizedUser = (userName) => {
+    refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.classList.add('hidden'));
+    refs.buttonsUser.forEach(buttonUser => buttonUser.classList.remove('hidden'));
+
+    refs.buttonsUser.forEach(buttonUser => buttonUser.children[1].textContent = userName);
+
+}
+
+const onClickUser = (e) => {
+    refs.buttonsLogOut[0].classList.toggle('hidden')
+}
+
+const onLogOut = () => {
+    signOut(auth).then(() => {
+        Notify.success('Sign-out successful.')
+    }).catch((error) => {
+        const errorMessage = error.message;
+        Notify.failure(`An error happened: ${errorMessage}`)
+    });
+};
+
 refs.authForm.addEventListener('submit', onSubmit);
-refs.buttonSignIn.addEventListener('click', openCloseModal);
+refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.addEventListener('click', openCloseModal));
 refs.modalAuth.addEventListener('click', onClickModal);
+refs.buttonsUser.forEach(buttonUser => buttonUser.addEventListener('click', onClickUser));
+refs.buttonsLogOut.forEach(buttonLogOut => buttonLogOut.addEventListener('click', onLogOut))

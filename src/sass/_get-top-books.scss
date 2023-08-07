@@ -29,6 +29,11 @@
     letter-spacing: -0.14px;
     text-transform: uppercase;
     margin-left: auto;
+    &:hover,
+    &:focus{
+        color: var(--color-white);
+        background-color: var(--color-violet);
+    }
 }
 
 .title_best-sellers {
@@ -85,7 +90,7 @@
 @media screen and (min-width: 1440px) {
     #best-sellers-container {
         // margin-top: 0;
-        margin-left: 40px;
+
         width: 996px;
         transition: margin-top 0.5s ease; 
     }

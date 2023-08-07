@@ -1,0 +1,178 @@
+.categories__list   { 
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 228px;
+    width: 335px;
+    overflow-y: scroll;
+    white-space: nowrap;
+    overflow-y: scroll;
+    text-overflow: ellipsis;
+ 
+}
+.categories__link{
+    // width: 335px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.32px;
+    color: var(--text-color);
+    &:hover,
+    &:focus{
+        color: var(--color-accent);
+        text-transform: uppercase;
+        font-weight: 700;
+        transition: var(--transition__stock);
+    }
+}
+
+.categories__list {
+}
+.categories__item {
+}
+._list {
+}
+.categories__link {
+}
+.active__link {
+}
+.all-categories {
+}
+._link {
+}
+.support-ukraine {
+    display: flex;
+    flex-direction: column;
+    height: 352px;
+    padding: 26px 40px 20px 40px;
+    width:335px;
+    border-radius: 16px;
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
+    box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
+
+}
+.support-ukraine__container-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 42px;
+}
+.support-ukraine__title {
+    color: #FFF;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 109.091% */
+    letter-spacing: -0.88px;
+}
+.support-ukraine__icon {
+}
+.support-ukraine__list {
+    display: flex;
+    flex-direction: column;
+    height: 188px;
+    overflow: hidden;
+    gap: 20px;
+    margin-bottom: 16px;
+    list-style-type: none; /* Убираем исходные маркеры */
+    counter-reset:  item; /* Обнуляем счетчик списка */
+    // margin-left: 50px;
+    color: #FFF;
+}
+.support-ukraine__item {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    &:nth-child(-n+9)::before {
+    content: '0' counter(item);
+    counter-increment: item; 
+}}
+.support-ukraine__link {
+}
+.support-ukraine__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    align-self: center;
+    background-color: #FFF;
+    &>svg{
+        width: 20px;
+        height: 20px;
+        fill: #4F2EE8;
+    }
+}
+.title_best-sellers {
+}
+.title_book {
+}
+.best_list {
+}
+.category-list {
+}
+.go-top {
+}
+.icon-scroll-up-wrap {
+}
+.icon-scroll-up {
+}
+
+.categories__link.active__link{
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.fonds-img{
+    height: 32px;
+    filter: grayscale(0%)brightness(0)invert(1);
+}
+.support-ukraine__link > .fonds-img{
+    &:hover,
+    &:focus{
+        filter: none;
+        transform: scale(1.25);
+    }
+}
+@media screen and (min-width: 768px) {
+    .categories__link{
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+    // width: 218px;
+    }
+    .categories__list {
+        gap: 32px;
+        height: 474px;
+        margin-bottom: 28px;
+    }
+    .support-ukraine{
+        height: 474px;
+    }
+    .support-ukraine__list{
+        height: 292px;
+    }
+    .support-ukraine__title {
+
+    font-size: 24px;
+
+    font-weight: 700;
+    line-height: 28px; /* 109.091% */
+    letter-spacing: -0.96px;
+}
+}
+@media screen and (min-width: 1440px) {
+    .categories__link{
+         width: 356px;
+    }
+    .support-ukraine{
+       width: 356px;
+     
+    }
+}
