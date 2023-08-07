@@ -13,7 +13,7 @@
 //     --transition__stock: all 300ms linear;
 
 .modal_backdrop {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
