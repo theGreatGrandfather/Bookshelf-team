@@ -29,6 +29,11 @@
     letter-spacing: -0.14px;
     text-transform: uppercase;
     margin-left: auto;
+    &:hover,
+    &:focus{
+        color: var(--color-white);
+        background-color: var(--color-violet);
+    }
 }
 
 .title_best-sellers {
