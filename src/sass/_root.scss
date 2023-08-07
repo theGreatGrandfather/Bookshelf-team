@@ -10,7 +10,17 @@
     --color-wrapper: #9d9d9d;
     --color-switcher: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
 
+    --amazon-filter-img: grayscale(99%);
+    --amazon-filter-wImg: grayscale(99%);
 
+    --amazon-hover: grayscale(none);
+    --amazon-hover: grayscale(none);
+
+    --filter-apple-img: grayscale(99%);
+    --filter-apple-wImg: grayscale(99%);
+
+    --filter-img: grayscale(99%);
+    --filter-wImg: grayscale(99%);
     // використовувати тільки в ховері на категорії це значення
     --color-accent: #4F2EE8;
     --transition__stock: all 300ms linear;
@@ -23,6 +33,18 @@
     --color-accent: #EAC645;
     --color-switcher: fill: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
     --text-color: rgba(255, 255, 255, 0.50); //#f0f0f0
+    
+    --amazon-filter-img: brightness(0.1)invert(0.5);
+    --filter-filter-wImg:brightness(0.1)invert(0.5);
+
+    --filter-apple-img: grayscale(99%);
+    --filter-apple-wImg:grayscale(99%);
+
+    --filter-img: brightness(0.1)invert(0.5);
+    --filter-wImg:brightness(0.1)invert(0.5);
+
+    --amazon-hover:  brightness(0.1)invert(1);
+    --amazon-hover:  brightness(0.1)invert(1);
 }
 
 @font-face {

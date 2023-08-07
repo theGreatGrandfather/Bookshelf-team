@@ -1,36 +1,6 @@
-// const list = [
-//   {
-//     id: '643282b2e85766588626a132',
-//     title: 'I WILL FIND YOU',
-//     img: 'https://storage.googleapis.com/du-prd/books/images/9781538748367.jpg',
-//     author: 'Harlan Coben',
-//     description:
-//       'A man imprisoned for murdering his 3-year-old son becomes convinced his son is still alive and plans an escape. Read by Steven Weber. 10 hours, 16 minutes unabridged.',
-//     amazonLink: 'https://www.amazon.com/dp/1538748363?tag=NYTBSREV-20',
-//     appleLink: 'https://goto.applebooks.apple/9781543661385?at=10lIEQ',
-//     barnesLink:
-//       'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781543661385',
-//     listname: 'Audio Fiction',
-//   },
-//   {
-//     id: '643282b1e85766588626a0b4',
-//     title: "I'M GLAD MY MOM DIED",
-//     img: 'https://storage.googleapis.com/du-prd/books/images/9781982185824.jpg',
-//     author: 'Jennette McCurdy',
-//     description:
-//       'The actress and filmmaker describes her eating disorders and difficult relationship with her mother. Read by the author. 6 hours, 25 minutes unabridged.',
-//     amazonLink: 'https://www.amazon.com/dp/1982185821?tag=NYTBSREV-20',
-//     appleLink: 'https://goto.applebooks.apple/9781797147949?at=10lIEQ',
-//     barnesLink:
-//       'https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781797147949',
-//     listname: 'Audio Nonfiction',
-//   },
-// ];
-
-import { pullBookData } from './auth-send-data';
-import { delBook } from './auth-send-data';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { delBook } from './auth-send-data';
 import { app } from './firebase';
 import { Notify } from 'notiflix';
 
@@ -115,15 +85,21 @@ const hideDefaultMarkup = () => {
 
 const showDefaultMarkup = () => {
   refs.defaultMarkup.style.display = 'flex';
+  Notify.info('There are no books in your list yet...');
 };
 
 const onDelBtnClick = evt => {
-  const isContains = evt.target.classList.contains('js-shl-del-btn');
-  if (!isContains) {
+  const doesContain = evt.target.classList.contains('js-shl-del-btn');
+  if (!doesContain) {
     return;
   }
   const bookCardEl = evt.target.closest('.js-shl-card');
   const cardId = bookCardEl.dataset.id;
+  bookCardEl.remove();
+  delBook(cardId);
+  if (!refs.bookListEl.children.length) {
+    showDefaultMarkup();
+  }
 };
 
 const launchBookDelBtn = () => {
@@ -154,7 +130,6 @@ const getBooksData = () => {
         arr.push(data);
       });
       if (!arr.length) {
-        Notify.info('There is no books in your list yet...');
         return showDefaultMarkup();
       }
       fillShopListWithBooks(arr);
@@ -165,19 +140,3 @@ const getBooksData = () => {
 };
 
 getBooksData();
-
-// const launchBookDelBtn = () => {
-//   const bookDelBtn = document.getElementById('js-shl-del-btn');
-//   bookDelBtn.addEventListener('click', onDelBtnClick);
-// };
-
-// refs.delBookBtn.addEventListener('click', onDelBtnClick);
-
-/** const delBook = async (docId) => {
-    onAuthStateChanged(auth, async (user) => {
-        if (user) {
-            const email = user.email;
-            await deleteDoc(doc(db, email, docId));
-        }
-    })
-};*/
