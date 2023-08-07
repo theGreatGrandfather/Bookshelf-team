@@ -1,3 +1,7 @@
+.shopping-list__container {
+  display: flex;
+  flex-direction: column;
+}
 .shopping-list__wrapper {
   @media screen and (min-width: 1440px) {
     display: flex;
@@ -246,16 +250,65 @@
   }
 }
 
-.shop-list-pagination__list {
-  display: flex;
-}
-
-.shop-list-pagination__btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: solid 1px var(--color-black);
+.shop-list-pagination {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
+}
+
+.shop-list-pagination__list {
+  display: flex;
+  gap: 14px;
+  @media screen and (min-width: 768px) {
+    gap: 24px;
+  }
+}
+
+.shop-list-pagination__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.22;
+  border-radius: 50%;
+  border: solid 1px var(--color-black);
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.shop-list-pagination__btn.--start,
+.shop-list-pagination__btn.--prev {
+  background-color: #000000;
+}
+
+.shop-list-pagination__btn.--end,
+.shop-list-pagination__btn.--next {
+  background-color: #eac645;
+}
+
+.shop-list-pagination__btn span {
+  width: 16px;
+  height: 16px;
+}
+
+.shop-list-pagination__nav-btns,
+.shop-list-pagination__page-btns {
+  display: flex;
+  gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    gap: 10px;
+  }
+}
+
+.--pagination-active {
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
