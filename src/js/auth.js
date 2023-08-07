@@ -38,6 +38,7 @@ const onSubmit = e => {
                     displayName: name,
                 }).then(() => {
                     openCloseModal();
+                    authorizedUser(name)
                     Notify.success(`Hello, ${name}, you successfully create new account`);
                 }).catch((error) => {
                     // error помилки, обробляю через Notiflix
@@ -78,11 +79,11 @@ onAuthStateChanged(auth, (user) => {
     if(!user.displayName) {return}
         const name = user.displayName;
         authorizedUser(name)
+        refs.buttonsLogOut[1].classList.remove('hidden')
     // ...
     } else {
     // Користувач не авторизований
-        const errorMessage = error.message;
-        Notify.failure(`Sign in error: ${errorMessage}`)
+    refs.buttonsLogOut[1].classList.add('hidden')
     // ...
     }
 });
@@ -92,24 +93,31 @@ const authorizedUser = (userName) => {
     refs.buttonsUser.forEach(buttonUser => buttonUser.classList.remove('hidden'));
 
     refs.buttonsUser.forEach(buttonUser => buttonUser.children[1].textContent = userName);
-
 }
 
-const onClickUser = (e) => {
+const unAuthorizedUser = () => {
+    refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.classList.remove('hidden'));
+    refs.buttonsUser.forEach(buttonUser => buttonUser.classList.add('hidden'));
+}
+
+const openCloseButtonLogOut = () => {
     refs.buttonsLogOut[0].classList.toggle('hidden')
 }
 
 const onLogOut = () => {
     signOut(auth).then(() => {
         Notify.success('Sign-out successful.')
+        unAuthorizedUser();
+        openCloseButtonLogOut();
+        refs.buttonsLogOut[1].classList.add('hidden')
     }).catch((error) => {
         const errorMessage = error.message;
         Notify.failure(`An error happened: ${errorMessage}`)
     });
 };
-
+refs.buttonsSignUp.forEach(el => console.log(el))
 refs.authForm.addEventListener('submit', onSubmit);
 refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.addEventListener('click', openCloseModal));
 refs.modalAuth.addEventListener('click', onClickModal);
-refs.buttonsUser.forEach(buttonUser => buttonUser.addEventListener('click', onClickUser));
-refs.buttonsLogOut.forEach(buttonLogOut => buttonLogOut.addEventListener('click', onLogOut))
+refs.buttonsUser.forEach(buttonUser => buttonUser.addEventListener('click', openCloseButtonLogOut));
+refs.buttonsLogOut.forEach(buttonLogOut => buttonLogOut.addEventListener('click', onLogOut));
