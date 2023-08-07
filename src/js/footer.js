@@ -2,7 +2,7 @@ const openModalButton = document.querySelector('.btn-aaaaaa');
 const closeModalButton = document.querySelector('.footer-btn-close');
 const modal = document.querySelector('.footer-modal');
 
-function hiddenBodyOverflow() {
+export function hiddenBodyOverflow() {
   if (document.body.style.overflow === 'hidden') {
     document.body.style.overflow = 'visible';
   } else {
