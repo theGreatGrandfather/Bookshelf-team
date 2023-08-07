@@ -1,4 +1,5 @@
 import { setItem, getItem, removeItem } from './local-storage';
+import { pullBookData } from './auth-send-data';
 
 const el = {
   body: document.querySelector('body'),
@@ -105,6 +106,7 @@ const onCloseModalESC = e => {
 const toggleToList = () => {
   if (!isBookAdded) {
     setItem(bookInfo);
+    pullBookData(bookInfo);
     el.addToList.textContent = BUTTON_REMOVE_TEXT;
     el.modalGreetings.classList.remove('modal-greetings-text-js');
     isBookAdded = true;

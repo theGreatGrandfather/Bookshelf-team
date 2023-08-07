@@ -10,14 +10,17 @@ const renderCategories = async () => {
                     <a data-categories__item data-listName='${list_name}' rel='noopener no-referrel nofollow' class='categories__link _link' href='#'>${list_name}</a>
                 </li>`
     ).sort().join('');
+    
     return markup;
 };
 
 renderCategories()
     .then((resp) => {
         categoriesList.insertAdjacentHTML('beforeend', resp);
+                
+        
     })
     .catch((err) => {
         console.log('err', err)
-    });
+    })
 
