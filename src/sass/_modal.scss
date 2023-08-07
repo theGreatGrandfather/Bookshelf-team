@@ -31,6 +31,7 @@
   margin: 0 auto;
   background-color: var(--color-white);
   border-radius: 18px;
+  overflow: scroll;
   border: 2px solid var(--color-black);
   @media screen and (min-width: 768px) {
     max-width: 579px;
@@ -183,42 +184,47 @@
 //    -webkit-filter: var(); 
 //   filter: grayscale(99%);
 // }
-
-#amazon-link {
+#amazon-link{
   background-image: url(../images/modal-images/amazon.png);
   background-repeat: no-repeat;
   width: 68px;
   height: 19px;
+}
+.amazon-link {
   -webkit-filter:var(--filter-wImg); 
   filter: var(--filter-img);
     &:hover,
     &:focus{
-    -webkit-filter: grayscale(0%); 
-    filter: grayscale(0%);
+      // background-color: red;
+    -webkit-filter: var(--amazon-hover); 
+    filter: var(--amazon-hover);
     }
 }
-
-#apple-link {
-  background-image: url(../images/modal-images/shop1.png);
+#apple-link{
+ background-image: url(../images/modal-images/shop1.png);
   background-repeat: no-repeat;
   width: 33px;
   height: 32px;
-  -webkit-filter: var(--filter-wImg); 
-  filter: var(--filter-img);
+}
+.apple-link {
+  -webkit-filter: var(--filter-apple-wImg); 
+  filter: var(--filter-apple-img);
   &:hover,
     &:focus{
     -webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
     }
 }
-
-#barnes-link {
+#barnes-link{
   background-image: url(../images/modal-images/shop.png);
   background-repeat: no-repeat;
   width: 38px;
   height: 36px;
-  -webkit-filter: var(--filter-wImg); 
-  filter: var(--filter-img);
+}
+.barnes-link {
+
+  -webkit-filter: var(--filter-apple-wImg); 
+  filter: var(--filter-apple-img);
 }
 
 // #amazon-link, #apple-link, #barnes-link{
