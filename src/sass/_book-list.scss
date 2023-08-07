@@ -4,11 +4,12 @@
     flex-wrap: wrap;
     flex-direction: column;
     gap: 40px;
+    margin-top: 40px;
 }
-.title_best-sellers.no-change{
-    display: flex;
-    flex-wrap: wrap;
-}
+// .title_best-sellers.no-change{
+//     display: flex;
+//     flex-wrap: wrap;
+// }
 
 @media screen and (min-width: 768px) {
     .best_list.category-list{

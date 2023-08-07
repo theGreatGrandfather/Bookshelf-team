@@ -3,14 +3,43 @@
     flex-direction: column;
     gap: 24px;
     height: 228px;
-    width: 335px;
+    width: 318px;
     overflow-y: scroll; 
+    scrollbar-width: thin; /* "auto" или "thin" */
+    scrollbar-color:transparent;
+    &::-webkit-scrollbar {
+    width: 8px;
+    
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color:var(--scroll-color);
+        border-radius: 12px;    
+    }
+
+    &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 100%;
+    background-color:transparent;
+
+    }
 }
 .categories__link{
     display: block;
     overflow: hidden;
-     text-overflow: ellipsis;
+    text-overflow: ellipsis;
     white-space: nowrap;
+
+
+    
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -166,7 +195,7 @@
 }
 @media screen and (min-width: 1440px) {
     .categories__link{
-         width: 356px;
+        //  width: 356px;
     }
     .support-ukraine{
        width: 356px;
