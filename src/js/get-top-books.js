@@ -23,7 +23,7 @@ const renderStartMarkup = async () => {
   if (!shouldRenderMarkup()) return;
 
   try {
-    loaderOn();
+    // loaderOn();
     const dataMarkup = await getTopBooks();
     if (dataMarkup.length === 0) return;
 
@@ -42,7 +42,7 @@ const renderStartMarkup = async () => {
   } catch (error) {
     console.error(error);
   } finally {
-    loaderOff();
+    // loaderOff();
   }
 };
 
@@ -51,7 +51,7 @@ const handleResize = () => {
   renderStartMarkup();
 };
 
-const debouncedHandleResize = debounce(handleResize, 150);
+const debouncedHandleResize = debounce(handleResize, 300);
 window.addEventListener('resize', debouncedHandleResize);
 
 function determineNumBooksPerRow() {

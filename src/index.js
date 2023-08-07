@@ -21,11 +21,11 @@ import './js/modal';
 
 import './js/auth';
 
-import './js/footer.js';
+// import './js/footer.js';
 
 import './js/scroll-up.js';
 
-import './js/loader.js';
+// import './js/loader.js';
 
 // add your import from js file here
 

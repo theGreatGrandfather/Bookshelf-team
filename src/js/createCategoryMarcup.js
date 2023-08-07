@@ -13,7 +13,7 @@ export const createCategoryMarcup = async (category) => {
 const onCategoryClick = (e) => {
     if (e.target.hasAttribute('data-categories__item')) {
         e.preventDefault();
-        loaderOn();
+        // loaderOn();
         const list = document.querySelector('.categories__list');
         const category = list.getElementsByClassName('categories__link');
 
@@ -35,7 +35,7 @@ const onCategoryClick = (e) => {
                 <span class="title_book">${accentText}</span>`;
                 mainBookList.innerHTML = makeMarkupForBooks(resp);
 
-                loaderOff();
+                // loaderOff();
             })
     }
 };
