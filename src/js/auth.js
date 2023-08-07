@@ -3,7 +3,7 @@ import { app } from "./firebase";
 import { onClickModal, openCloseModal } from "./auth-modal";
 import { refs } from "./auth-refs";
 import { Notify } from "notiflix";
-import { loaderOn, loaderOff } from "./loader";
+// import { loaderOn, loaderOff } from "./loader";
 
 const auth = getAuth(app);
 
@@ -18,7 +18,7 @@ const onSubmit = e => {
 
     // Реєстрація
     if (e.target.children[0].classList.contains('js_form_sign_up')) {
-        loaderOn()
+        // loaderOn()
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // userCredential данні користувача отримані відразу після реєстрації
@@ -45,13 +45,13 @@ const onSubmit = e => {
                     const errorMessage = error.message;
                     Notify.failure(`Update profile error: ${errorMessage}`);
                 });
-                loaderOff()
+                // loaderOff()
             });
     }
 
     // Авторизація
     if (e.target.children[0].classList.contains('js_form_sign_in')) {
-        loaderOn()
+        // loaderOn()
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Данні отримані про користувача після авторизації
@@ -64,7 +64,7 @@ const onSubmit = e => {
                 const errorMessage = error.message;
                 Notify.failure(`Sign in error: ${errorMessage}`)
             }).finally(() => {
-                loaderOff();
+                // loaderOff();
             });
     }
 }
@@ -118,6 +118,6 @@ const onLogOut = () => {
 refs.buttonsSignUp.forEach(el => console.log(el))
 refs.authForm.addEventListener('submit', onSubmit);
 refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.addEventListener('click', openCloseModal));
-refs.modalAuth.addEventListener('click', onClickModal);
+// refs.modalAuth.addEventListener('click', onClickModal);
 refs.buttonsUser.forEach(buttonUser => buttonUser.addEventListener('click', openCloseButtonLogOut));
 refs.buttonsLogOut.forEach(buttonLogOut => buttonLogOut.addEventListener('click', onLogOut));
