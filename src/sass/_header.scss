@@ -10,8 +10,8 @@
 
 .header {
     display: block;
-    background-color: var(--color-white);
     position: sticky;
+    z-index: 5;
     top: 0;
 }
 
@@ -23,9 +23,11 @@
     align-items: center;
     border: 2px solid;
     border-color: var(--color-black);
+    background-color: var(--color-white);
     border-radius: 0 0 8px 8px;
     height: 64px;
     max-width: 768px;
+    width: auto;
 }
 
 .logo-box {
@@ -40,20 +42,18 @@
     align-items: center;
 }
 
-// .logo-box:hover {
-//     transform: scale(1.05);
-// }
-
 .logo-text {
 width: 77px;
 height: 14px;
 }
 
-
+.for_desktop.hidden,
 .hidden,
 .user.hidden {
     display: none;
 }
+
+
 
 .header-logo {
     width: 24px;
@@ -225,7 +225,12 @@ display: block;
 //     background-color: var(--color-white);
 //     border-radius: 50%;
 // }
+
 .user-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     margin-left: 5px;
     color: var(--color-white);
     font-family: inherit;
@@ -332,7 +337,6 @@ display: block;
     position: fixed;
     left: 20px;
     bottom: 20px;
-    display: flex;
     justify-content: center;
     align-items: center;
     width: 118px;
@@ -433,13 +437,25 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 gap: 4px;
-width: 184px;
+width: fit-content;
+max-width: 230px;
 height: 45px;
 padding: 14px;
 background-color: var(--color-violet);
 border-radius: 36px;
 border: none;
-} 
+}
+
+.wrapper_buttons {
+    position: relative;
+}
+
+.for_desktop {
+    position: absolute;
+    top: 100%;
+    left: auto;
+    right: 0;
+}
 
 .sign-up-text {
     display: block;
@@ -458,6 +474,7 @@ border: none;
    
     .header ._container {
             width: 1440px;
+            max-width: 1440px;
         }
 
     .header-nav {
