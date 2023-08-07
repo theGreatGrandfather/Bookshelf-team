@@ -1,48 +1,48 @@
-// .footer {
-//     background-color: RGB(230, 230, 250);
-//     min-height: 150px;
-//     display: flex;
-//     flex-direction: column; 
-//     align-items: center;
-//     justify-content: center; 
-//     border-radius: 10px; 
-//   }
+.footer {
+    background-color: RGB(230, 230, 250);
+    min-height: 150px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    border-radius: 10px; 
+  }
   
-//   .footer__redes-wrapper {
-//     display: flex;
-//     justify-content: center;
-//     gap: 40px;
-//     flex-wrap: wrap;
-//     max-width: 600px;
-//     margin: 45px auto;
-//     text-align: center; 
-//   }
+  .footer__redes-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 45px auto;
+    text-align: center; 
+  }
   
-//   .footer__texto {
-//     color: var(--light-gray);
-//     text-align: center;
-//     margin-top: auto; 
-//     margin-bottom: 10px; 
-//   }
+  .footer__texto {
+    color: var(--light-gray);
+    text-align: center;
+    margin-top: auto; 
+    margin-bottom: 10px; 
+  }
   
-//   .btn-aaaaaa {
-//     width: 300px;
-//     height: 40px;
-//     background-color: RGB(200, 210, 240);
-//     color: white;
-//     border: none;
-//     border-radius: 5px;
-//     font-size: 16px;
-//     cursor: pointer;
-//     transition: background-color 0.3s ease;
-//     justify-content: center;
-//     align-items: center;
-//   }
+  .btn-aaaaaa {
+    width: 300px;
+    height: 40px;
+    background-color: RGB(200, 210, 240);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    align-items: center;
+  }
   
-//   .btn-aaaaaa:hover {
-//     background-color: RGB(180, 190, 230);
-//   }
-//   /*---------------------  Modal  ---------------------*/
+  .btn-aaaaaa:hover {
+    background-color: RGB(180, 190, 230);
+  }
+  /*---------------------  Modal  ---------------------*/
 //   .modal {
 //     display: none; 
 //     position: fixed;
