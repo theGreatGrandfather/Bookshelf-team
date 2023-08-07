@@ -29,9 +29,10 @@
   max-width: 335px;
   padding: 40px 24px;
   margin: 0 auto;
+  height: 90vh;
   background-color: var(--color-white);
   border-radius: 18px;
-  overflow: scroll;
+  overflow-y: scroll;
   border: 2px solid var(--color-black);
   @media screen and (min-width: 768px) {
     max-width: 579px;
