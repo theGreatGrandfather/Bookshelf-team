@@ -115,8 +115,8 @@
     padding: 20px;
   }
 
-  &:hover,
-  &:focus {
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
     color: var(--color-white);
     background: var(--color-violet);
   }
