@@ -5,10 +5,12 @@
 .main__container {
     display: flex;
     flex-direction: column;
+    
 }
 aside{
     display: flex;
     flex-direction: column;
+    gap: 40px;
 }
 .categories {
 }
@@ -42,14 +44,20 @@ aside{
 @media screen and (min-width: 768px) {
     aside{
         flex-direction: row;
+        gap: 32px;
+    }
+    .main__container{
+        
     }
 }
 
 @media screen and (min-width: 1440px) {
     .main__container {
         flex-direction: row;
+        
     }
     aside{
         flex-direction: column;
+        gap: 86px;
     }
 }
