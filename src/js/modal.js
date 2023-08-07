@@ -26,7 +26,10 @@ let isBookAdded = false;
 const onBookClick = e => {
   e.preventDefault();
   if (!e.target.closest('.book-item')) return;
-
+  el.modalClose.addEventListener('click', onCloseModal);
+  document.addEventListener('keydown', onCloseModalESC);
+  el.addToList.addEventListener('click', toggleToList);
+  el.modal.addEventListener('click', onBackdrop);
   const bookItem = e.target.closest('.book-item');
 
   // get book data from attrs
@@ -68,14 +71,34 @@ const onBookClick = e => {
   el.modal.classList.toggle('modal-js');
 };
 
-const onCloseModal = () => {
+const onCloseModal = (e) => {
   el.modal.classList.add('modal-js');
   el.body.classList.remove('no-scroll-js');
+  el.modalClose.removeEventListener('click', onCloseModal);
+  document.removeEventListener('keydown', onCloseModalESC);
+  el.addToList.removeEventListener('click', toggleToList);
+  el.modal.removeEventListener('click', onBackdrop);
+};
+
+  
+
+const onBackdrop = (e) => {
+    if (e.target === e.currentTarget) {
+      onCloseModal();
+      el.modalClose.removeEventListener('click', onCloseModal);
+      document.removeEventListener('keydown', onCloseModalESC);
+      el.addToList.removeEventListener('click', toggleToList);
+      el.modal.removeEventListener('click', onBackdrop);
+    }
 };
 
 const onCloseModalESC = e => {
   if (e.key === 'Escape') {
     onCloseModal();
+    el.modalClose.removeEventListener('click', onCloseModal);
+    document.removeEventListener('keydown', onCloseModalESC);
+    el.addToList.removeEventListener('click', toggleToList);
+    el.modal.removeEventListener('click', onBackdrop);
   }
 };
 
@@ -94,8 +117,30 @@ const toggleToList = () => {
 };
 
 el.books.addEventListener('click', onBookClick);
-el.modalClose.addEventListener('click', onCloseModal);
-el.addToList.addEventListener('click', toggleToList);
-document.addEventListener('keydown', onCloseModalESC);
-el.modal.addEventListener('click', onCloseModal);
-el.modalInner.addEventListener('click', e => e.stopPropagation());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// el.modalInner.addEventListener('click', e => e.stopPropagation());
+
+
+// el.books.removeEventListener
