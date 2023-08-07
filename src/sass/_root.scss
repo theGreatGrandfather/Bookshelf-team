@@ -1,7 +1,7 @@
 :root {
     --primery-bgc: #F6F6F6;
     --color-white: #FFFFFF;
-
+    
     --text-color:rgba(17, 17, 17, 0.60);// #707070 
     --color-black: #111111;
     --description-color: #B4AFAF;
@@ -24,6 +24,7 @@
     // використовувати тільки в ховері на категорії це значення
     --color-accent: #4F2EE8;
     --transition__stock: all 300ms linear;
+     --scroll-color:#E0E0E0; 
 }
 
 :root body.dark-theme {
@@ -45,6 +46,8 @@
 
     --amazon-hover:  brightness(0.1)invert(1);
     --amazon-hover:  brightness(0.1)invert(1);
+
+    --scroll-color:rgba(17, 17, 17, 0.60);// #707070 
 }
 
 @font-face {
@@ -60,6 +63,32 @@ body {
 font-family: regular;
 font-weight: 400;
 background-color: var(--primery-bgc);
+scrollbar-width: thin; /* "auto" или "thin" */
+    scrollbar-color:transparent;
+    &::-webkit-scrollbar {
+    width: 12px;
+    
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color:var(--scroll-color);
+        border-radius: 12px;    
+    }
+
+    &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 100%;
+    background-color:transparent;
+
+    }
 }
 
 
