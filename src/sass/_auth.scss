@@ -13,7 +13,7 @@
 //     --transition__stock: all 300ms linear;
 
 .modal_backdrop {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -73,6 +73,7 @@ transform: translateY(-120%);
     top: 48px;
     padding: 0 4px;
     background: var(--primery-bgc);
+    color: var(--color-black);
     transition: var(--transition__stock);
     border-radius: 4px;
 }

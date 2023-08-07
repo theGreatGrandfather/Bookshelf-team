@@ -7,5 +7,5 @@ export const refs = {
     buttonsLogOut: document.querySelectorAll('.js_log_out'),
     menuContainer: document.querySelector('.js-menu-container'),
     iconBurger: document.querySelector('.js-menu-open'),
-    iconCross: document.querySelector('.js-menu-close'),
+    iconCross: document.querySelector('.js-menu-close')
 }
