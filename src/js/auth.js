@@ -88,10 +88,11 @@ onAuthStateChanged(auth, (user) => {
 });
 
 const authorizedUser = (userName) => {
-    refs.buttonSignUp.classList.add('hidden');
-    refs.buttonUser.classList.remove('hidden');
+    refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.classList.add('hidden'));
+    refs.buttonsUser.forEach(buttonUser => buttonUser.classList.remove('hidden'));
 
-    refs.buttonUser.children[1].textContent = userName;
+    refs.buttonsUser.forEach(buttonUser => buttonUser.children[1].textContent = userName);
+
 }
 
 const onClickUser = (e) => {
@@ -105,7 +106,6 @@ console.log(e.currentTarget);
 }
 
 refs.authForm.addEventListener('submit', onSubmit);
-refs.buttonSignUp.addEventListener('click', openCloseModal);
+refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.addEventListener('click', openCloseModal));
 refs.modalAuth.addEventListener('click', onClickModal);
-refs.buttonUser.addEventListener('click', onClickUser)
-
+refs.buttonsUser.forEach(buttonUser => buttonUser.addEventListener('click', onClickUser));
