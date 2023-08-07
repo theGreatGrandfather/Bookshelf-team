@@ -3,6 +3,7 @@
 ._section{
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-top: 64px;
 }
 
 ._container{
@@ -18,6 +19,9 @@
         width: 768px;
         padding-left: 32px;
         padding-right: 32px;
+    }
+    ._section{
+        margin-top: 72px;
     }
 }
 

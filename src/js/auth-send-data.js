@@ -1,5 +1,5 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { app } from "./firebase";
 import { Notify } from "notiflix";
 
@@ -58,3 +58,18 @@ const getBooksData = () => {
         }
     });
 };
+
+
+/**
+ * Видаляє елемент з id в базі данних, якщо юзер авторизований, можна імпортувати.
+ * @param {id елемента який потрібно видалити (отриманий з бази данних)} docId 
+ */
+export const delBook = async (docId) => {
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            const email = user.email;
+            await deleteDoc(doc(db, email, docId));
+        }
+    })
+};
+
