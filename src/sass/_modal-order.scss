@@ -1,0 +1,63 @@
+.form__button_submit {
+}
+.confirm__btn {
+}
+.is-hiden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal__form__backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+
+    background-color: rgba(17, 17, 17, 0.40);
+}
+.modal__form__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: 579px;
+    width: calc(100% - 40px);
+    padding: 24px;
+
+    border-radius: 18px;
+    border: 2px solid var(--color-black);
+    background: var(--primery-bgc);
+}
+.modal__form {
+
+}
+.modal__button_close {
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+}
+.modal__form__close__bt {
+}
+.button_cross {
+}
+._list {
+}
+.form__element {
+}
+.modal__input-adress {
+}
+.mfi {
+    height: 64px;
+    width: 100%;
+    padding: 20px 130px 20px 40px;
+    align-items: center;
+    border-radius: 40px;
+    border: 2px solid var(--color-black);
+    background: var(--primery-bgc);
+}
+._req-big {
+}
+._req-big-tel {
+}

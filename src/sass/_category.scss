@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 24px;
     height: 228px;
-    width: 318px;
+    width: 335px;
     overflow-y: scroll; 
     scrollbar-width: thin; /* "auto" или "thin" */
     scrollbar-color:transparent;
@@ -171,9 +171,7 @@
     // width: 218px;
     }
     .categories__list {
-        gap: 32px;
-        height: 474px;
-        margin-bottom: 28px;
+        width: 335px;
     }
     .support-ukraine{
         height: 474px;
@@ -191,11 +189,12 @@
 }
 }
 @media screen and (min-width: 1440px) {
-    .categories__link{
-        //  width: 356px;
-    }
+  
     .support-ukraine{
        width: 356px;
      
+    }
+    .categories__list {
+        width: 356px;
     }
 }
