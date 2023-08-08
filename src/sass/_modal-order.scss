@@ -1,6 +1,12 @@
 .form__button_submit {
 }
-.confirm__btn {
+.confirm__btn.__btn {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width: 768px){
+        max-width: 50%;
+    }
 }
 .is-hiden{
     opacity: 0;
@@ -9,11 +15,13 @@
 }
 
 .modal__form__backdrop {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
-    top: 0;
-
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
     background-color: rgba(17, 17, 17, 0.40);
 }
 .modal__form__container {
