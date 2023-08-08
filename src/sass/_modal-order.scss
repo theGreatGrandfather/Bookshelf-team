@@ -2,6 +2,11 @@
 }
 .confirm__btn {
 }
+.is-hiden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
 
 .modal__form__backdrop {
     position: fixed;
