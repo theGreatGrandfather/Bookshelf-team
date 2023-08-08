@@ -245,10 +245,16 @@ height: 14px;
 }
 
 .user-icon {
-    width: 37px;
-    height: 37px;
-    border-radius: 50%;
+    width: 19px;
+    height: 19px;
+}
+
+.thumb-user-icon {
+        width: 37px;
+            height: 37px;
+    padding: 9px;
     background-color: var(--color-white);
+        border-radius: 50%;
 }
 
 .menu-user-name {
