@@ -19,15 +19,15 @@ import './js/modal';
 
 // add your import from js file here
 
-import './js/auth';
+import './js/auth-for-index';
 
-import './js/footer.js';
+// import './js/footer.js';
 
 import './js/scroll-up.js';
 
-import './js/loader.js';
+// import './js/loader.js';
 
-// add your import from js file here
+import './js/onFondsBtnClick.js';
 
 import './js/renderCategories.js';
 
@@ -37,3 +37,4 @@ import './js/createFoundsMarcup';
 
 import './js/createCategoryMarcup.js';
 import './js/seeMore';
+ 

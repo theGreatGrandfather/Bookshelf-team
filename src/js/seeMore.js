@@ -2,11 +2,12 @@ import { mainBookList } from './get-top-books';
 import { makeMarkupForBooks } from './markup-books';
 import { createCategoryMarcup, categoryTitle } from './createCategoryMarcup';
 import { loaderOn, loaderOff } from './loader';
+import { goTop } from './scroll-up';
 
 const onSeeMoreClick = (e) => {
     if (e.target.classList.contains('see_more')) {
         e.preventDefault();
-        loaderOn();
+        
         const list = document.querySelector('.categories__list');
         const category = list.getElementsByClassName('categories__link');
 
@@ -14,16 +15,12 @@ const onSeeMoreClick = (e) => {
         for (let index = 0; index < arr.length; index++) {
             const element = arr[index];
             element.classList.remove('active__link');
-            console.log('e.target', e.target.dataset.name)
-            console.log('element', element.innerText)
+
             if (e.target.dataset.name === element.innerText) {
                 element.classList.add('active__link');
 
             }
         }
-        
-        
-
 
         const titleTExt =  e.target.dataset.name.split(' ');
         titleTExt.pop();
@@ -33,9 +30,15 @@ const onSeeMoreClick = (e) => {
                 categoryTitle.classList.add('no-change');
                 categoryTitle.innerHTML = `${titleTExt.join(' ')}&nbsp
                 <span class="title_book">${accentText}</span>`;
-
                 mainBookList.innerHTML = makeMarkupForBooks(resp);
-                loaderOff();
+                // loaderOff();
+                // if ( document.documentElement.scrollWidth >= 1440) {
+                //     return;
+                // }
+                document.querySelector('#best-sellers-container').scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
             })
     }
 };

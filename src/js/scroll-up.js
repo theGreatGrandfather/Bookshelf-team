@@ -2,7 +2,7 @@
 const btnGoTop = document.querySelector(".go-top")
 btnGoTop.hidden = true;
 
-const goTop = () => {
+export const goTop = () => {
     if (window.scrollY > 0) {
         window.scrollBy(0, -82);
         setTimeout(goTop, 0);

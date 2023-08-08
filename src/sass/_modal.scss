@@ -17,6 +17,7 @@
   width: 100vw;
   height: 100vh;
   top: 0;
+  z-index: 1111;
   background-color: rgba(17, 17, 17, 0.4);
   transition: var(--transition__stock);
 }
@@ -29,7 +30,7 @@
   width: 335px;
   padding: 40px 24px;
   margin: 0 auto;
-  height: 90vh;
+  max-height: 90vh;
   background-color: var(--color-white);
   border-radius: 18px;
   overflow-y: scroll;

@@ -23,14 +23,14 @@ const renderStartMarkup = async () => {
   if (!shouldRenderMarkup()) return;
 
   try {
-    loaderOn();
+    // loaderOn();
     const dataMarkup = await getTopBooks();
     if (dataMarkup.length === 0) return;
 
     const firstIndexBooks = dataMarkup.map(({ books, list_name }) => {
       const booksSlice = books.slice(0, numBooksPerRow);
       return `<li class='best-item _list'>
-                <h4 class='min-title'>${list_name}</h4>
+                <h3 class='min-title'>${list_name}</h3>
                 <ul class='books-list'>
                     ${makeMarkupForBooks(booksSlice)}
                 </ul>
@@ -42,7 +42,7 @@ const renderStartMarkup = async () => {
   } catch (error) {
     console.error(error);
   } finally {
-    loaderOff();
+    // loaderOff();
   }
 };
 
@@ -51,7 +51,7 @@ const handleResize = () => {
   renderStartMarkup();
 };
 
-const debouncedHandleResize = debounce(handleResize, 150);
+const debouncedHandleResize = debounce(handleResize, 300);
 window.addEventListener('resize', debouncedHandleResize);
 
 function determineNumBooksPerRow() {

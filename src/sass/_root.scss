@@ -53,10 +53,12 @@
 @font-face {
     font-family: italic;
     src: url(../fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf);
+    font-display: swap;
 }
 @font-face {
     font-family: regular;
     src: url(../fonts/DMSans-VariableFont_opsz,wght.ttf);
+    font-display: swap;
 }
 
 body {

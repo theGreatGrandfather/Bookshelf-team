@@ -13,7 +13,7 @@ export const createCategoryMarcup = async (category) => {
 const onCategoryClick = (e) => {
     if (e.target.hasAttribute('data-categories__item')) {
         e.preventDefault();
-        loaderOn();
+        // loaderOn();
         const list = document.querySelector('.categories__list');
         const category = list.getElementsByClassName('categories__link');
 
@@ -34,8 +34,15 @@ const onCategoryClick = (e) => {
                 categoryTitle.innerHTML = `${titleTExt.join(' ')}&nbsp
                 <span class="title_book">${accentText}</span>`;
                 mainBookList.innerHTML = makeMarkupForBooks(resp);
+                if ( document.documentElement.scrollWidth >= 1440) {
+                    return;
+                }
+                document.querySelector('#best-sellers-container').scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
 
-                loaderOff();
+                // loaderOff();
             })
     }
 };
