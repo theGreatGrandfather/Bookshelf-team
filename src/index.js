@@ -21,7 +21,7 @@ import './js/modal';
 
 import './js/auth-for-index';
 
-// import './js/footer.js';
+import './js/footer.js';
 
 import './js/scroll-up.js';
 
