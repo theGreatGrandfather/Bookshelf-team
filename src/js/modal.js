@@ -73,7 +73,7 @@ onAuthStateChanged(auth, (user) => {
   currentBookId = bookInfo.id;
 
   // check if this book has been already added to storage
-  isBookAdded = getItem(bookInfo.id);
+  // isBookAdded = getItem(bookInfo.id);
   if (!isBookAdded) {
     el.addToList.textContent = BUTTON_ADD_TEXT;
     el.modalGreetings.classList.add('modal-greetings-text-js');
@@ -120,13 +120,13 @@ const onCloseModalESC = e => {
 
 const toggleToList = () => {
   if (!isBookAdded) {
-    setItem(bookInfo);
+    // setItem(bookInfo);
     pullBookData(bookInfo);
     el.addToList.textContent = BUTTON_REMOVE_TEXT;
     el.modalGreetings.classList.remove('modal-greetings-text-js');
     isBookAdded = true;
   } else {
-    removeItem(currentBookId);
+    // removeItem(currentBookId);
     el.addToList.textContent = BUTTON_ADD_TEXT;
     el.modalGreetings.classList.add('modal-greetings-text-js');
     isBookAdded = false;

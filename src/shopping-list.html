@@ -18,7 +18,36 @@
   <include src="./partials/shopping-list-body.html"></include>
   <include src="./partials/auth.html"></include>
   <include src="./partials/footer.html"></include>
+  <div class="modal__form__backdrop is-hiden">
+    <div class="modal__form__container">
+      <form class="modal__form">
+        <button type="button" class="modal__button_close modal__form__close__bt">
+          <svg class="button_cross" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+            <path d="M21 7L7 21M7 7L21 21" stroke-width="3">
+            </path>
+          </svg>
+        </button>
+        <ul class=" _list">
+          <li class="form__element ">
+            <input placeholder="adress" id="pac-input" type="text" class="modal__input-adress  mfi" required
+              name="address" />
+          </li>
 
+          <li class="form__element ">
+            <input name="tell" placeholder="phone number" type="tel" class=" _req-big _req-big-tel mfi" />
+          </li>
+        </ul>
+        <button type="submit" class="form__button_submit">
+          <span>Submit</span>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="modal__form__backdrop modal-greetings-text-js">
+    <div class="modal__form__container">
+      <p class=''>sps</p>
+    </div>
+  </div>
   <script type="module" id="google-maps-script"></script>
   <!-- <script type="module" src="./js/google.js"></script> -->
   <script type="module" src="./shopping-list.js"></script>
