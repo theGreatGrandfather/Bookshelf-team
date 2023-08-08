@@ -74,9 +74,11 @@ export const checkUserIsAuth = () => {
     const auth = getAuth(app);
     onAuthStateChanged(auth, (user) => {
         if (user) {
+            Notify.info(`You are authorizated`)
             if (!user.displayName) { return }
             authorizedUser(user.displayName);
         } else {
+            Notify.info(`You are UNauthorizated`)
             unAuthorizedUser();
         }
     });

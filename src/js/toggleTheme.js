@@ -29,4 +29,3 @@ if (activeTheme === 'qq' || activeTheme === null) {
 }
 
 checkBox.addEventListener("change", onCheckBoxChange);
-
