@@ -1,10 +1,7 @@
 import { refs } from "./auth-refs";
-import { onClickModal, openModal, closeModal } from "./auth-modal";
-import { loaderOn, loaderOff } from "./loader";
-import { Notify } from "notiflix";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut } from "firebase/auth";
-import { registration } from "./auth";
-
+import { onClickModal, openModal } from "./auth-modal";
+import { registration, authorization, onLogOut, checkUserIsAuth } from "./auth";
+checkUserIsAuth()
 
 refs.buttonsSignUp[0].addEventListener('click', openModal);
 refs.modalAuth.addEventListener('click', onClickModal)
@@ -17,8 +14,18 @@ const onSubmit = (e) => {
         password: e.currentTarget.password.value
     };
 
-    registration(email, password, name)
+    if (e.target.children[0].classList.contains('js_form_sign_up')) {
+        registration(email, password, name);
+    } else {
+        authorization(email, password);
+    }
 }
+
+const openOrCloseButtonLogOut = () => {
+    refs.buttonsLogOut[0].classList.toggle('hidden')
+};
 
 refs.modalAuth.addEventListener('click', onClickModal);
 refs.authForm.addEventListener('submit', onSubmit);
+refs.buttonsUser.forEach(buttonUser => buttonUser.addEventListener('click', openOrCloseButtonLogOut));
+refs.buttonsLogOut.forEach(buttonUser => buttonUser.addEventListener('click', onLogOut));
