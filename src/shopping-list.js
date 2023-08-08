@@ -39,3 +39,4 @@ import './js/toggleTheme.js';
 // import './js/createCategoryMarcup.js';
 
 import './js/onFondsBtnClick.js';
+import './js/authforshoping.js';
