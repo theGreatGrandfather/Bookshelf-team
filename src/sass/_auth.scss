@@ -79,7 +79,7 @@ transform: translateY(-120%);
 
     border-radius: 40px;
     color: var(--color-white);
-    background:var(--color-black);
+    background-color:var(--color-black);
     border: none;
 
     transition: var(--transition__stock);
@@ -97,7 +97,7 @@ transform: translateY(-120%);
     gap: 20px;
 }
 
-.form__button_submit, .buttons_change_form .button, .modal_window {
+.form__button_submit, .modal__form__container, .buttons_change_form .button, .modal_window {
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
