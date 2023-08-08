@@ -1,9 +1,32 @@
- 
+import axios from "axios";
+
 const TOKEN = '6279094717:AAEINNI-WB8PTYW-nQglKgNdX6lALH6T6A0';
 const CHAT_ID = '-1001887598395';
 const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
-bigForm = document.querySelector('.modal__form'),
+let autocomplete;
+function loadGoogleMapsScript() {
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDW-p4nZpSUbbOWr0MdEUruheMS1uooSQw&libraries=places&callback=initAutocomplete`;
+    script.async = true;
+    script.defer = true;
+
+    window.initAutocomplete = function () {
+        autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('pac-input'),
+        {
+            types: ['address'],
+            componentRestrictions: { country: ["us"] },
+        });
+    autocomplete.addListener('place_changed', onPlaceChange);
+    };
+    const scriptTag = document.getElementById('google-maps-script');
+    scriptTag.parentNode.insertBefore(script, scriptTag);
+}
+
+loadGoogleMapsScript();
+
+const bigForm = document.querySelector('.modal__form');
 bigForm.addEventListener('submit', modalFormSubmit);
 
     function ban(event) {
@@ -25,29 +48,15 @@ bigForm.addEventListener('submit', modalFormSubmit);
 };
 async function modalFormSubmit(event) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(bigForm);
     formData.append('object', address.formatted_address);
-    console.log(formData);
-    // console.log(address.formatted_address);
-    let error = 0;
-    // formValidate(bigForm);
-    // if (formData) {
-    // }
-    formData.forEach((x, y) => {
-        console.log(x);
-        console.log(y);
-        
-        
-    });
+    let error = formValidate(bigForm);
     if (error === 0) {
-        onLastStepBtnClick()
         let messageToTg = `<b>New order</b>\n`;
         function sendMessage() {
             for (let entry of formData.entries()) {
-                console.log(entry);
                 if (entry[1] != '') {
                     messageToTg += ` ${entry.join(" : ")}\n`;
-                    console.log(messageToTg);
                 }
             }
             return messageToTg;
@@ -57,33 +66,31 @@ async function modalFormSubmit(event) {
             chat_id: CHAT_ID,
             parse_mode: 'html',
             text: messageToTg,
-        });
+        }).then(
+            console.log('then')
+        );
     }
-    // function formValidate(bigForm) {
-    //     let error = 0;
-    //     let formReq = document.querySelectorAll('._req-big');
-    //     console.log(formReq);
-        
-
-    //     for (let index = 0; index < formReq.length; index++) {
-    //         const input = formReq[index];
-    //         formRemoveError(input);
-    //         if (input.classList.contains('_req-big-tel')) {
-    //             if (telTest(input)) {
-    //                 formAddError(input);
-    //                 error++;
-    //             }
-    //         }
-    //         else {
-    //             if (input.value === '') {
-    //                 formAddError(input);
-    //                 error++;
-    //             }
-    //         }
-    //     }
-    //     return error;
-    // }
-
+    function formValidate(bigForm) {
+        let error = 0;
+        let formReq = document.querySelectorAll('._req-big');
+        for (let index = 0; index < formReq.length; index++) {
+            const input = formReq[index];
+            formRemoveError(input);
+            if (input.classList.contains('_req-big-tel')) {
+                if (telTest(input)) {
+                    formAddError(input);
+                    error++;
+                }
+            }
+            else {
+                if (input.value === '') {
+                    formAddError(input);
+                    error++;
+                }
+            }
+        }
+        return error;
+    }
     function formAddError(input) {
         input.classList.add('_error');
         input.classList.add('_error');
@@ -95,38 +102,21 @@ async function modalFormSubmit(event) {
     function telTest(input) {
         return !/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.test(input.value);
     }
-}
+};
 
-    const address = {};
-    let autocomplete;
-    function initAutocomplete() {
-        autocomplete = new google.maps.places.Autocomplete(
-            document.getElementById('pac-input'),
-            {
-                types: ['address'],
-                componentRestrictions: { country: ["us"] },
-                // fields: ["address_components"],
-                // fields: ["address"],
-                // fields: ['place_id', 'geometry', 'name'],
-            });
-        autocomplete.addListener('place_changed', onPlaceChange);
-    }
+
+const address = {};
+ 
 
 let place;
 
 function onPlaceChange() {
     place = autocomplete.getPlace();
-    console.log(place);
-    console.log(place.address_components);
-
-parseAddress(place);
+    parseAddress(place);
 
 }
 
-
 const parseAddress = (place) => {
-    // const address = {};
-    console.log(address);
     if (!Array.isArray(place.address_components)) {
         throw Error('Address Components is not an array')
     }
@@ -200,8 +190,7 @@ const parseAddress = (place) => {
         address.type = null
     }
     address.formatted_address = place.formatted_address;
-    console.log(address);
-      	
-    //  document.getElementById('bbbbb').innerHTML = address.formatted_address;
+
     return address
 }
+

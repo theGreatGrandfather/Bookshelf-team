@@ -1,0 +1,59 @@
+.modal__form__backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 1111;
+    background-color: rgba(17, 17, 17, 0.4);
+    transition: var(--transition__stock);
+}
+.modal__form__container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 335px;
+    padding: 40px 24px;
+    margin: 0 auto;
+    max-height: 90vh;
+    background-color: var(--color-white);
+    border-radius: 18px;
+    overflow-y: scroll;
+    border: 2px solid var(--color-black);
+    @media screen and (min-width: 768px) {
+        width: 579px;
+        padding: 40px;
+        height: fit-content;
+        overflow-y: hidden;
+    }
+}
+.modal__form {
+}
+.button_cross {
+}
+._list {
+}
+.form__element {
+}
+.modal__input-adress {
+}
+.modal-zip {
+}
+.form__element__input {
+}
+.form__element__label {
+}
+._req-big {
+}
+._req-big-tel {
+}
+.form__button_submit {
+}
+
+.modal {
+  
+}
+
+.modal-inner {
+
+}

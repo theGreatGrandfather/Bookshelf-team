@@ -1,20 +1,29 @@
 <button type='button' class='form__button_submit confirm__btn __btn'>confirm order</button>
-<form class="modal__form">
-    <ul class=" _list">
-        <li class="form__element ">
-            <input placeholder="" id="pac-input" type="text" class="form__element__input _req-big _req-big-tel"
-                id="address" required />
-            <label for="address" class="form__element__label">Address</label>
-        </li>
+<div class="modal__form__backdrop">
+    <div class="modal__form__container">
+        <form class="modal__form">
+            <svg class="button_cross" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                <path d="M21 7L7 21M7 7L21 21" stroke="inherit" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round">
+                </path>
+            </svg>
+            <ul class=" _list">
+                <li class="form__element ">
+                    <input placeholder="" id="pac-input" type="text"
+                        class="modal__input-adress modal-zip form__element__input " id="address" required
+                        name="address" />
+                    <label for="address" class="form__element__label">Address</label>
+                </li>
 
-        <li class="form__element ">
-            <input placeholder="" type="tel" class="form__element__input" id="address" required />
+                <li class="form__element ">
+                    <input name="tell" placeholder="" type="tel" class="form__element__input _req-big _req-big-tel" />
 
-            <label for="address" class="form__element__label">Phone Number</label>
-        </li>
-    </ul>
-
-    <button type="submit" class="form__button_submit">
-        <span>Submit</span>
-    </button>`
-</form>
+                    <label for="address" class="form__element__label">Phone Number</label>
+                </li>
+            </ul>
+            <button type="submit" class="form__button_submit">
+                <span>Submit</span>
+            </button>`
+        </form>
+    </div>
+</div>
