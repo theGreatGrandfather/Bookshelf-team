@@ -1,19 +1,10 @@
-//     --primery-bgc: #F6F6F6;
-//     --color-white: #FFFFFF;
-
-//     --text-color: rgba(17, 17, 17, 0.60); // #707070 
-//     --color-black: #111111;
-//     --description-color: #B4AFAF;
-//     --color-violet: #4F2EE8;
-//     --color-yellow: #EAC645;
-//     --color-wrapper: #9d9d9d;
-
-//     // використовувати тільки в ховері на категорії це значення
-//     --color-accent: #4F2EE8;
-//     --transition__stock: all 300ms linear;
+.notiflix-notify {
+    top: 64px;
+}
 
 .modal_backdrop {
     position: fixed;
+    z-index: 6;
     width: 100vw;
     height: 100vh;
     top: 0;

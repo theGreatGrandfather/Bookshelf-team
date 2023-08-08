@@ -53,13 +53,13 @@ width: 77px;
 height: 14px;
 }
 
+
+.for_desktop.hidden,
 .for_desktop,
 .hidden,
 .user.hidden {
     display: none;
 }
-
-
 
 .header-logo {
     width: 24px;
@@ -245,10 +245,16 @@ height: 14px;
 }
 
 .user-icon {
-    width: 37px;
-    height: 37px;
-    border-radius: 50%;
+    width: 19px;
+    height: 19px;
+}
+
+.thumb-user-icon {
+        width: 37px;
+            height: 37px;
+    padding: 9px;
     background-color: var(--color-white);
+        border-radius: 50%;
 }
 
 .menu-user-name {
@@ -446,6 +452,7 @@ border: none;
 }
 
 .for_desktop {
+    display: flex;
     position: absolute;
     top: 100%;
     left: auto;

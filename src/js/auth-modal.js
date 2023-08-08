@@ -1,20 +1,20 @@
 import { refs } from "./auth-refs"
 
-export const openCloseModal = () => {
-  refs.modalAuth.classList.toggle('hidden');
-  refs.iconBurger.classList.remove('hidden');
-  refs.iconCross.classList.add('hidden');
-  refs.menuContainer.classList.remove('is-open');   
-  document.body.classList.remove('disable-scroll');
-  if (document.body.style.overflow === 'hidden') {
-    document.body.style.overflow = 'visible'
-  } else {document.body.style.overflow = 'hidden'}
+export const openModal = () => {
+  refs.modalAuth.classList.remove('hidden');
+  document.body.classList.add('no-scroll-js');
 }
 
-const signInMarkup = `<ul class="js_form_sign_in">
+export const closeModal = () => {
+  refs.modalAuth.classList.add('hidden');
+  document.body.classList.remove('no-scroll-js');
+}
+
+const signInMarkup = `<ul class="js_form_sign_in _list">
         <li class="form__element form__element_email">
           <input
-          placeholder=""
+            placeholder=""
+            autocomplete="email"
             type="email"
             class="form__element__input form__element_email__input"
             id="email"
@@ -25,7 +25,8 @@ const signInMarkup = `<ul class="js_form_sign_in">
 
         <li class="form__element form__element_password">
           <input
-          placeholder=""
+            placeholder=""
+            autocomplete="password"
             type="password"
             class="form__element__input form__element_password__input"
             id="password"
@@ -40,10 +41,10 @@ const signInMarkup = `<ul class="js_form_sign_in">
         <span>Sign up</span>
       </button>`
 
-const signUpMarkup = `<ul class="js_form_sign_up">
+const signUpMarkup = `<ul class="js_form_sign_up _list">
         <li class="form__element form__element_name">
           <input
-          placeholder=""
+            placeholder=""
             type="text"
             class="form__element__input form__element_name__input"
             id="name"
@@ -54,7 +55,8 @@ const signUpMarkup = `<ul class="js_form_sign_up">
 
         <li class="form__element form__element_email">
           <input
-          placeholder=""
+            placeholder=""
+            autocomplete="email"
             type="email"
             class="form__element__input form__element_email__input"
             id="email"
@@ -65,8 +67,9 @@ const signUpMarkup = `<ul class="js_form_sign_up">
 
         <li class="form__element form__element_password">
           <input
-          placeholder=""
+            placeholder=""
             type="password"
+            autocomplete="new-password"
             class="form__element__input form__element_password__input"
             id="password"
             required
@@ -80,28 +83,28 @@ const signUpMarkup = `<ul class="js_form_sign_up">
         <span>Sign up</span>
       </button>`
 
-const changeDisabledButton = () => {
-    if (refs.changeButtons.children[0].disabled) {
-        refs.changeButtons.children[0].disabled = false;
-        refs.changeButtons.children[1].disabled = true;
-    } else {
-        refs.changeButtons.children[0].disabled = true;
-        refs.changeButtons.children[1].disabled = false;
-    }
+const disabledButtonSignUp = () => { 
+  refs.changeButtons.children[0].disabled = true;
+  refs.changeButtons.children[1].disabled = false;
+}
+
+const disabledButtonSignIn = () => { 
+  refs.changeButtons.children[0].disabled = false;
+  refs.changeButtons.children[1].disabled = true;
 }
 
 export const onClickModal = e => {
     if (e.target.classList.contains('modal__button_close')) {
-        openCloseModal();
+        closeModal();
     }
 
     if (e.target.classList.contains('js_button_sign_in')) {
         refs.authForm.innerHTML = signInMarkup;
-        changeDisabledButton()
+        disabledButtonSignIn()
     }
 
     if (e.target.classList.contains('js_button_sign_up')) {
         refs.authForm.innerHTML = signUpMarkup;
-        changeDisabledButton()
+        disabledButtonSignUp()
     }
 }
