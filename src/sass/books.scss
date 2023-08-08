@@ -91,11 +91,21 @@
             flex-shrink: 0;
         }
     }
-.thumb > img {
-    width: 100%;
-    // max-height: 100%;
-}
+.thumb>img {
+    width: 335px;
+    height: 485px;
 
+    @media screen and (min-width: 768px) {
+        width: 218px;
+        height: 316px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: 180px;
+        height: 256px;
+        flex-shrink: 0;
+    }
+}
 .book-item:hover .overlay {
     transform: translateY(0);
 }
