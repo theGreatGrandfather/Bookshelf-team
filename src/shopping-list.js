@@ -1,12 +1,12 @@
-import './js/shop-list';
+// import './js/shop-list';
 
-import './js/createFoundsMarcup';
+// import './js/createFoundsMarcup';
 
 // add your import from js file here 3
 
 // import './js/markup-books';
 
-import './js/auth';
+// import './js/auth';
 
 // import './js/get-top-books';
 
@@ -32,11 +32,12 @@ import './js/auth';
 
 // import './js/renderCategories.js';
 
-import './js/toggleTheme.js';
+// import './js/toggleTheme.js';
 
 // import './js/createFoundsMarcup';
 
 // import './js/createCategoryMarcup.js';
 
-import './js/onFondsBtnClick.js';
-import './js/authforshoping.js';
+// import './js/onFondsBtnClick.js';
+// import './js/authforshoping.js';
+// import './js/google.js'

@@ -116,7 +116,7 @@ const onLogOut = () => {
     });
 };
 refs.buttonsSignUp.forEach(el => console.log(el))
-refs.authForm.addEventListener('submit', onSubmit);
+// refs.authForm.addEventListener('submit', onSubmit);
 refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.addEventListener('click', openCloseModal));
 // refs.modalAuth.addEventListener('click', onClickModal);
 refs.buttonsUser.forEach(buttonUser => buttonUser.addEventListener('click', openCloseButtonLogOut));

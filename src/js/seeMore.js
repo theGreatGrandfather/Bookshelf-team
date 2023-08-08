@@ -32,6 +32,9 @@ const onSeeMoreClick = (e) => {
                 <span class="title_book">${accentText}</span>`;
                 mainBookList.innerHTML = makeMarkupForBooks(resp);
                 // loaderOff();
+                // if ( document.documentElement.scrollWidth >= 1440) {
+                //     return;
+                // }
                 document.querySelector('#best-sellers-container').scrollIntoView({
                     behavior: "smooth",
                     block: "start"
