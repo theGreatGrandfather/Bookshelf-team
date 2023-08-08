@@ -40,4 +40,4 @@
 
 // import './js/onFondsBtnClick.js';
 // import './js/authforshoping.js';
-// import './js/google.js'
+import './js/orderModal.js'
