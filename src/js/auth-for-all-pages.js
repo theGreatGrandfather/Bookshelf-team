@@ -4,7 +4,8 @@ import { registration, authorization, onLogOut, checkUserIsAuth } from "./auth";
 checkUserIsAuth()
 
 refs.buttonsSignUp[0].addEventListener('click', openModal);
-refs.modalAuth.addEventListener('click', onClickModal)
+refs.buttonsSignUp[1].addEventListener('click', openModal);
+refs.modalAuth.addEventListener('click', onClickModal);
 
 const onSubmit = (e) => {
     e.preventDefault()
@@ -19,7 +20,7 @@ const onSubmit = (e) => {
     } else {
         authorization(email, password);
     }
-}
+};
 
 const openOrCloseButtonLogOut = () => {
     refs.buttonsLogOut[0].classList.toggle('hidden')
