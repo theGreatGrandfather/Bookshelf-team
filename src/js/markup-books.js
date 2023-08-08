@@ -21,7 +21,7 @@ export const makeMarkupForBooks = (booksArray) => {
               <p class="overlay-text">quick view </p>
             </div>
           </div>
-          <h3 class="book-title">${title}</h3>
+          <h4 class="book-title">${title}</h4>
           <p class="book-author">${author}</p>
         </a>
       </li>
