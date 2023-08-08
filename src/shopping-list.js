@@ -39,5 +39,5 @@
 // import './js/createCategoryMarcup.js';
 
 // import './js/onFondsBtnClick.js';
-// import './js/authforshoping.js';
+import './js/auth-for-shoping.js';
 // import './js/google.js'

@@ -19,7 +19,7 @@ import './js/modal';
 
 // add your import from js file here
 
-import './js/auth';
+import './js/auth-for-index';
 
 // import './js/footer.js';
 
