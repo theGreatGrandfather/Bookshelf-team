@@ -128,7 +128,36 @@
     z-index: 10000;
     justify-content: center;
     align-items: center;
+    max-height: 80vh; /* Максимальна висота відносно висоти екрану */
+    overflow-y: auto;
+    scrollbar-width: thin; /* "auto" или "thin" */
+    scrollbar-color:transparent;
+    &::-webkit-scrollbar {
+    width: 5px;
+    
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color:var(--scroll-color);
+        border-radius: 12px;    
+    }
+
+    &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 100%;
+    background-color:transparent;
+
+    }
 }
+
 
 .footer-modal.show .footer-modal-window {
     margin-top: 0;
@@ -165,6 +194,7 @@
     padding: 0;
     margin: 0;
     list-style-type: none;
+    margin-top: 25px;
 }
 
 .team-modal {
@@ -203,4 +233,23 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+/*----------------------------*/
+
+.team-placeholder{
+    padding: 15px;
+}
+
+.footer-modal-window {
+    /* Попередні стилі */
+    padding: 20px; /* Додайте падінг до контенту модального вікна */
+    /* Решта стилів залиште без змін */
+}
+
+.team-modal {
+    /* Залиште поточні стилі */
+    border: 2px solid #111; /* Додайте рамку для li елементів */
+    border-radius: 10px; /* Закруглені кути */
+    overflow: hidden; /* Заборона видимості зайвого контенту за межами рамки */
 }

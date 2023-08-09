@@ -112,7 +112,7 @@ transform: translateY(-120%);
 }
 
 .buttons_change_form .button {
-    color:rgba(17, 17, 17, 0.50);
+    color: var(--auth-text-color);
     background-color: transparent;
     border: none;
     transition: var(--transition__stock);
@@ -131,8 +131,8 @@ transform: translateY(-120%);
 /*lock-email*/
 
 .lock-email{
-    stroke: black;
-    fill: white;
+    stroke: var(--color-black);
+    fill:   var(--primery-bgc);
     position: absolute;
     right: 32px;
     bottom: 18px;
