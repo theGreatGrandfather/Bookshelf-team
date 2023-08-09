@@ -1,8 +1,8 @@
 import { delBook, pullBookData } from './auth-send-data';
-import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { onAuthStateChanged } from 'firebase/auth';
 import { app } from './firebase';
 import { getAuth } from 'firebase/auth';
+import { getDocs, collection, getFirestore } from 'firebase/firestore';
 
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -27,38 +27,35 @@ const el = {
 const BUTTON_ADD_TEXT = 'Add to shopping list';
 const BUTTON_REMOVE_TEXT = 'Remove from the shopping list';
 let bookInfo = {};
-let currentBookId;
 let isBookAdded = false;
-let bookId = ''
 
-const onBookClick = async e => {
+const onBookClick = e => {
   e.preventDefault();
-  
+
   onAuthStateChanged(auth, async (user) => {
     if (user) {
-      el.addToList.disabled = false;
-      el.addToList.style.cursor = 'pointer';
-
       const email = user.email;
-
       const querySnapshot = await getDocs(collection(db, email));
-      querySnapshot.forEach(bookInDataBase => {
-        if (bookInDataBase.data().id !== bookInfo.id) {
-          isBookAdded = false;
-          el.addToList.textContent = BUTTON_ADD_TEXT;
-          el.modalGreetings.classList.add('modal-greetings-text-js');
-        } else {
-          bookId = bookInDataBase.id;
+      const arr = [];
+      querySnapshot.forEach(bookInDataBase => arr.push(bookInDataBase.data().id));
+
+       if (arr.some(el => el === bookInfo.id)) {
           isBookAdded = true;
+          console.log(isBookAdded);
           el.addToList.textContent = BUTTON_REMOVE_TEXT;
           el.modalGreetings.classList.remove('modal-greetings-text-js');
+        } else {
+          isBookAdded = false;
+          console.log(isBookAdded);
+          el.addToList.textContent = BUTTON_ADD_TEXT;
+          el.modalGreetings.classList.add('modal-greetings-text-js');
         }
-      });
+    
     } else {
       el.addToList.disabled = true;
       el.addToList.style.cursor = 'not-allowed';
     }
-  })
+  });
 
   if (!e.target.closest('.book-item')) return;
   el.modalClose.addEventListener('click', onCloseModal);
@@ -137,21 +134,19 @@ const onCloseModalESC = e => {
   }
 };
 
-const toggleToList = async () => {
+const toggleToList = () => {
   if (!isBookAdded) {
     // setItem(bookInfo);
     pullBookData(bookInfo);
-    isBookAdded = true;
     el.addToList.textContent = BUTTON_REMOVE_TEXT;
     el.modalGreetings.classList.remove('modal-greetings-text-js');
-    checkData()
+    isBookAdded = true;
   } else {
     // removeItem(currentBookId);
-    delBook(bookId)
-    isBookAdded = false;
+    delBook(bookInfo.id)
     el.addToList.textContent = BUTTON_ADD_TEXT;
     el.modalGreetings.classList.add('modal-greetings-text-js');
-    checkData()
+    isBookAdded = false;
   }
 };
 
@@ -160,21 +155,3 @@ el.books.addEventListener('click', onBookClick);
 // el.modalInner.addEventListener('click', e => e.stopPropagation());
 
 // el.books.removeEventListener
-
-const checkData = async () => {
-  const email = auth.currentUser.email;
-
-  const querySnapshot = await getDocs(collection(db, email));
-  querySnapshot.forEach(bookInDataBase => {
-    if (bookInDataBase.data().id !== bookInfo.id) {
-      isBookAdded = false;
-      el.addToList.textContent = BUTTON_ADD_TEXT;
-      el.modalGreetings.classList.add('modal-greetings-text-js');
-    } else {
-      bookId = bookInDataBase.id;
-      isBookAdded = true;
-      el.addToList.textContent = BUTTON_REMOVE_TEXT;
-      el.modalGreetings.classList.remove('modal-greetings-text-js');
-    }
-  });
-};

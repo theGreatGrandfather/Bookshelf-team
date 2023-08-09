@@ -1,5 +1,5 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { getFirestore, collection, addDoc, setDoc, getDocs, doc, deleteDoc } from "firebase/firestore";
+import { getFirestore, collection, setDoc, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { app } from "./firebase";
 import { Notify } from "notiflix";
 
