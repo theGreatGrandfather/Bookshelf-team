@@ -64,7 +64,6 @@ async function modalFormSubmit(event) {
     if (error === 0) {
         
         const books = document.querySelectorAll('.shopping-list-card__title');
-        console.log('bocks', books)
 
         const booksInBasket = Array.from(books);
         for (let index = 0; index < booksInBasket.length; index++) {
@@ -78,7 +77,6 @@ async function modalFormSubmit(event) {
                     
                 }
             }
-            console.log('messageToTg', messageToTg);
             return messageToTg;
         };
         sendMessage();

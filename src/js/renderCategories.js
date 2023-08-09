@@ -21,6 +21,6 @@ renderCategories()
         
     })
     .catch((err) => {
-        console.log('err', err)
+        // sssssssssssssssssssssssssssssssssssss
     })
 
