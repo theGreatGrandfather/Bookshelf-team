@@ -49,10 +49,11 @@
 .form__element__input {
     height: 64px;
     width: 100%;
-    padding: 20px 130px 20px 40px;
+    padding: 20px 40px 20px 40px;
     align-items: center;
     border-radius: 40px;
     border: 2px solid var(--color-black);
+    color: var(--color-black);
     background: var(--primery-bgc);
 }
 
