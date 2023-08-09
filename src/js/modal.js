@@ -1,9 +1,11 @@
-import { setItem, getItem, removeItem } from './local-storage';
-import { pullBookData } from './auth-send-data';
+import { delBook, pullBookData } from './auth-send-data';
 import { onAuthStateChanged } from 'firebase/auth';
 import { app } from './firebase';
 import { getAuth } from 'firebase/auth';
+import { getDocs, collection, getFirestore } from 'firebase/firestore';
+
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 const el = {
   body: document.querySelector('body'),
@@ -25,21 +27,35 @@ const el = {
 const BUTTON_ADD_TEXT = 'Add to shopping list';
 const BUTTON_REMOVE_TEXT = 'Remove from the shopping list';
 let bookInfo = {};
-let currentBookId;
 let isBookAdded = false;
 
 const onBookClick = e => {
   e.preventDefault();
 
-onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, async (user) => {
     if (user) {
-      el.addToList.disabled = false;
-      el.addToList.style.cursor = 'pointer';
+      const email = user.email;
+      const querySnapshot = await getDocs(collection(db, email));
+      const arr = [];
+      querySnapshot.forEach(bookInDataBase => arr.push(bookInDataBase.data().id));
+
+       if (arr.some(el => el === bookInfo.id)) {
+          isBookAdded = true;
+          console.log(isBookAdded);
+          el.addToList.textContent = BUTTON_REMOVE_TEXT;
+          el.modalGreetings.classList.remove('modal-greetings-text-js');
+        } else {
+          isBookAdded = false;
+          console.log(isBookAdded);
+          el.addToList.textContent = BUTTON_ADD_TEXT;
+          el.modalGreetings.classList.add('modal-greetings-text-js');
+        }
+    
     } else {
       el.addToList.disabled = true;
       el.addToList.style.cursor = 'not-allowed';
     }
-});
+  });
 
   if (!e.target.closest('.book-item')) return;
   el.modalClose.addEventListener('click', onCloseModal);
@@ -127,6 +143,7 @@ const toggleToList = () => {
     isBookAdded = true;
   } else {
     // removeItem(currentBookId);
+    delBook(bookInfo.id)
     el.addToList.textContent = BUTTON_ADD_TEXT;
     el.modalGreetings.classList.add('modal-greetings-text-js');
     isBookAdded = false;

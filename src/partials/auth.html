@@ -1,20 +1,8 @@
 <div class="js_modal_auth modal_backdrop hidden">
   <div class="modal_window">
     <button type="button" class="modal__button_close">
-      <svg
-        class="button_cross"
-        xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
-        viewBox="0 0 28 28"
-      >
-        <path
-          d="M21 7L7 21M7 7L21 21"
-          stroke="inherit"
-          stroke-width="3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
+      <svg class="button_cross" width="28" height="28">
+        <use href="./images/sprite.svg#icon-close"></use>
       </svg>
     </button>
     <form class="js_form_auth form_auth">
@@ -40,6 +28,9 @@
             required
           />
           <label for="email" class="form__element__label">Email</label>
+          <svg class="lock-email" width="28" height="28">
+            <use href="./images/sprite.svg#icon-mail"></use>
+          </svg>
         </li>
 
         <li class="form__element form__element_password">
@@ -53,6 +44,9 @@
           />
 
           <label for="password" class="form__element__label">Password</label>
+          <svg class="lock-email" width="28" height="28">
+            <use href="./images/sprite.svg#icon-lock"></use>
+          </svg>
         </li>
       </ul>
 
