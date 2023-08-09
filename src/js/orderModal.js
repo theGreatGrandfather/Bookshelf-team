@@ -1,6 +1,6 @@
 const body = document.querySelector('body');
 const modal = document.querySelector('.modal__form__backdrop');
-const confirmBtn = document.querySelector('.form__button_submit');
+export const confirmBtn = document.querySelector('.form__button_submit');
 const closeBnt = document.querySelector('.modal__form__close__bt');
 const backdrop = document.querySelector('.modal__form__backdrop');
 

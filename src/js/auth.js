@@ -89,6 +89,7 @@ export const onLogOut = () => {
     signOut(auth).then(() => {
         Notify.success('Sign-out successful.')
         unAuthorizedUser();
+        location.reload();
     }).catch((error) => {
         const errorMessage = error.message;
         Notify.failure(`An error happened: ${errorMessage}`)

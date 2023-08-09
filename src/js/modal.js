@@ -41,12 +41,12 @@ const onBookClick = e => {
 
        if (arr.some(el => el === bookInfo.id)) {
           isBookAdded = true;
-          console.log(isBookAdded);
+
           el.addToList.textContent = BUTTON_REMOVE_TEXT;
           el.modalGreetings.classList.remove('modal-greetings-text-js');
         } else {
           isBookAdded = false;
-          console.log(isBookAdded);
+
           el.addToList.textContent = BUTTON_ADD_TEXT;
           el.modalGreetings.classList.add('modal-greetings-text-js');
         }
