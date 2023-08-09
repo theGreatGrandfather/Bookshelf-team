@@ -3,6 +3,7 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { delBook } from './auth-send-data';
 import { app } from './firebase';
 import { Notify } from 'notiflix';
+import { loaderOn, loaderOff } from './loader';
 
 const confirmBtn = document.querySelector('.confirm__btn');
 
@@ -125,6 +126,7 @@ const db = getFirestore(app);
 
 const getBooksData = () => {
   onAuthStateChanged(auth, async user => {
+    loaderOn();
     if (user) {
       const email = user.email;
       const querySnapshot = await getDocs(collection(db, email));
@@ -147,7 +149,9 @@ const getBooksData = () => {
     } else {
       Notify.info(`Please Sign-In/Sign-Up`);
     }
+    loaderOff();
   });
+  
 };
 
 getBooksData();

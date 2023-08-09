@@ -13,4 +13,5 @@ import './js/toggleTheme.js';
 import './js/createFoundsMarcup';
 import './js/createCategoryMarcup.js';
 import './js/seeMore';
-import './js/scroll-funds'
+import './js/scroll-funds';
+import './js/loader';

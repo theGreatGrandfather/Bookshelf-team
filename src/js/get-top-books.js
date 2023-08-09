@@ -24,7 +24,7 @@ const renderStartMarkup = async () => {
   if (!shouldRenderMarkup()) return;
 
   try {
-    // loaderOn();
+    loaderOn();
     const dataMarkup = await getTopBooks();
     if (dataMarkup.length === 0) return;
 
@@ -43,7 +43,7 @@ const renderStartMarkup = async () => {
   } catch (error) {
     Notify.failure(`Error: ${errorMessage}`);
   } finally {
-    // loaderOff();
+    loaderOff();
   }
 };
 

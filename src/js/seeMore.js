@@ -2,12 +2,11 @@ import { mainBookList } from './get-top-books';
 import { makeMarkupForBooks } from './markup-books';
 import { createCategoryMarcup, categoryTitle } from './createCategoryMarcup';
 import { loaderOn, loaderOff } from './loader';
-import { goTop } from './scroll-up';
 
 const onSeeMoreClick = (e) => {
     if (e.target.classList.contains('see_more')) {
         e.preventDefault();
-        
+        loaderOn();
         const list = document.querySelector('.categories__list');
         const category = list.getElementsByClassName('categories__link');
 
@@ -31,7 +30,7 @@ const onSeeMoreClick = (e) => {
                 categoryTitle.innerHTML = `${titleTExt.join(' ')}&nbsp
                 <span class="title_book">${accentText}</span>`;
                 mainBookList.innerHTML = makeMarkupForBooks(resp);
-                // loaderOff();
+                loaderOff();
                 // if ( document.documentElement.scrollWidth >= 1440) {
                 //     return;
                 // }
