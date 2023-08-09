@@ -91,7 +91,6 @@ const showDefaultMarkup = () => {
   refs.defaultMarkup.style.display = 'flex';
   
   confirmBtn.classList.add('is-hiden');
-  console.log('qwe')
   Notify.info('There are no books in your list yet...');
  };
 
@@ -106,8 +105,6 @@ const onDelBtnClick = evt => {
   delBook(cardId);
 
   if (!refs.bookListEl.children.length) {
-      
-    console.log('first')
     showDefaultMarkup();
   }
 };
