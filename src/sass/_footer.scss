@@ -7,10 +7,10 @@
     max-height: 300px;
     padding-top: 0;
     padding-bottom: 0;
-    position: absolute;
+    position: fixed;
     left: 50%;
     transform: translate(-50%);
-    // bottom: 0;
+    bottom: 0;
 }
 
 .qwe {
@@ -18,24 +18,26 @@
     gap: 5vw;
 }
 .footer_container{
+    width: 99vw;
     background: var(--color-white);
     padding-top: 13px;
-  padding-bottom: 14px;
-  border-radius: 8px 8px 0px 0px;
-  border: 1.5px solid var(--color-black);
-  max-width: 768px;
+    padding-bottom: 14px;
+    border-radius: 8px 8px 0px 0px;
+    border: 1.5px solid var(--color-black);
+    max-width: 99vw;
+   
   
 }
 
 @media screen and (min-width: 768px) {
     .footer_container {
-        width: 768px;
+        width: 755px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     .footer_container {
-        width: 1440px;
+        width: 1420px;
     }
 }
 
