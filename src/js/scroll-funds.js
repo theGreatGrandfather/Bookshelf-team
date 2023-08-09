@@ -1,6 +1,6 @@
 let position = 0;
 let slidesToShow = 6;
-let slidesToScroll = 1;
+let slidesToScroll = 1.5;
 
 const container = document.querySelector('.slider-container');
 const list = document.querySelector('.support-ukraine__list');
