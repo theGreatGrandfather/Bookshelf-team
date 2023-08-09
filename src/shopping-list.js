@@ -9,3 +9,4 @@ import './js/footer'
 import './js/auth-for-all-pages';
 import './js/scroll-funds';
 import './js/loader';
+import './js/loadBasket';

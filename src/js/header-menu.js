@@ -47,8 +47,9 @@ body.classList.remove('disable-scroll')
 function disableScroll() {
     body.classList.add('disable-scroll')
 }
-const homePage = document.querySelector('.home'); 
+
 const basketPage = document.querySelector('.shopping-list'); 
+
 
 // const onHomeClick = (e) => {
 //     e.preventDefault();
