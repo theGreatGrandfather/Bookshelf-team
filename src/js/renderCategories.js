@@ -1,5 +1,5 @@
 import { getCategoryList } from "./axios-get";
-
+import { Notify } from "notiflix";
 export const categoriesList = document.querySelector('.categories__list');
 
 const renderCategories = async () => {
@@ -21,6 +21,6 @@ renderCategories()
         
     })
     .catch((err) => {
-        // sssssssssssssssssssssssssssssssssssss
+        Notify.failure(`Error: ${errorMessage}`);
     })
 

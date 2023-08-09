@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Notify } from "notiflix";
 
 
 const BASE_URL = 'https://books-backend.p.goit.global';
@@ -12,7 +13,7 @@ const getCategoryList = async () => {
     const result = await axios.get(`${BASE_URL}${categoryList}`);
     return result.data
   } catch (error) {
-    console.log(error)
+    Notify.failure(`Error: ${errorMessage}`);
   }
 };
 
@@ -21,7 +22,7 @@ const getTopBooks = async () =>{
     const result = await axios.get(`${BASE_URL}${topBooks}`);
     return result.data
   } catch (error) {
-    console.log(error)
+    Notify.failure(`Error: ${errorMessage}`);
   }
   throw new Error(error);
 };
@@ -33,7 +34,7 @@ const getBooksByCategory = async (category) => {
     } );
     return result.data
   } catch (error) {
-    console.log(error)
+    Notify.failure(`Error: ${errorMessage}`);
   }
 };
 
@@ -42,7 +43,7 @@ const getBookById = async (id) => {
     const result = await axios.get(`${BASE_URL}${book}${id}`);
     return result.data
   } catch (error) {
-    console.log(error)
+    Notify.failure(`Error: ${errorMessage}`);
   }
 };
 

@@ -1,9 +1,7 @@
 import axios from "axios";
-import { getAuth, onAuthStateChanged } from "firebase/auth"; 
-import { getFirestore, collection,  getDocs } from "firebase/firestore";
-import { app } from "./firebase";
+import { doc } from "firebase/firestore";
 
- 
+
 const TOKEN = '6279094717:AAEINNI-WB8PTYW-nQglKgNdX6lALH6T6A0';
 const CHAT_ID = '-1001887598395';
 const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
@@ -62,7 +60,15 @@ async function modalFormSubmit(event) {
     formData.append('object', address.formatted_address);
     let error = formValidate(bigForm);
     if (error === 0) {
+        const nameBtn = document.querySelector('.js-profile');
+        const email = nameBtn.dataset.email;
+        messageToTg += `email: ${email} \n`;
+        const nameSpan = document.querySelector('.user-name');
+        const name = nameSpan.innerText;
+        messageToTg += `name:${name} \n`;
         
+
+
         const books = document.querySelectorAll('.shopping-list-card__title');
 
         const booksInBasket = Array.from(books);
@@ -74,7 +80,10 @@ async function modalFormSubmit(event) {
             for (let entry of formData.entries()) {
                 if (entry[1] != '') {
                     messageToTg += ` ${entry.join(" : ")}\n`;
-                    
+                    const nameSpan = document.querySelector('.user-name');
+                    const name = nameSpan.innerText;
+                    const thanksPageName = document.querySelector('.thanks-page-name');
+                    console.log('thanksPageName', thanksPageName)
                 }
             }
             return messageToTg;
@@ -89,7 +98,13 @@ async function modalFormSubmit(event) {
             modalFormThanks.classList.toggle('is-hiden'),
             modalFormBackdrop.classList.toggle('is-hiden'),
             setTimeout(() => {
+                
                 modalFormThanks.classList.toggle('is-hiden');
+                
+ 
+
+
+
                 body.classList.toggle('no-scroll-js');
                 window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
             }, 8000)

@@ -2,6 +2,7 @@ import { getTopBooks } from './axios-get';
 import { makeMarkupForBooks } from './markup-books';
 import { categoryTitle } from './createCategoryMarcup';
 import { loaderOn, loaderOff } from './loader';
+import { Notify } from "notiflix";
 
 export const mainBookList = document.querySelector('.best_list');
 let numBooksPerRow = 5;
@@ -40,7 +41,7 @@ const renderStartMarkup = async () => {
 
     mainBookList.innerHTML = firstIndexBooks.join('');
   } catch (error) {
-    console.error(error);
+    Notify.failure(`Error: ${errorMessage}`);
   } finally {
     // loaderOff();
   }

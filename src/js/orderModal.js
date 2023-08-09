@@ -7,7 +7,6 @@ const backdrop = document.querySelector('.modal__form__backdrop');
 
 const onSBtnClick = (e) => {
     e.preventDefault();
-    console.log('e', e);
     body.classList.toggle('no-scroll-js');
     modal.classList.toggle('is-hiden');
     document.addEventListener('keydown', onCloseModalESC);
