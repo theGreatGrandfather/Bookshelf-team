@@ -4,6 +4,8 @@ import { delBook } from './auth-send-data';
 import { app } from './firebase';
 import { Notify } from 'notiflix';
 
+const confirmBtn = document.querySelector('.confirm__btn');
+
 const refs = {
   defaultMarkup: document.getElementById('js-shl-default-container'),
   bookListEl: document.getElementById('js-shl-booklist'),
@@ -87,8 +89,11 @@ const hideDefaultMarkup = () => {
 
 const showDefaultMarkup = () => {
   refs.defaultMarkup.style.display = 'flex';
+  
+  confirmBtn.classList.add('is-hiden');
+  console.log('qwe')
   Notify.info('There are no books in your list yet...');
-};
+ };
 
 const onDelBtnClick = evt => {
   const doesContain = evt.target.classList.contains('js-shl-del-btn');
@@ -99,7 +104,10 @@ const onDelBtnClick = evt => {
   const cardId = bookCardEl.dataset.id;
   bookCardEl.remove();
   delBook(cardId);
+
   if (!refs.bookListEl.children.length) {
+      
+    console.log('first')
     showDefaultMarkup();
   }
 };
@@ -132,8 +140,12 @@ const getBooksData = () => {
         arr.push(data);
       });
       if (!arr.length) {
+        // confirmBtn.classList.add('is-hiden');
+        // confirmBtn.classList.remove('is-hiden');
+        // confirmBtn.classList.add('is-hiden');
         return showDefaultMarkup();
       }
+      confirmBtn.classList.remove('is-hiden');
       fillShopListWithBooks(arr);
     } else {
       Notify.info(`Please Sign-In/Sign-Up`);
