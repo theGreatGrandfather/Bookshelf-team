@@ -1,8 +1,12 @@
 import axios from "axios";
 
+
 const TOKEN = '6279094717:AAEINNI-WB8PTYW-nQglKgNdX6lALH6T6A0';
 const CHAT_ID = '-1001887598395';
 const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+const modalFormThanks = document.querySelector('.modal__form__thanks');
+const modalFormBackdrop = document.querySelector('.modal__form__backdrop'); 
+const body = document.querySelector('body');
 
 let autocomplete;
 function loadGoogleMapsScript() {
@@ -67,7 +71,17 @@ async function modalFormSubmit(event) {
             parse_mode: 'html',
             text: messageToTg,
         }).then(
-            console.log('then')
+            modalFormThanks.classList.toggle('is-hiden'),
+            modalFormBackdrop.classList.toggle('is-hiden'),
+            console.log('then'),
+            console.log('2fe'),
+            setTimeout(() => {
+                modalFormThanks.classList.toggle('is-hiden');
+                body.classList.toggle('no-scroll-js');
+                window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
+            }, 8000)
+        
+            
         );
     }
     function formValidate(bigForm) {
