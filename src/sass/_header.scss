@@ -376,7 +376,8 @@ height: 14px;
 }
 
 .home.active,
- .shopping-list.active{
+.shopping-list.active,
+.menu-home.active{
     background-color: var(--color-yellow);
     border-radius: 36px;
     font-weight: 700;
