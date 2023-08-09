@@ -1,7 +1,7 @@
 export const makeMarkupForBooks = (booksArray) => {
   const markup = booksArray.map(
     ({ book_image, title, author, _id, list_name, description, buy_links }) => `
-      <li class="book-item" class="_list"
+      <li class="book-item" class="_list  "
         data-title="${title}"
         data-image="${book_image}"
         data-author="${author}"

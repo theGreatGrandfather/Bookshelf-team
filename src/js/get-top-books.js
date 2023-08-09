@@ -30,7 +30,7 @@ const renderStartMarkup = async () => {
 
     const firstIndexBooks = dataMarkup.map(({ books, list_name }) => {
       const booksSlice = books.slice(0, numBooksPerRow);
-      return `<li class='best-item _list'>
+      return `<li class='best-item _list _anim-items'>
                 <h3 class='min-title'>${list_name}</h3>
                 <ul class='books-list'>
                     ${makeMarkupForBooks(booksSlice)}

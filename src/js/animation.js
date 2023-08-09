@@ -1,5 +1,5 @@
 
-const animItems = document.querySelector('._anim-items')
+const animItems = document.querySelectorAll('._anim-items')
 
 
 
