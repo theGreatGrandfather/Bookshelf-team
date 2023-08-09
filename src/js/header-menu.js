@@ -1,3 +1,5 @@
+import { doc } from "firebase/firestore";
+
 const refs = {
     btnHeaderMenu: document.querySelector('.header-menu'), 
     iconBurger: document.querySelector('.js-menu-open'),
@@ -45,3 +47,28 @@ body.classList.remove('disable-scroll')
 function disableScroll() {
     body.classList.add('disable-scroll')
 }
+const homePage = document.querySelector('.home'); 
+const basketPage = document.querySelector('.shopping-list'); 
+
+// const onHomeClick = (e) => {
+//     e.preventDefault();
+//     homePage.classList.add('active');
+//     basketPage.classList.remove('active');
+//     window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
+
+// } 
+
+
+
+
+
+
+// const onBasketClick = (e) => {
+//     e.preventDefault();
+
+//     homePage.classList.remove('active');
+//     basketPage.classList.add('active');
+//     window.location.href = 'https://thegreatgrandfather.github.io/apple/shopping-list.html';
+// } 
+// homePage.addEventListener('click', onHomeClick);
+// basketPage.addEventListener('click', onBasketClick);
