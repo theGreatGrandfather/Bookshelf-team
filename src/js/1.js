@@ -1,10 +1,10 @@
-import { mainBookList } from './get-top-books';
+// import { mainBookList } from './get-top-books';
 
-const hiddenElement = document.getElementById("box");
-const btn = document.querySelector(".btn");
+// const hiddenElement = document.getElementById("box");
+// const btn = document.querySelector(".btn");
 
-function handleButtonClick() {
-    mainBookList.scrollIntoView({ block: "center", behavior: "smooth" });
-}
+// function handleButtonClick() {
+//     mainBookList.scrollIntoView({ block: "center", behavior: "smooth" });
+// }
 
-// btn.addEventListener("click", handleButtonClick);
+// // btn.addEventListener("click", handleButtonClick);
