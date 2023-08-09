@@ -40,73 +40,85 @@ closeModalSasha.addEventListener('click', (event) => {
 
 
 const signInMarkup = `<ul class="js_form_sign_in _list">
-        <li class="form__element form__element_email">
-          <input
-            placeholder=""
-            autocomplete="email"
-            type="email"
-            class="form__element__input form__element_email__input"
-            id="email"
-            required
-          />
-          <label for="email" class="form__element__label">Email</label>
-        </li>
+<li class="form__element form__element_email">
+<input
+  placeholder=""
+  autocomplete="email"
+  type="email"
+  class="form__element__input form__element_email__input"
+  id="email"
+  required
+/>
+<label for="email" class="form__element__label">Email</label>
+<svg class="lock-email" width="28" height="28">
+  <use href="../images/sprite.svg#icon-mail"></use>
+</svg>
+</li>
 
-        <li class="form__element form__element_password">
-          <input
-            placeholder=""
-            autocomplete="password"
-            type="password"
-            class="form__element__input form__element_password__input"
-            id="password"
-            required
-          />
+<li class="form__element form__element_password">
+<input
+  placeholder=""
+  autocomplete="new-password"
+  type="password"
+  class="form__element__input form__element_password__input"
+  id="password"
+  required
+/>
 
-          <label for="password" class="form__element__label">Password</label>
-        </li>
+<label for="password" class="form__element__label">Password</label>
+<svg class="lock-email" width="28" height="28">
+  <use href="../images/sprite.svg#icon-lock"></use>
+</svg>
+</li>
       </ul>
 
       <button type="submit" class="form__button_submit">
         <span>Sign up</span>
       </button>`
 
-const signUpMarkup = `<ul class="js_form_sign_up _list">
-        <li class="form__element form__element_name">
-          <input
-            placeholder=""
-            type="text"
-            class="form__element__input form__element_name__input"
-            id="name"
-            required
-          />
-          <label for="name" class="form__element__label">Name</label>
-        </li>
+const signUpMarkup = ` <ul class="js_form_sign_up _list">
+<li class="form__element form__element_name">
+  <input
+    placeholder=""
+    type="text"
+    class="form__element__input form__element_name__input"
+    id="name"
+    required
+  />
+  <label for="name" class="form__element__label">Name</label>
+</li>
 
-        <li class="form__element form__element_email">
-          <input
-            placeholder=""
-            autocomplete="email"
-            type="email"
-            class="form__element__input form__element_email__input"
-            id="email"
-            required
-          />
-          <label for="email" class="form__element__label">Email</label>
-        </li>
+<li class="form__element form__element_email">
+  <input
+    placeholder=""
+    autocomplete="email"
+    type="email"
+    class="form__element__input form__element_email__input"
+    id="email"
+    required
+  />
+  <label for="email" class="form__element__label">Email</label>
+  <svg class="lock-email" width="28" height="28">
+    <use href="./images/sprite.svg#icon-mail"></use>
+  </svg>
+</li>
 
-        <li class="form__element form__element_password">
-          <input
-            placeholder=""
-            type="password"
-            autocomplete="new-password"
-            class="form__element__input form__element_password__input"
-            id="password"
-            required
-          />
+<li class="form__element form__element_password">
+  <input
+    placeholder=""
+    autocomplete="new-password"
+    type="password"
+    class="form__element__input form__element_password__input"
+    id="password"
+    required
+  />
 
-          <label for="password" class="form__element__label">Password</label>
-        </li>
-      </ul>
+  <label for="password" class="form__element__label">Password</label>
+  <svg class="lock-email" width="28" height="28">
+    <use href="./images/sprite.svg#icon-lock"></use>
+  </svg>
+</li>
+</ul>
 
       <button type="submit" class="form__button_submit">
         <span>Sign up</span>
