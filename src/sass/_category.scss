@@ -112,7 +112,11 @@
     &:nth-child(-n+9)::before {
     content: '0' counter(item);
     counter-increment: item; 
-}}
+    }
+    &:last-child{
+        margin-bottom: 20px;
+    }
+}
 .support-ukraine__btn.open{
    transform: rotate(180deg);
 }
