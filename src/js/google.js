@@ -98,15 +98,10 @@ async function modalFormSubmit(event) {
             modalFormThanks.classList.toggle('is-hiden'),
             modalFormBackdrop.classList.toggle('is-hiden'),
             setTimeout(() => {
-                
                 modalFormThanks.classList.toggle('is-hiden');
-                
- 
-
-
-
                 body.classList.toggle('no-scroll-js');
                 window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
+                
             }, 8000)
         
             

@@ -86,7 +86,7 @@ const onBookClick = e => {
   el.appleLink.href = bookInfo.appleLink;
   el.barnesLink.href = bookInfo.barnesLink;
 
-  currentBookId = bookInfo.id;
+  // currentBookId = bookInfo.id;
 
   // check if this book has been already added to storage
   // isBookAdded = getItem(bookInfo.id);
