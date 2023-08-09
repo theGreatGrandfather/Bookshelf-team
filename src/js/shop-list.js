@@ -3,6 +3,7 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { delBook } from './auth-send-data';
 import { app } from './firebase';
 import { Notify } from 'notiflix';
+import { confirmBtn } from './orderModal';
 
 const refs = {
   defaultMarkup: document.getElementById('js-shl-default-container'),
@@ -132,6 +133,7 @@ const getBooksData = () => {
         arr.push(data);
       });
       if (!arr.length) {
+        confirmBtn.classList.add('is-hiden');
         return showDefaultMarkup();
       }
       fillShopListWithBooks(arr);
