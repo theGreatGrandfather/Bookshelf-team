@@ -16,7 +16,7 @@ export const makeMarkupForBooks = (booksArray) => {
       >
         <a href="#" class="_link" class="book-item" data-id="${_id}">
           <div class="thumb">
-            <img class="lazyload" src="https://raw.githubusercontent.com/theGreatGrandfather/apple/main/src/images/testBook.png" data-src="${book_image ? book_image:'https://raw.githubusercontent.com/theGreatGrandfather/apple/main/src/images/testBook.png'}" alt="${title}" loading="lazy"/>
+            <img class="lazyload" src="" data-src="${book_image ? book_image:'https://raw.githubusercontent.com/theGreatGrandfather/apple/main/src/images/testBook.png'}" alt="${title}" loading="lazy"/>
             <div class="overlay">
               <p class="overlay-text">quick view </p>
             </div>
