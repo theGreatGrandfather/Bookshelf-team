@@ -81,12 +81,14 @@
     line-height: 24px; /* 109.091% */
     letter-spacing: -0.88px;
 }
-
+.slider-container{
+    overflow: hidden;
+}
 .support-ukraine__list {
     display: flex;
     flex-direction: column;
     height: 188px;
-    overflow: hidden;
+    // overflow: hidden;
     gap: 20px;
     margin-bottom: 16px;
     list-style-type: none; /* Убираем исходные маркеры */
@@ -198,4 +200,7 @@
        width: 356px;
      
     }
+        .categories__list {
+            width: 356px;
+        }
 }

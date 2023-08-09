@@ -37,4 +37,6 @@ import './js/createFoundsMarcup';
 
 import './js/createCategoryMarcup.js';
 import './js/seeMore';
- 
+
+
+import './js/scroll-funds';
