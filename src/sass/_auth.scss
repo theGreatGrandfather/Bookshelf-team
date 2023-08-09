@@ -130,8 +130,8 @@ transform: translateY(-120%);
 /*lock-email*/
 
 .lock-email{
-    stroke: black;
-    fill: white;
+    stroke: var(--color-black);
+    fill:   var(--primery-bgc);
     position: absolute;
     right: 32px;
     bottom: 18px;

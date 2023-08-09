@@ -1,14 +1,43 @@
-import { refs } from "./auth-refs"
+import { refs } from "./auth-refs";
+
+const closeModalSasha = document.querySelector('.js_modal_auth');
+const openModalButton = document.querySelector('.btn-aaaaaa');
+const closeModalButton = document.querySelector('.footer-btn-close');
 
 export const openModal = () => {
   refs.modalAuth.classList.remove('hidden');
   document.body.classList.add('no-scroll-js');
+  document.addEventListener('keydown', onEscKeyPress);
 }
 
 export const closeModal = () => {
   refs.modalAuth.classList.add('hidden');
   document.body.classList.remove('no-scroll-js');
+  document.removeEventListener('keydown', onEscKeyPress);
 }
+
+const onEscKeyPress = event => {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+}
+
+openModalButton.addEventListener('click', () => {
+  closeModalSasha.classList.add('hidden');
+  hiddenBodyOverflow();
+  openModal();
+});
+
+closeModalButton.addEventListener('click', () => {
+  closeModal();
+});
+
+closeModalSasha.addEventListener('click', (event) => {
+  if (event.target === closeModalSasha || event.target.classList.contains('modal_window')) {
+    closeModal();
+  }
+});
+
 
 const signInMarkup = `<ul class="js_form_sign_in _list">
         <li class="form__element form__element_email">

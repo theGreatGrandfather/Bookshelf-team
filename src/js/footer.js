@@ -2,7 +2,7 @@ const openModalButton = document.querySelector('.btn-aaaaaa');
 const closeModalButton = document.querySelector('.footer-btn-close');
 const modal = document.querySelector('.footer-modal');
 
-export function hiddenBodyOverflow() {
+export const hiddenBodyOverflow = () => {
   if (document.body.style.overflow === 'hidden') {
     document.body.style.overflow = 'visible';
   } else {
@@ -10,13 +10,13 @@ export function hiddenBodyOverflow() {
   }
 }
 
-function closeModal() {
+const closeModal = () => {
   modal.classList.remove('show');
   hiddenBodyOverflow();
   document.removeEventListener('keydown', onEscKeyPress);
 }
 
-function onEscKeyPress(event) {
+const onEscKeyPress = event => {
   if (event.key === 'Escape') {
     closeModal();
   }
