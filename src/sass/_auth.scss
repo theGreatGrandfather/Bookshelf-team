@@ -42,6 +42,9 @@
     position: relative;
     padding-top: 28px;
 }
+.form__element>input{
+    color: var(--color-black);
+}
 
 .form__element__input {
     height: 64px;
