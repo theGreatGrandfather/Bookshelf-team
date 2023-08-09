@@ -12,6 +12,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transition: var(--transition__stock);
 }
 
 .modal__form__backdrop {
@@ -23,6 +24,7 @@
     transform: translate(-50%, -50%);
     z-index: 12;
     background-color: rgba(17, 17, 17, 0.40);
+    transition: var(--transition__stock);
 }
 .modal__form__container {
     position: absolute;
@@ -68,4 +70,47 @@
 ._req-big {
 }
 ._req-big-tel {
+}
+.modal__form__thanks {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    background-color: rgba(17, 17, 17, 0.40);
+    transition: var(--transition__stock);
+}
+.modal__form__thanks__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    padding-top: 50px;
+    max-width: 579px;
+    width: calc(100% - 40px);
+    padding: 64px;
+    gap:24%;
+    border-radius: 18px;
+    border: 2px solid var(--color-black);
+    background: var(--primery-bgc);
+}
+.thanks-page-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+.modal__thanks-title>span, .thanks-page-title>span {
+    color: #D10914;
+    font-size: 40px;
 }

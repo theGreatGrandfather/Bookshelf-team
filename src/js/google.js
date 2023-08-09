@@ -1,8 +1,17 @@
 import axios from "axios";
+import { getAuth, onAuthStateChanged } from "firebase/auth"; 
+import { getFirestore, collection,  getDocs } from "firebase/firestore";
+import { app } from "./firebase";
 
+ 
 const TOKEN = '6279094717:AAEINNI-WB8PTYW-nQglKgNdX6lALH6T6A0';
 const CHAT_ID = '-1001887598395';
 const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+const modalFormThanks = document.querySelector('.modal__form__thanks');
+const modalFormBackdrop = document.querySelector('.modal__form__backdrop'); 
+const body = document.querySelector('body');
+
+
 
 let autocomplete;
 function loadGoogleMapsScript() {
@@ -46,28 +55,48 @@ bigForm.addEventListener('submit', modalFormSubmit);
         event.preventDefault();
     }
 };
+ let messageToTg = `<b>New order</b>\n`;
 async function modalFormSubmit(event) {
     event.preventDefault();
     const formData = new FormData(bigForm);
     formData.append('object', address.formatted_address);
     let error = formValidate(bigForm);
     if (error === 0) {
-        let messageToTg = `<b>New order</b>\n`;
+        
+        const books = document.querySelectorAll('.shopping-list-card__title');
+        console.log('bocks', books)
+
+        const booksInBasket = Array.from(books);
+        for (let index = 0; index < booksInBasket.length; index++) {
+            const element = booksInBasket[index].textContent;
+            messageToTg += `${element} \n`;
+        }
         function sendMessage() {
             for (let entry of formData.entries()) {
                 if (entry[1] != '') {
                     messageToTg += ` ${entry.join(" : ")}\n`;
+                    
                 }
             }
+            console.log('messageToTg', messageToTg);
             return messageToTg;
         };
         sendMessage();
         axios.post(URI_API, {
             chat_id: CHAT_ID,
             parse_mode: 'html',
+            
             text: messageToTg,
         }).then(
-            console.log('then')
+            modalFormThanks.classList.toggle('is-hiden'),
+            modalFormBackdrop.classList.toggle('is-hiden'),
+            setTimeout(() => {
+                modalFormThanks.classList.toggle('is-hiden');
+                body.classList.toggle('no-scroll-js');
+                window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
+            }, 8000)
+        
+            
         );
     }
     function formValidate(bigForm) {
@@ -104,9 +133,7 @@ async function modalFormSubmit(event) {
     }
 };
 
-
 const address = {};
- 
 
 let place;
 
