@@ -1,5 +1,5 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, setDoc, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { app } from "./firebase";
 import { Notify } from "notiflix";
 
@@ -12,14 +12,35 @@ const db = getFirestore(app);
  * повертає ID об'єкта записаного в firestore Data Base
  * @param {Об'єект властивостей книги} bookData 
  */
+// export const pullBookData = async (bookData) => {
+//     onAuthStateChanged(auth, async (user) => {
+//         if (user) {
+//             const email = user.email;
+
+//             try {
+//                 const docRef = await addDoc(collection(db, email), bookData);
+//                 return docRef.id;
+//             } catch (e) {
+//                 const errorMessage = e.message;
+//                 Notify.failure(`Error: ${errorMessage}`);
+//             };
+//             // ...
+//         } else {
+//             // Користувач не авторизований
+//             Notify.info(`Please Sign-In/Sign-Up`)
+//             // ...
+//         }
+//     });
+// };
+
+
 export const pullBookData = async (bookData) => {
     onAuthStateChanged(auth, async (user) => {
         if (user) {
             const email = user.email;
 
             try {
-                const docRef = await addDoc(collection(db, email), bookData);
-                return docRef.id;
+                const docRef = await setDoc(doc(db, email, bookData.id), bookData);
             } catch (e) {
                 const errorMessage = e.message;
                 Notify.failure(`Error: ${errorMessage}`);
@@ -32,6 +53,7 @@ export const pullBookData = async (bookData) => {
         }
     });
 };
+
 
 /**
  * Отримувати базу книг
@@ -52,9 +74,7 @@ const getBooksData = () => {
             })
             return arr;
         } else {
-            // Користувач не авторизований
             Notify.info(`Please Sign-In/Sign-Up`)
-            // ...
         }
     });
 };

@@ -53,11 +53,12 @@ export const authorization = (email, password) => {
         });
 }
 
-const authorizedUser = (userName) => {
+const authorizedUser = (userName, userEmail) => {
     refs.buttonsSignUp.forEach(buttonSignUp => buttonSignUp.classList.add('hidden'));
     refs.buttonsUser.forEach(buttonUser => buttonUser.classList.remove('hidden'));
 
     refs.buttonsUser.forEach(buttonUser => buttonUser.children[1].textContent = userName);
+    refs.buttonsUser.forEach(buttonUser => buttonUser.dataset.email = userEmail);
 
     refs.buttonsLogOut[1].classList.remove('hidden');
 }
@@ -74,11 +75,9 @@ export const checkUserIsAuth = () => {
     const auth = getAuth(app);
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            Notify.info(`You are authorizated`)
             if (!user.displayName) { return }
-            authorizedUser(user.displayName);
+            authorizedUser(user.displayName, user.email);
         } else {
-            Notify.info(`You are UNauthorizated`)
             unAuthorizedUser();
         }
     });
