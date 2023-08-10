@@ -49,7 +49,7 @@
     letter-spacing: -0.56px;
     text-transform: uppercase;
 }
-.btn-aaaaaa {
+.footer-btn-modal {
     width: 200px;
     height: 40px;
     background-color: RGB(180, 190, 230);
@@ -64,10 +64,10 @@
     align-items: center;
     transform: all 0.2s ease;
 }
-.btn-aaaaaa.active{
+.footer-btn-modal.active{
     scale: scale(0.96)
 }
-.btn-aaaaaa:hover {
+.footer-btn-modal:hover {
     background-color: var(--color-violet);
 }
 

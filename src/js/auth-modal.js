@@ -1,8 +1,7 @@
 import { refs } from "./auth-refs";
 
 const closeModalSasha = document.querySelector('.js_modal_auth');
-const openModalButton = document.querySelector('.btn-aaaaaa');
-const closeModalButton = document.querySelector('.footer-btn-close');
+const closeModalButton = document.querySelector('.modal__button_close');
 
 export const openModal = () => {
   refs.modalAuth.classList.remove('hidden');
@@ -22,11 +21,11 @@ const onEscKeyPress = event => {
   }
 }
 
-openModalButton.addEventListener('click', () => {
-  closeModalSasha.classList.add('hidden');
-  hiddenBodyOverflow();
-  openModal();
-});
+// openModalButton.addEventListener('click', () => {
+//   closeModalSasha.classList.add('hidden');
+//   hiddenBodyOverflow();
+//   openModal();
+// });
 
 closeModalButton.addEventListener('click', () => {
   closeModal();

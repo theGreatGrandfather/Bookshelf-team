@@ -1,5 +1,5 @@
-const openModalButton = document.querySelector('.btn-aaaaaa');
-const closeModalButton = document.querySelector('.footer-btn-close');
+const openModalButton = document.querySelector('.footer-btn-modal');
+const closeModalButton = document.querySelector('.footer-close-btn'); 
 const modal = document.querySelector('.footer-modal');
 
 export const hiddenBodyOverflow = () => {
@@ -23,6 +23,7 @@ const onEscKeyPress = event => {
 }
 
 openModalButton.addEventListener('click', () => {
+  console.log("Button clicked!");
   modal.classList.add('show');
   hiddenBodyOverflow();
   document.addEventListener('keydown', onEscKeyPress);
