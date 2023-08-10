@@ -5,7 +5,7 @@ const createFoundsMarcup = () => {
     return foundsList.innerHTML = fonds.map(({ title, url, img }) => `
         <li class='support-ukraine__item'>
             <a target="_blank" rel='noopener no-referrel nofollow' class='support-ukraine__link _link' href='${url}'>
-                <img class='fonds-img' src="${img}" alt="${title}" width='auto' height='32px'>
+                <img class='fonds-img' src="${img}" alt="${title}" width='70' height='32'>
             </a>
         </li>`
     ).join('');
