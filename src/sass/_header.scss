@@ -141,11 +141,11 @@ height: 14px;
 }
 
 .switch__input:checked+.switch__slider {
-    background-image: linear-gradient(to bottom,
-            var(--color-violet),
-           var(--color-switcher));
+    background-image: var(--color-switcher); 
 }
-
+// linear-gradient(to bottom,
+//             var(--color-violet),
+//            var(--color-switcher));
 /*Button "burger-cross"*/
 .header-menu {
     display: flex;

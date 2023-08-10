@@ -21,6 +21,6 @@ renderCategories()
         
     })
     .catch((err) => {
-        Notify.failure(`Error: ${errorMessage}`);
+        Notify.failure(`Something went wrong. Try to reload the page`);
     })
 

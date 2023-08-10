@@ -23,11 +23,11 @@
     font-size: 12px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    transform: all 0.2s ease;
+    
     opacity: 0.9;
 }
 .btn-aaaaaa.active{
-    scale: scale(0.96)
+    transform: scale(0.96);
 }
 .btn-aaaaaa:hover {
     box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
