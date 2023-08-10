@@ -159,7 +159,7 @@
 .fonds-img{
     height: 32px;
     max-width: 100%;
-    filter: brightness(0)invert(1);
+    filter: brightness(0) invert(0.99);
 }
 .support-ukraine__link > .fonds-img{
     &:hover,
