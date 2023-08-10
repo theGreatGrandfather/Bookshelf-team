@@ -7,12 +7,10 @@
     max-height: 300px;
     padding-top: 0;
     padding-bottom: 0;
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: 0;
+    position: relative; 
+    width: 100%;
+    transform: translateY(0);
 }
-
 .qwe {
     display: flex;
     gap: 5vw;
@@ -28,24 +26,20 @@
    
   
 }
-
 @media screen and (min-width: 768px) {
     .footer_container {
         width: 755px;
     }
 }
-
 @media screen and (min-width: 1440px) {
     .footer_container {
         width: 1420px;
     }
 }
-
 .footer__redes-wrapper {
     margin-left: auto;
     margin-right: auto;
 }
-
 .footer__texto {
     text-align: center;
     color: var(--color-black);
@@ -55,7 +49,6 @@
     letter-spacing: -0.56px;
     text-transform: uppercase;
 }
-
 .btn-aaaaaa {
     width: 200px;
     height: 40px;
@@ -71,14 +64,14 @@
     align-items: center;
     transform: all 0.2s ease;
 }
-
 .btn-aaaaaa.active{
     scale: scale(0.96)
 }
-
 .btn-aaaaaa:hover {
     background-color: var(--color-violet);
 }
+
+/*-------------   MODAL   --------------------*/
 
 .footer-modal {
     position: fixed;
@@ -94,13 +87,11 @@
     opacity: 0;
     transition: all .09s ease-out;
 }
-
 .footer-modal.show {
     visibility: visible;
     z-index: 100;
     opacity: 1;
 }
-
 .footer-modal .footer-overlay {
     position: absolute;
     top: 0;
@@ -110,7 +101,6 @@
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 0;
 }
-
 .footer-modal-window {
     position: relative;
     z-index: 2;
@@ -119,35 +109,32 @@
     max-width: 100%;
     border-radius: 10px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-    background-color: #fff;
+    background-color:var(--primery-bgc);;
     padding: 30px;
     margin: 20px;
     overflow: auto; 
     transition: inherit;
     border-radius: 18px;
-    border: 2px solid #111;
-    background: #FFF;
+    border: 2px solid var(--color-black);
+    padding: 20px;
+    
     z-index: 10000;
     justify-content: center;
     align-items: center;
-    max-height: 80vh; /* Максимальна висота відносно висоти екрану */
+    max-height: 80vh; 
     overflow-y: auto;
-    scrollbar-width: thin; /* "auto" или "thin" */
+    scrollbar-width: thin; 
     scrollbar-color:transparent;
     &::-webkit-scrollbar {
     width: 5px;
-    
     }
-
     &::-webkit-scrollbar-track {
         background: transparent;
     }
-
     &::-webkit-scrollbar-thumb {
         background-color:var(--scroll-color);
         border-radius: 12px;    
     }
-
     &::after {
     content: "";
     position: absolute;
@@ -156,19 +143,15 @@
     width: 8px;
     height: 100%;
     background-color:transparent;
-
     }
 }
-
-
 .footer-modal.show .footer-modal-window {
     margin-top: 0;
 }
-
 .footer-btn-close {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 2px;
+    top: 10px;
     border: none;
     background: none;
     opacity: 0.7;
@@ -177,17 +160,14 @@
 .footer-btn-close:hover {
     opacity: 1;
 }
-
 .footer-name{
     display: flex;
     justify-content: center;
     font-size: 16px;
+    color: var(  --color-black);
 }
 
-/*-------------------------TEAM-------------------------*/
-
-
-
+/*-------------------    TEAM    -------------------*/
 
 .team-list._list {
     display: flex;
@@ -198,15 +178,16 @@
     list-style-type: none;
     margin-top: 25px;
 }
-
 .team-modal {
     width: calc(50% - 10px); 
     margin-bottom: 20px; 
     display: flex;
     align-items: center; 
     justify-content: center;
+    border: 2px solid var( --color-black);
+    border-radius: 10px; 
+    overflow: hidden; 
 }
-
 .team-circle {
     width: 54px;
     height: 54px;
@@ -215,43 +196,27 @@
     margin-right: 8px; 
     flex-shrink: 0; 
 }
-
-
-
 .team-image{
     border-radius: 50%;
     margin-right: auto;
     margin-left: auto;
     cursor: help;
 }
-
 .git-icon{
-    fill: #111;
     width: 40px;
     height: 40px;
+    fill: var(--color-black);
 }
-
 .footer-icon{
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-
-/*----------------------------*/
-
+.rfnfnoer{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 .team-placeholder{
     padding: 15px;
-}
-
-.footer-modal-window {
-    /* Попередні стилі */
-    padding: 20px; /* Додайте падінг до контенту модального вікна */
-    /* Решта стилів залиште без змін */
-}
-
-.team-modal {
-    /* Залиште поточні стилі */
-    border: 2px solid #111; /* Додайте рамку для li елементів */
-    border-radius: 10px; /* Закруглені кути */
-    overflow: hidden; /* Заборона видимості зайвого контенту за межами рамки */
 }
