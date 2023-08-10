@@ -117,7 +117,7 @@ async function modalFormSubmit(event) {
                 body.classList.toggle('no-scroll-js');
                 window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
                 
-            }, 0)
+            }, 7000)
         
             
         );
