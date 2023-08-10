@@ -1,6 +1,6 @@
 import axios from "axios";
-import { doc } from "firebase/firestore";
-
+import { delBook } from './auth-send-data';
+import { showDefaultMarkup } from './shop-list';
 
 const TOKEN = '6279094717:AAEINNI-WB8PTYW-nQglKgNdX6lALH6T6A0';
 const CHAT_ID = '-1001887598395';
@@ -8,7 +8,15 @@ const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 const modalFormThanks = document.querySelector('.modal__form__thanks');
 const modalFormBackdrop = document.querySelector('.modal__form__backdrop'); 
 const body = document.querySelector('body');
+const booksInCart = document.querySelectorAll('.js-shl-card');
 
+ 
+const onDelBtnClick = evt => {
+
+    delBook(cardId);
+
+    showDefaultMarkup();
+};
 
 
 let autocomplete;
@@ -83,7 +91,6 @@ async function modalFormSubmit(event) {
                     const nameSpan = document.querySelector('.user-name');
                     const name = nameSpan.innerText;
                     const thanksPageName = document.querySelector('.thanks-page-name');
-                    console.log('thanksPageName', thanksPageName)
                 }
             }
             return messageToTg;
@@ -98,6 +105,13 @@ async function modalFormSubmit(event) {
             modalFormThanks.classList.toggle('is-hiden'),
             modalFormBackdrop.classList.toggle('is-hiden'),
             setTimeout(() => {
+                const booksInCart = document.querySelectorAll('.js-shl-card');
+                const booksInCartArr = Array.from(booksInCart);
+                    for (let index = 0; index < booksInCartArr.length; index++) {
+                        const element = booksInCartArr[index];
+                        delBook(element.dataset.id);
+                    }
+                showDefaultMarkup();
                 modalFormThanks.classList.toggle('is-hiden');
                 body.classList.toggle('no-scroll-js');
                 window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';

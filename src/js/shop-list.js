@@ -88,7 +88,7 @@ const hideDefaultMarkup = () => {
   refs.defaultMarkup.style.display = 'none';
 };
 
-const showDefaultMarkup = () => {
+export const showDefaultMarkup = () => {
   refs.defaultMarkup.style.display = 'flex';
   
   confirmBtn.classList.add('is-hiden');
@@ -126,7 +126,7 @@ const db = getFirestore(app);
 
 const getBooksData = () => {
   onAuthStateChanged(auth, async user => {
-    loaderOn();
+    // loaderOn();
     if (user) {
       const email = user.email;
       const querySnapshot = await getDocs(collection(db, email));
@@ -149,9 +149,9 @@ const getBooksData = () => {
     } else {
       Notify.info(`Please Sign-In/Sign-Up`);
     }
-    loaderOff();
+    
   });
-  
+ 
 };
 
 getBooksData();
