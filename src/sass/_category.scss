@@ -12,10 +12,7 @@
     
     }
 
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
+    
     &::-webkit-scrollbar-thumb {
         background-color:var(--scroll-color);
         border-radius: 12px;    
@@ -32,6 +29,9 @@
 
     }
 }
+ 
+
+
 .categories__link{
     display: block;
     overflow: hidden;

@@ -91,9 +91,9 @@
     &::-webkit-scrollbar {
     width: 5px;
     }
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
+    // &::-webkit-scrollbar-track {
+    //     background: transparent;
+    // }
     &::-webkit-scrollbar-thumb {
         background-color:var(--scroll-color);
         border-radius: 12px;    
