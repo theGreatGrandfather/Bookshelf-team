@@ -1,12 +1,12 @@
 const openModalButton = document.querySelector('.btn-aaaaaa');
-const closeModalButton = document.querySelector('.footer-btn-close');
+const closeModalButton = document.querySelector('.footer-btn-close'); 
 const modal = document.querySelector('.footer-modal');
 
 export const hiddenBodyOverflow = () => {
-  if (document.body.style.overflow === 'hidden') {
-    document.body.style.overflow = 'visible';
+  if (document.body.classList.contains('no-scroll-js')) {
+    document.body.classList.remove('no-scroll-js');
   } else {
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('no-scroll-js');
   }
 }
 
