@@ -155,4 +155,3 @@ const getBooksData = () => {
 };
 
 getBooksData();
-//  loaderOff();

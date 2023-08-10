@@ -106,23 +106,17 @@ async function modalFormSubmit(event) {
             modalFormBackdrop.classList.toggle('is-hiden'),
             setTimeout(() => {
                 const booksInCart = document.querySelectorAll('.js-shl-card');
-
-                console.log('booksInCart', booksInCart)
                 const booksInCartArr = Array.from(booksInCart);
-                console.log('booksInCartArr', booksInCartArr)
                     for (let index = 0; index < booksInCartArr.length; index++) {
                         const element = booksInCartArr[index];
                         delBook(element.dataset.id);
-
-                        
-                        console.log('element', element.dataset.id);
-                }
+                    }
                 showDefaultMarkup();
                 modalFormThanks.classList.toggle('is-hiden');
                 body.classList.toggle('no-scroll-js');
-                // window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
+                window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
                 
-            }, 0)
+            }, 8000)
         
             
         );
