@@ -53,6 +53,7 @@ const onBookClick = e => {
     
     } else {
       el.addToList.disabled = true;
+      el.addToList.innerText = 'Please, sign up to shopping';
       el.addToList.style.cursor = 'not-allowed';
     }
   });
