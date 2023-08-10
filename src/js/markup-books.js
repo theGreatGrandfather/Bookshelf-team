@@ -1,6 +1,4 @@
 import  'lazysizes' ; 
-// імпорт плагіна 
-import  'lazysizes/plugins/parent-fit/ls.parent-fit' ;
 
 export const makeMarkupForBooks = (booksArray) => {
   const markup = booksArray.map(
