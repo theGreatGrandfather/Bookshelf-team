@@ -185,7 +185,7 @@
   background-size: contain;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
-  transition: filter var(--transition__stock);
+  transition: var(--transition__stock);
 }
 
 .shopping-list-card__link:is(:hover, :focus) {
