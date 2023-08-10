@@ -184,7 +184,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   filter: grayscale(0.99);
-
+  -webkit-filter: grayscale(100%);
   transition: var(--transition__stock);
 }
 
@@ -192,7 +192,7 @@
   filter: none;
  }
 
-.shopping-list-card__link.--amazon {
+.shopping-list-card__link.shop-amazon {
   width: 32px;
   height: 11px;
   background-color: inherit;
@@ -203,7 +203,7 @@
     height: 15px;
   }
 }
-.shopping-list-card__link.--apple {
+.shopping-list-card__link.shop-apple {
   background-color: inherit;
   background-image: url(../images/links-images/apple.png);
 
@@ -212,7 +212,7 @@
     height: 27px;
   }
 }
-.shopping-list-card__link.--barnes {
+.shopping-list-card__link.shop-barnes {
   background-color: inherit;
   background-image: url(../images/links-images/barnes.png);
 

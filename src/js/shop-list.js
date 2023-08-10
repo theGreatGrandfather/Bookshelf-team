@@ -45,19 +45,19 @@ const createShopListMarkup = arr => {
                 <a
                   href="${amazonLink}"
                   target="_blank"
-                  class="shopping-list-card__link --amazon _link amazon-link"
+                  class="shopping-list-card__link shop-amazon _link amazon-link"
                   
                 ></a>
                 <a
                   href="${appleLink}"
                   target="_blank"
-                  class="shopping-list-card__link --apple _link apple-link"
+                  class="shopping-list-card__link shop-apple _link apple-link"
                   
                 ></a>
                 <a
                   href="${barnesLink}"
                   target="_blank"
-                  class="shopping-list-card__link --barnes _link"
+                  class="shopping-list-card__link shop-barnes _link"
                 ></a>
               </div>
             </div>
