@@ -49,8 +49,9 @@ const onBookClick = e => {
 
           el.addToList.textContent = BUTTON_ADD_TEXT;
           el.modalGreetings.classList.add('modal-greetings-text-js');
-        }
-    
+       }
+      el.addToList.disabled = false;
+      el.addToList.style.cursor = 'pointer';
     } else {
       el.addToList.disabled = true;
       el.addToList.innerText = 'Please, sign up to shopping';
