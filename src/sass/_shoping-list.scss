@@ -195,7 +195,7 @@
 .shopping-list-card__link.--amazon {
   width: 32px;
   height: 11px;
-  background-image: url(../images/links-images/amazon.png);
+  background: url(../images/links-images/amazon.png);
 
   @media screen and (min-width: 768px) {
     width: 48px;
@@ -203,7 +203,7 @@
   }
 }
 .shopping-list-card__link.--apple {
-  background-image: url(../images/links-images/apple.png);
+  background: url(../images/links-images/apple.png);
 
   @media screen and (min-width: 768px) {
     width: 28px;
@@ -211,7 +211,7 @@
   }
 }
 .shopping-list-card__link.--barnes {
-  background-image: url(../images/links-images/barnes.png);
+  background: url(../images/links-images/barnes.png);
 
   @media screen and (min-width: 768px) {
     width: 32px;
