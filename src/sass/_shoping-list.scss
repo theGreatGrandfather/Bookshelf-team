@@ -184,7 +184,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   filter: grayscale(100%);
-
+  -webkit-filter: grayscale(100%);
   transition: var(--transition__stock);
 }
 
@@ -195,7 +195,8 @@
 .shopping-list-card__link.--amazon {
   width: 32px;
   height: 11px;
-  background: url(../images/links-images/amazon.png);
+  background-color: inherit;
+  background-image: url(../images/links-images/amazon.png);
 
   @media screen and (min-width: 768px) {
     width: 48px;
@@ -203,7 +204,8 @@
   }
 }
 .shopping-list-card__link.--apple {
-  background: url(../images/links-images/apple.png);
+  background-color: inherit;
+  background-image: url(../images/links-images/apple.png);
 
   @media screen and (min-width: 768px) {
     width: 28px;
@@ -211,7 +213,8 @@
   }
 }
 .shopping-list-card__link.--barnes {
-  background: url(../images/links-images/barnes.png);
+  background-color: inherit;
+  background-image: url(../images/links-images/barnes.png);
 
   @media screen and (min-width: 768px) {
     width: 32px;
