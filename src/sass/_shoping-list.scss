@@ -183,8 +183,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
+  filter: grayscale(0.99);
+
   transition: var(--transition__stock);
 }
 
