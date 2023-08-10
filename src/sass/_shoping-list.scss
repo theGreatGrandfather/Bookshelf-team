@@ -190,8 +190,7 @@
 
 .shopping-list-card__link:is(:hover, :focus) {
   filter: none;
-  -webkit-filter: none;
-}
+ }
 
 .shopping-list-card__link.--amazon {
   width: 32px;
