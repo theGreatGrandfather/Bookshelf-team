@@ -109,6 +109,9 @@
     align-items: center;
     text-align: center;
     gap: 24px;
+    & > span{
+        color: var(--color-black);
+    }
 }
 .modal__thanks-title>span, .thanks-page-title>span {
     color: #D10914;
