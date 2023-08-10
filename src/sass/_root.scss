@@ -4,7 +4,7 @@
     
 
     --auth-text-color: rgba(17, 17, 17, 0.40);
-    --text-color:rgba(17, 17, 17, 0.60);// #707070 
+    --text-color: rgba(17, 17, 17, 0.60);
     --color-black: #111111;
     --description-color: #B4AFAF;
     --color-violet: #4F2EE8;
@@ -23,7 +23,7 @@
 
     --filter-img: grayscale(99%);
     --filter-wImg: grayscale(99%);
-    // використовувати тільки в ховері на категорії це значення
+
     --color-accent: #4F2EE8;
     --transition__stock: all 300ms linear;
      --scroll-color:#E0E0E0; 
@@ -34,9 +34,9 @@
     --color-white: #111111;
     --color-black: #FFFFFF;
     --color-accent: #EAC645;
-    --color-switcher: fill: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+    --color-switcher: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
     --auth-text-color: rgba(246, 246, 246, 0.50);
-    --text-color: rgba(255, 255, 255, 0.50); //#f0f0f0
+    --text-color: rgba(255, 255, 255, 0.50); 
     
     --amazon-filter-img: brightness(0.1)invert(0.5);
     --filter-filter-wImg:brightness(0.1)invert(0.5);
@@ -50,7 +50,7 @@
     --amazon-hover:  brightness(0.1)invert(1);
     --amazon-hover:  brightness(0.1)invert(1);
 
-    --scroll-color:rgba(17, 17, 17, 0.60);// #707070 
+    --scroll-color:rgba(17, 17, 17, 0.60);
 }
 
 @font-face {
@@ -68,7 +68,7 @@ body {
 font-family: regular;
 font-weight: 400;
 background-color: var(--primery-bgc);
-scrollbar-width: thin; /* "auto" или "thin" */
+scrollbar-width: thin; 
     scrollbar-color:transparent;
     &::-webkit-scrollbar {
     width: 12px;
@@ -95,8 +95,4 @@ scrollbar-width: thin; /* "auto" или "thin" */
 
     }
 }
-
-
-// * {
-// outline: 1px solid red;
-// }
+ 
