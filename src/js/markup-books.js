@@ -1,3 +1,7 @@
+import  'lazysizes' ; 
+// імпорт плагіна 
+import  'lazysizes/plugins/parent-fit/ls.parent-fit' ;
+
 export const makeMarkupForBooks = (booksArray) => {
   const markup = booksArray.map(
     ({ book_image, title, author, _id, list_name, description, buy_links }) => `
@@ -16,7 +20,7 @@ export const makeMarkupForBooks = (booksArray) => {
       >
         <a href="#" class="_link" class="book-item" data-id="${_id}">
           <div class="thumb">
-            <img class="lazyload" src="https://raw.githubusercontent.com/theGreatGrandfather/apple/main/src/images/testBook.png" data-src="${book_image}" alt="${title}" loading="lazy" width='335' height='500'/>
+            <img class="lazyload" data-sizes="auto" src="https://raw.githubusercontent.com/theGreatGrandfather/apple/main/src/images/testBook.png" data-src="${book_image}" alt="${title}" loading="lazy" width='335' height='500'/>
             <div class="overlay">
               <p class="overlay-text">quick view </p>
             </div>
