@@ -82,7 +82,7 @@ async function modalFormSubmit(event) {
         const booksInBasket = Array.from(books);
         for (let index = 0; index < booksInBasket.length; index++) {
             const element = booksInBasket[index].textContent;
-            messageToTg += `${element} \n`;
+            messageToTg += `book:  ${element} \n`;
         }
         function sendMessage() {
             for (let entry of formData.entries()) {
@@ -109,6 +109,7 @@ async function modalFormSubmit(event) {
                 const booksInCartArr = Array.from(booksInCart);
                     for (let index = 0; index < booksInCartArr.length; index++) {
                         const element = booksInCartArr[index];
+                        element.remove();
                         delBook(element.dataset.id);
                     }
                 showDefaultMarkup();
@@ -116,7 +117,7 @@ async function modalFormSubmit(event) {
                 body.classList.toggle('no-scroll-js');
                 window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
                 
-            }, 8000)
+            },8000)
         
             
         );
