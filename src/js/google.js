@@ -115,7 +115,7 @@ async function modalFormSubmit(event) {
                 showDefaultMarkup();
                 modalFormThanks.classList.toggle('is-hiden');
                 body.classList.toggle('no-scroll-js');
-                window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
+                // window.location.href = 'https://thegreatgrandfather.github.io/apple/index.html';
                 
             }, 7000)
         
