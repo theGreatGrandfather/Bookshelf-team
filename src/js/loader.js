@@ -2,8 +2,11 @@ const wrapLoader = document.querySelector('.wrapper-loader');
 const loader = document.querySelector('.loader');
 
 const loaderOn = () => {
-    loader.classList.remove('hidden-loader');
+    setTimeout(() => {
+        loader.classList.remove('hidden-loader');
     wrapLoader.classList.remove('hidden-loader');
+    }, 1000);
+    
 }
 
 const loaderOff = () => {

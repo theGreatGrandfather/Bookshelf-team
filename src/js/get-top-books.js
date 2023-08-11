@@ -38,13 +38,13 @@ const renderStartMarkup = async () => {
                 <button class='see_more' data-name="${list_name}">See More</button>
               </li>`;
     });
-    loaderOff();
+    
     mainBookList.innerHTML = firstIndexBooks.join('');
   } catch (error) {
     loaderOff();
     Notify.failure(`Something went wrong. Try to reload the page`);
   } finally {
-    
+    loaderOff();
   }
 };
 
