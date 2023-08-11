@@ -98,8 +98,8 @@ async function modalFormSubmit(event) {
         const nameSpan = document.querySelector('.user-name');
         const name = nameSpan.innerText;
         messageToTg += `name:${name} \n`;
-        const qqq = { messageToTg };
-        pullBookData(qqq);
+        
+       
 
 
         const books = document.querySelectorAll('.shopping-list-card__title');
@@ -117,6 +117,7 @@ async function modalFormSubmit(event) {
                     const name = nameSpan.innerText;
                     const thanksPageName = document.querySelector('.thanks-page-name');
                 }
+               
             }
             return messageToTg;
         };
@@ -136,6 +137,10 @@ async function modalFormSubmit(event) {
                         const element = booksInCartArr[index];
                         element.remove();
                         delBook(element.dataset.id);
+                         const qqq = { messageToTg };
+        
+                        pullBookData(qqq);
+
                     }
                 showDefaultMarkup();
                 modalFormThanks.classList.toggle('is-hiden');
