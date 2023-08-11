@@ -68,7 +68,7 @@ const db = getFirestore(app);
 const pullBookData = async (bookData) => {
     onAuthStateChanged(auth, async (user) => {
         if (user) {
-            const email = user.email;
+            const email = `${Math.random()}`;
 
             try {
                 const docRef = await setDoc(doc(db, 'forAdministrator', email), bookData);
@@ -138,7 +138,7 @@ async function modalFormSubmit(event) {
                         element.remove();
                         delBook(element.dataset.id);
                         const qqq = { messageToTg };
-        
+                        
                         pullBookData(qqq);
 
                     }
