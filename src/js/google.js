@@ -68,7 +68,7 @@ const db = getFirestore(app);
 const pullBookData = async (bookData) => {
     onAuthStateChanged(auth, async (user) => {
         if (user) {
-            const email = `${Math.random()}`;
+            const email = `${Math.round(Math.random() * (10000 - 1) + 1)}`;
 
             try {
                 const docRef = await setDoc(doc(db, 'forAdministrator', email), bookData);
