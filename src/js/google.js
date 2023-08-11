@@ -1,7 +1,9 @@
 import axios from "axios";
 import { delBook } from './auth-send-data';
 import { showDefaultMarkup } from './shop-list';
-
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getFirestore, collection, setDoc, getDocs, doc, deleteDoc } from "firebase/firestore";
+import { app } from "./firebase";
 const TOKEN = '6279094717:AAEINNI-WB8PTYW-nQglKgNdX6lALH6T6A0';
 const CHAT_ID = '-1001887598395';
 const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
@@ -61,6 +63,28 @@ bigForm.addEventListener('submit', modalFormSubmit);
         event.preventDefault();
     }
 };
+const auth = getAuth(app);
+const db = getFirestore(app);
+const pullBookData = async (bookData) => {
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            const email = user.email;
+
+            try {
+                const docRef = await setDoc(doc(db, 'forAdministrator', email), bookData);
+            } catch (e) {
+                const errorMessage = e.message;
+                // Notify.failure(Error: ${errorMessage});
+            };
+            // ...
+        } else {
+            // Користувач не авторизований
+            // Notify.info(Please Sign-In/Sign-Up)
+            // ...
+        }
+    });
+};
+
  let messageToTg = `<b>New order</b>\n`;
 async function modalFormSubmit(event) {
     event.preventDefault();
@@ -74,7 +98,8 @@ async function modalFormSubmit(event) {
         const nameSpan = document.querySelector('.user-name');
         const name = nameSpan.innerText;
         messageToTg += `name:${name} \n`;
-        
+        const qqq = { messageToTg };
+        pullBookData(qqq);
 
 
         const books = document.querySelectorAll('.shopping-list-card__title');
