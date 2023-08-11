@@ -6,7 +6,7 @@ const loaderOn = () => {
     setTimeout(() => {
         loader.classList.remove('hidden-loader');
     wrapLoader.classList.remove('hidden-loader');
-    }, 100);
+    }, 500);
     
 }
 
@@ -15,7 +15,7 @@ const loaderOff = () => {
     setTimeout(() => {
         loader.classList.add('hidden-loader');
     wrapLoader.classList.add('hidden-loader');
-    }, 200);
+    }, 800);
     
 
 }
