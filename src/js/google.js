@@ -137,7 +137,7 @@ async function modalFormSubmit(event) {
                         const element = booksInCartArr[index];
                         element.remove();
                         delBook(element.dataset.id);
-                         const qqq = { messageToTg };
+                        const qqq = { messageToTg };
         
                         pullBookData(qqq);
 

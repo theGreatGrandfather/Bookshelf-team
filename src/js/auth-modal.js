@@ -102,7 +102,7 @@ const signInMarkup = `<ul class="js_form_sign_in _list">
       </ul>
 
       <button type="submit" class="form__button_submit">
-        <span>Sign up</span>
+        <span>Sign in</span>
       </button>`
 
 const signUpMarkup = ` <ul class="js_form_sign_up _list">
