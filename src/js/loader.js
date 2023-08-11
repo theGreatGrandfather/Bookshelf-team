@@ -2,16 +2,22 @@ const wrapLoader = document.querySelector('.wrapper-loader');
 const loader = document.querySelector('.loader');
 
 const loaderOn = () => {
+
     setTimeout(() => {
         loader.classList.remove('hidden-loader');
     wrapLoader.classList.remove('hidden-loader');
-    }, 1000);
+    }, 100);
     
 }
 
 const loaderOff = () => {
-    loader.classList.add('hidden-loader');
+
+    setTimeout(() => {
+        loader.classList.add('hidden-loader');
     wrapLoader.classList.add('hidden-loader');
+    }, 200);
+    
+
 }
 loaderOff()
 
